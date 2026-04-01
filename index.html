@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remote Tower World Deployment Map</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0e1a;color:#e0e0e0}
+#app{display:flex;height:100vh}
+#sidebar{width:370px;min-width:370px;background:#111827;border-right:1px solid #1f2937;display:flex;flex-direction:column;overflow:hidden;z-index:1000}
+#sidebar-header{padding:16px 18px;border-bottom:1px solid #1f2937;background:linear-gradient(135deg,#111827,#1a2332)}
+#sidebar-header h1{font-size:17px;font-weight:700;color:#f9fafb;margin-bottom:3px;letter-spacing:-0.3px}
+#sidebar-header p{font-size:11px;color:#6b7280}
+#search-box{width:100%;padding:7px 11px;background:#1a2332;border:1px solid #1f2937;border-radius:8px;color:#f9fafb;font-size:12px;margin-top:8px;outline:none}
+#search-box:focus{border-color:#3b82f6}
+#search-box::placeholder{color:#4b5563}
+#filters{padding:10px 18px;border-bottom:1px solid #1f2937;display:flex;flex-wrap:wrap;gap:5px}
+.fbtn{padding:3px 9px;border-radius:10px;border:1px solid #374151;background:transparent;color:#9ca3af;font-size:10px;cursor:pointer;transition:all .2s}
+.fbtn:hover{border-color:#6b7280;color:#e5e7eb}
+.fbtn.active{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
+#site-list{flex:1;overflow-y:auto;padding:6px 10px}
+#site-list::-webkit-scrollbar{width:5px}
+#site-list::-webkit-scrollbar-thumb{background:#374151;border-radius:3px}
+.sc{background:#1a2332;border:1px solid #1f2937;border-radius:9px;padding:11px 13px;margin-bottom:6px;cursor:pointer;transition:all .2s}
+.sc:hover{border-color:#3b82f6;background:#1e293b;transform:translateX(2px)}
+.sc.sel{border-color:#3b82f6;background:#1e293b;box-shadow:0 0 10px rgba(59,130,246,.12)}
+.sc .sn{font-size:13px;font-weight:600;color:#f9fafb;margin-bottom:2px}
+.sc .icao-tag{font-size:11px;font-weight:700;color:#38bdf8;font-family:'SF Mono',SFMono-Regular,Consolas,monospace;margin-left:6px}
+.sc .sl{font-size:10px;color:#6b7280;margin-bottom:5px}
+.sc .sm{display:flex;gap:5px;flex-wrap:wrap}
+.tag{padding:2px 7px;border-radius:7px;font-size:9px;font-weight:500}
+.t-op{background:rgba(16,185,129,.15);color:#34d399}
+.t-dep{background:rgba(245,158,11,.15);color:#fbbf24}
+.t-con{background:rgba(139,92,246,.15);color:#a78bfa}
+.t-usa{background:rgba(239,68,68,.15);color:#f87171}
+.t-rtc{background:rgba(56,189,248,.2);color:#38bdf8}
+.t-v{background:rgba(59,130,246,.08);font-size:9px}
+#map-container{flex:1;position:relative}
+#map{height:100%;width:100%}
+#stats{position:absolute;top:10px;right:10px;z-index:999;display:flex;gap:6px}
+.sp{background:rgba(17,24,39,.9);backdrop-filter:blur(8px);border:1px solid #1f2937;border-radius:9px;padding:7px 12px;text-align:center}
+.sp .sn{font-size:18px;font-weight:700;color:#f9fafb}
+.sp .sl{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px}
+#dp{display:none;position:absolute;bottom:16px;left:50%;transform:translateX(-50%);z-index:999;width:720px;max-height:420px;background:rgba(17,24,39,.95);backdrop-filter:blur(12px);border:1px solid #1f2937;border-radius:12px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,.5)}
+#dp .dh{padding:14px 18px;border-bottom:1px solid #1f2937;display:flex;justify-content:space-between;align-items:center}
+#dp .dh h2{font-size:16px;font-weight:700;color:#f9fafb}
+#dp .dh .icao-badge{font-size:14px;font-weight:700;color:#38bdf8;font-family:'SF Mono',SFMono-Regular,Consolas,monospace;background:rgba(56,189,248,.1);padding:3px 10px;border-radius:6px;border:1px solid rgba(56,189,248,.25);margin-left:10px}
+#dp .dc{width:26px;height:26px;border-radius:50%;border:1px solid #374151;background:transparent;color:#9ca3af;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px}
+#dp .dc:hover{background:#1f2937;color:#f9fafb}
+#dp .db{padding:14px 18px;overflow-y:auto;max-height:320px}
+#dp .db::-webkit-scrollbar{width:4px}
+#dp .db::-webkit-scrollbar-thumb{background:#374151;border-radius:2px}
+.ds{margin-bottom:12px}
+.ds h3{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#6b7280;margin-bottom:5px}
+.ds p{font-size:12px;color:#d1d5db;line-height:1.5}
+.dtags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.glinks{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;flex-wrap:wrap}
+.gl{display:flex;align-items:center;gap:5px;padding:6px 11px;background:#1a2332;border:1px solid #1f2937;border-radius:7px;text-decoration:none;color:#60a5fa;font-size:11px;white-space:nowrap;transition:all .2s}
+.gl:hover{background:#1e293b;border-color:#3b82f6}
+.gl svg{width:12px;height:12px;flex-shrink:0}
+.chart-link{display:flex;align-items:center;gap:5px;padding:6px 11px;background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:7px;text-decoration:none;color:#38bdf8;font-size:11px;white-space:nowrap;transition:all .2s}
+.chart-link:hover{background:rgba(56,189,248,.12);border-color:#38bdf8}
+.chart-link svg{width:12px;height:12px;flex-shrink:0}
+.legend{position:absolute;bottom:16px;right:10px;z-index:999;background:rgba(17,24,39,.92);backdrop-filter:blur(8px);border:1px solid #1f2937;border-radius:9px;padding:12px 14px}
+.legend h4{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#6b7280;margin-bottom:6px}
+.li{display:flex;align-items:center;gap:7px;margin-bottom:4px;font-size:11px;color:#d1d5db}
+.ld{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.c2b{position:absolute;top:10px;left:10px;z-index:999;background:linear-gradient(135deg,rgba(30,58,138,.9),rgba(88,28,135,.9));backdrop-filter:blur(8px);border:1px solid rgba(139,92,246,.3);border-radius:9px;padding:8px 14px}
+.c2b .c2t{font-size:10px;font-weight:600;color:#c4b5fd;text-transform:uppercase;letter-spacing:1px}
+.c2b .c2v{font-size:15px;font-weight:700;color:#f9fafb;margin-top:1px}
+.c2b .c2s{font-size:9px;color:#a78bfa}
+.leaflet-popup-content-wrapper{background:#1a2332!important;color:#e5e7eb!important;border-radius:9px!important;border:1px solid #1f2937!important;box-shadow:0 6px 24px rgba(0,0,0,.4)!important}
+.leaflet-popup-tip{background:#1a2332!important}
+.leaflet-popup-content{margin:8px 12px!important;font-size:12px!important;line-height:1.4!important}
+.leaflet-popup-content strong{color:#f9fafb}
+.leaflet-popup-close-button{color:#6b7280!important}
+.leaflet-control-zoom a{background:#111827!important;color:#e5e7eb!important;border-color:#1f2937!important}
+.leaflet-control-zoom a:hover{background:#1e293b!important}
+.leaflet-control-attribution{background:rgba(17,24,39,.8)!important;color:#4b5563!important;font-size:9px!important}
+.leaflet-control-attribution a{color:#6b7280!important}
+.rtc-icon{display:flex;align-items:center;justify-content:center}
+.airport-connected{display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff}
+</style>
+</head>
+<body>
+<div id="app">
+<div id="sidebar">
+<div id="sidebar-header">
+<h1>Remote Tower World Deployments</h1>
+<p>C2 Consulting intelligence tracker</p>
+<input type="text" id="search-box" placeholder="Search sites, ICAO codes, vendors, countries..." />
+</div>
+<div id="filters">
+<button class="fbtn active" data-f="all">All</button>
+<button class="fbtn" data-f="rtc">RTCs Only</button>
+<button class="fbtn" data-f="operational">Operational</button>
+<button class="fbtn" data-f="deploying">Deploying</button>
+<button class="fbtn" data-f="concept">Concept</button>
+<button class="fbtn" data-f="usa">USA</button>
+</div>
+<div id="site-list"></div>
+</div>
+<div id="map-container">
+<div id="map"></div>
+<div id="stats">
+<div class="sp"><div class="sn" id="st-t">0</div><div class="sl">Total Sites</div></div>
+<div class="sp"><div class="sn" id="st-rtc">0</div><div class="sl">RTCs</div></div>
+<div class="sp"><div class="sn" id="st-apt">0</div><div class="sl">Airports</div></div>
+<div class="sp"><div class="sn" id="st-c">0</div><div class="sl">Countries</div></div>
+</div>
+<div class="c2b">
+<div class="c2t">C2 Market</div>
+<div class="c2v">$639M</div>
+<div class="c2s">21% CAGR to $1.72B by 2030</div>
+</div>
+<div class="legend">
+<h4>Type</h4>
+<div class="li"><div style="width:14px;height:14px;background:#38bdf8;border-radius:3px;border:2px solid #0ea5e9;"></div> Remote Tower Centre (RTC)</div>
+<div class="li"><div class="ld" style="background:#10b981;"></div> Airport (Operational)</div>
+<div class="li"><div class="ld" style="background:#f59e0b;"></div> Airport (Deploying)</div>
+<div class="li"><div class="ld" style="background:#8b5cf6;"></div> Concept / Planning</div>
+<div class="li"><div class="ld" style="background:#ef4444;"></div> USA (FAA Program)</div>
+<h4 style="margin-top:8px">Vendors</h4>
+<div class="li"><div class="ld" style="background:#06b6d4;"></div> Kongsberg</div>
+<div class="li"><div class="ld" style="background:#22c55e;"></div> Saab</div>
+<div class="li"><div class="ld" style="background:#eab308;"></div> Indra</div>
+<div class="li"><div class="ld" style="background:#3b82f6;"></div> Frequentis</div>
+<div class="li"><div class="ld" style="background:#ec4899;"></div> Searidge</div>
+<div class="li"><div class="ld" style="background:#a3a3a3;"></div> Other / TBD</div>
+</div>
+<div id="dp">
+<div class="dh"><h2 id="dt"></h2><button class="dc" onclick="closeD()">&times;</button></div>
+<div class="db" id="dbd"></div>
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// VENDOR COLORS
+const VC={Kongsberg:'#06b6d4',Saab:'#22c55e',Indra:'#eab308',Frequentis:'#3b82f6',Searidge:'#ec4899',DFS:'#a3a3a3',Other:'#a3a3a3'};
+const SC={operational:'#10b981',deploying:'#f59e0b',concept:'#8b5cf6',usa:'#ef4444'};
+
+// Link builders
+function airnavUrl(icao){return `https://www.airnav.com/airport/${icao}`}
+function skyvectorUrl(icao){return `https://skyvector.com/airport/${icao}`}
+function faaChartUrl(icao){return `https://nfdc.faa.gov/nfdcApps/services/ajv5/airportDisplay.jsp?airportId=${icao}`}
+function gmapUrl(lat,lng){return `https://www.google.com/maps/@${lat},${lng},2000m/data=!3m1!1e3`}
+function gmapSearchUrl(name,lat,lng){return `https://www.google.com/maps/search/${encodeURIComponent(name)}/@${lat},${lng},3000m/data=!3m1!1e3`}
+
+// DATA
+const data=[
+// ===== NORWAY: Bodø RTC + airports (Kongsberg + Indra) =====
+{id:'bodo_rtc',name:'Bodø Remote Tower Centre',icao:'ENBO',country:'Norway',lat:67.268,lng:14.405,type:'rtc',status:'operational',vendor:'Kongsberg',ansp:'Avinor',
+ desc:'World\'s largest RTC. NINOX program. 15+ airports from single center. Operational since Oct 2020. Kongsberg Digital Towers + Indra InNOVA. Scaling to 23 airports by 2027.',
+ techSpecs:'Kongsberg Digital Towers Module, augmented OTW, Indra InNOVA integration, HD cameras per airport, full ATS.',
+ charts:[{l:'AIP Norway (Avinor)',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENBO',u:'https://skyvector.com/airport/ENBO'}],
+ images:[
+  {l:'Kongsberg Digital Towers',u:'https://www.kongsberg.com/kda/news/stories/2025/5/remote-towers-a-new-standard-for-air-traffic-management/'},
+  {l:'Avinor Remote Towers',u:'https://avinor.no/en/remote'},
+  {l:'World\'s Biggest RTC Opens',u:'https://www.kongsberg.com/kmagazine/2022/6/worlds-biggest-digital-tower-centre-opens-in-norway/'}]},
+{id:'rost',name:'Røst Airport',icao:'ENRS',country:'Norway',lat:67.528,lng:12.103,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'First airport from Bodø RTC. Oct 19, 2019. Remote island, Lofoten. Paired with Svolvær for multi-ops trial.',
+ charts:[{l:'AIP Norway ENRS',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENRS',u:'https://skyvector.com/airport/ENRS'}]},
+{id:'vardo',name:'Vardø Airport, Svartnes',icao:'ENSS',country:'Norway',lat:70.355,lng:31.045,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'First live from Bodø RTC Oct 7, 2020. Paired with Berlevåg for multi-ops trial. Northernmost remote-controlled airport.',
+ charts:[{l:'AIP Norway ENSS',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENSS',u:'https://skyvector.com/airport/ENSS'}]},
+{id:'hasvik',name:'Hasvik Airport',icao:'ENHK',country:'Norway',lat:70.487,lng:22.139,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Operational Nov 2020. Paired with Mehamn for multi-ops trial.',
+ charts:[{l:'AIP Norway ENHK',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENHK',u:'https://skyvector.com/airport/ENHK'}]},
+{id:'berlevag',name:'Berlevåg Airport',icao:'ENBV',country:'Norway',lat:70.871,lng:29.034,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Operational Nov 2020. Paired with Vardø for multi-ops trial.',
+ charts:[{l:'AIP Norway ENBV',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENBV',u:'https://skyvector.com/airport/ENBV'}]},
+{id:'mehamn',name:'Mehamn Airport',icao:'ENMH',country:'Norway',lat:71.029,lng:27.827,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Operational April 2021. Paired with Hasvik.',
+ charts:[{l:'AIP Norway ENMH',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENMH',u:'https://skyvector.com/airport/ENMH'}]},
+{id:'rorvik',name:'Rørvik Airport, Ryum',icao:'ENRV',country:'Norway',lat:64.838,lng:11.146,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Operational Oct 2021. Paired with Namsos.',
+ charts:[{l:'AIP Norway ENRV',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENRV',u:'https://skyvector.com/airport/ENRV'}]},
+{id:'namsos',name:'Namsos Airport, Høknesøra',icao:'ENNM',country:'Norway',lat:64.472,lng:11.579,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Operational Oct 2021. Paired with Rørvik.',
+ charts:[{l:'AIP Norway ENNM',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENNM',u:'https://skyvector.com/airport/ENNM'}]},
+{id:'svolvaer',name:'Svolvær Airport, Helle',icao:'ENSH',country:'Norway',lat:68.243,lng:14.669,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Operational Dec 2021. Paired with Røst for multi-ops.',
+ charts:[{l:'AIP Norway ENSH',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENSH',u:'https://skyvector.com/airport/ENSH'}]},
+{id:'honningsvag',name:'Honningsvåg Airport, Valan',icao:'ENHV',country:'Norway',lat:70.983,lng:25.984,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Nordkapp. Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENHV',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENHV',u:'https://skyvector.com/airport/ENHV'}]},
+{id:'lakselv',name:'Lakselv Airport, Banak',icao:'ENBK',country:'Norway',lat:70.069,lng:24.974,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Banak. Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENBK',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENBK',u:'https://skyvector.com/airport/ENBK'}]},
+{id:'sorkjosen',name:'Sørkjosen Airport',icao:'ENSR',country:'Norway',lat:69.787,lng:20.959,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENSR',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENSR',u:'https://skyvector.com/airport/ENSR'}]},
+{id:'stokmarknes',name:'Stokmarknes Airport, Skagen',icao:'ENSK',country:'Norway',lat:68.580,lng:15.026,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Skagen. Vesterålen. Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENSK',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENSK',u:'https://skyvector.com/airport/ENSK'}]},
+{id:'leknes',name:'Leknes Airport',icao:'ENLK',country:'Norway',lat:68.153,lng:13.609,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Lofoten. Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENLK',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENLK',u:'https://skyvector.com/airport/ENLK'}]},
+{id:'narvik',name:'Narvik Airport, Framnes',icao:'ENNK',country:'Norway',lat:68.437,lng:16.544,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Framnes. Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENNK',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENNK',u:'https://skyvector.com/airport/ENNK'}]},
+{id:'sandnessjoen',name:'Sandnessjøen Airport, Stokka',icao:'ENST',country:'Norway',lat:65.957,lng:12.469,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Stokka. Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENST',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENST',u:'https://skyvector.com/airport/ENST'}]},
+{id:'moirana',name:'Mo i Rana Airport, Røssvoll',icao:'ENRA',country:'Norway',lat:66.364,lng:14.301,type:'airport',status:'operational',vendor:'Kongsberg',parentRtc:'bodo_rtc',
+ desc:'Røssvoll. Controlled from Bodø.',
+ charts:[{l:'AIP Norway ENRA',u:'https://aip.avinor.no/AIP/View/95/2024-11-07-AIRAC/html/index-en-GB.html'},{l:'SkyVector ENRA',u:'https://skyvector.com/airport/ENRA'}]},
+
+// ===== SWEDEN: RTC Sundsvall + airports (Saab / LFV) =====
+{id:'sundsvall_rtc',name:'RTC Sundsvall',icao:'ESNN',country:'Sweden',lat:62.528,lng:17.440,type:'rtc',status:'operational',vendor:'Saab',ansp:'LFV',
+ desc:'World\'s first operational RTC. Since April 2015 (Örnsköldsvik H24). 14 HD cameras per airport, PTZ, signal light gun, audio. 55-inch screens in semicircle. Co-located at Sundsvall-Timrå Airport.',
+ techSpecs:'Saab DATS, 55" displays, 360° panoramic view, 14 HD cameras + PTZ + IR per airport, airfield audio, track-based surveillance.',
+ charts:[{l:'Sweden AIP ESNN',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESNN',u:'https://skyvector.com/airport/ESNN'}],
+ images:[
+  {l:'Saab Remote Tower Story',u:'https://www.saab.com/newsroom/stories/2017/february/remote-tower-revolutionises-air-traffic-management'},
+  {l:'Saab DATS Platform',u:'https://www.saab.com/sites/saab-digital-air-traffic-solutions'},
+  {l:'LFV Remote Tower Services',u:'https://www.lfv.se/en/services/airport-services/remote-tower-services'}]},
+{id:'ornskoldsvik',name:'Örnsköldsvik Airport',icao:'ESNO',country:'Sweden',lat:63.408,lng:18.990,type:'airport',status:'operational',vendor:'Saab',parentRtc:'sundsvall_rtc',
+ desc:'First remote-controlled airport in the world. H24 since April 2015. 150km from RTC Sundsvall.',
+ charts:[{l:'Sweden AIP ESNO',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESNO',u:'https://skyvector.com/airport/ESNO'}]},
+{id:'sundsvall_apt',name:'Sundsvall-Timrå Airport',icao:'ESNN',country:'Sweden',lat:62.528,lng:17.101,type:'airport',status:'operational',vendor:'Saab',parentRtc:'sundsvall_rtc',
+ desc:'Controlled from RTC Sundsvall since Dec 2017. Second airport connected. RTC co-located here.',
+ charts:[{l:'Sweden AIP ESNN',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESNN',u:'https://skyvector.com/airport/ESNN'}]},
+{id:'linkoping',name:'Linköping City Airport',icao:'ESSL',country:'Sweden',lat:58.408,lng:15.680,type:'airport',status:'operational',vendor:'Saab',parentRtc:'sundsvall_rtc',
+ desc:'Third Swedish airport from RTC Sundsvall. LFV approved. Also known as Saab Airport.',
+ charts:[{l:'Sweden AIP ESSL',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESSL',u:'https://skyvector.com/airport/ESSL'}]},
+
+// ===== SWEDEN: RTC Stockholm + airports (Saab / LFV) =====
+{id:'arlanda_rtc',name:'RTC Stockholm (Arlanda)',icao:'ESSA',country:'Sweden',lat:59.652,lng:17.942,type:'rtc',status:'operational',vendor:'Saab',ansp:'LFV',
+ desc:'Second Swedish RTC. Commissioned June 2021. Swedavia airports. Same Saab DATS platform as Sundsvall.',
+ techSpecs:'Saab DATS platform.',
+ charts:[{l:'Sweden AIP ESSA',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESSA',u:'https://skyvector.com/airport/ESSA'}],
+ images:[{l:'Saab DATS',u:'https://www.saab.com/sites/saab-digital-air-traffic-solutions'}]},
+{id:'kiruna',name:'Kiruna Airport',icao:'ESNQ',country:'Sweden',lat:67.822,lng:20.337,type:'airport',status:'operational',vendor:'Saab',parentRtc:'arlanda_rtc',
+ desc:'First airport connected to RTC Stockholm. Arctic Sweden.',
+ charts:[{l:'Sweden AIP ESNQ',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESNQ',u:'https://skyvector.com/airport/ESNQ'}]},
+{id:'ostersund',name:'Åre Östersund Airport',icao:'ESNZ',country:'Sweden',lat:63.194,lng:14.500,type:'airport',status:'operational',vendor:'Saab',parentRtc:'arlanda_rtc',
+ desc:'Second airport from RTC Stockholm.',
+ charts:[{l:'Sweden AIP ESNZ',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESNZ',u:'https://skyvector.com/airport/ESNZ'}]},
+{id:'umea',name:'Umeå Airport',icao:'ESNU',country:'Sweden',lat:63.792,lng:20.283,type:'airport',status:'operational',vendor:'Saab',parentRtc:'arlanda_rtc',
+ desc:'Third airport from RTC Stockholm.',
+ charts:[{l:'Sweden AIP ESNU',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESNU',u:'https://skyvector.com/airport/ESNU'}]},
+{id:'malmo',name:'Malmö Airport',icao:'ESMS',country:'Sweden',lat:55.536,lng:13.376,type:'airport',status:'operational',vendor:'Saab',parentRtc:'arlanda_rtc',
+ desc:'Fourth airport from RTC Stockholm. Southern Sweden. Sturup.',
+ charts:[{l:'Sweden AIP ESMS',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESMS',u:'https://skyvector.com/airport/ESMS'}]},
+
+// SWEDEN standalone
+{id:'scandmtn',name:'Scandinavian Mountains Airport',icao:'ESKS',country:'Sweden',lat:61.254,lng:12.834,type:'airport',status:'operational',vendor:'Saab',
+ desc:'First airport in the WORLD built WITHOUT a traditional tower (2019). Remote from day one. Sälen-Trysil. Dalarna.',
+ charts:[{l:'Sweden AIP ESKS',u:'https://aro.lfv.se/Editorial/View/IAIP'},{l:'SkyVector ESKS',u:'https://skyvector.com/airport/ESKS'}]},
+
+// ===== UK: Swanwick RTC + London City (Saab / NATS) =====
+{id:'swanwick_rtc',name:'NATS Swanwick Digital Tower Centre',icao:'N/A',country:'United Kingdom',lat:50.874,lng:-1.248,type:'rtc',status:'operational',vendor:'Saab',ansp:'NATS',
+ desc:'NATS ATC centre in Hampshire. Not an airport, dedicated ATC facility. Controls London City from 115km away. 16 HD cameras + sensors on 50m mast at LCY. Enhanced reality overlays. Busiest remote-controlled airport globally.',
+ techSpecs:'Saab technology, 16 HD cameras, 360° view, 14 display screens, fibre connection, audio feed, radar integration, enhanced reality.',
+ charts:[],
+ images:[
+  {l:'NATS London City Digital Tower',u:'https://www.nats.aero/news/london-city-is-first-major-airport-controlled-by-remote-digital-tower/'},
+  {l:'NATS Flickr Gallery',u:'https://www.flickr.com/photos/natspressoffice/34711661235'},
+  {l:'NATS Digital Towers',u:'https://www.nats.aero/our-solutions/digital-towers/'}]},
+{id:'lcy',name:'London City Airport',icao:'EGLC',country:'United Kingdom',lat:51.505,lng:0.055,type:'airport',status:'operational',vendor:'Saab',parentRtc:'swanwick_rtc',
+ desc:'Busiest remote-controlled airport globally. Operational early 2021. 50m camera mast on-site. 115km from Swanwick.',
+ charts:[{l:'UK AIP EGLC',u:'https://www.aurora.nats.co.uk/htmlAIP/Publications/2024-11-28-AIRAC/html/index-en-GB.html'},{l:'SkyVector EGLC',u:'https://skyvector.com/airport/EGLC'}]},
+{id:'cranfield',name:'Cranfield Airport',icao:'EGTC',country:'United Kingdom',lat:52.072,lng:-0.617,type:'airport',status:'operational',vendor:'Saab',
+ desc:'First UK remote tower. Dec 13, 2018. University-linked testbed. Saab technology.',
+ charts:[{l:'UK AIP EGTC',u:'https://www.aurora.nats.co.uk/htmlAIP/Publications/2024-11-28-AIRAC/html/index-en-GB.html'},{l:'SkyVector EGTC',u:'https://skyvector.com/airport/EGTC'}]},
+{id:'heathrow_rtc',name:'Heathrow Contingency RTC',icao:'EGLL',country:'United Kingdom',lat:51.470,lng:-0.454,type:'rtc',status:'deploying',vendor:'Saab',ansp:'NATS',
+ desc:'Backup contingency remote tower for Europe\'s busiest airport. Demonstrates RT viability for complex Class A airports.',
+ charts:[{l:'UK AIP EGLL',u:'https://www.aurora.nats.co.uk/htmlAIP/Publications/2024-11-28-AIRAC/html/index-en-GB.html'},{l:'SkyVector EGLL',u:'https://skyvector.com/airport/EGLL'}],
+ images:[]},
+
+// ===== GERMANY =====
+{id:'braunschweig_rtc',name:'Braunschweig RTC',icao:'EDVE',country:'Germany',lat:52.320,lng:10.556,type:'rtc',status:'operational',vendor:'DFS',ansp:'DFS Aviation Services',
+ desc:'DFS Aviation Services Remote Tower Control Center. Inaugurated Nov 2024.',
+ charts:[{l:'Germany AIP EDVE',u:'https://aip.dfs.de/BasicVFR/'},{l:'SkyVector EDVE',u:'https://skyvector.com/airport/EDVE'}],
+ images:[]},
+{id:'braunschweig_apt',name:'Braunschweig-Wolfsburg Airport',icao:'EDVE',country:'Germany',lat:52.319,lng:10.558,type:'airport',status:'operational',vendor:'DFS',parentRtc:'braunschweig_rtc',
+ desc:'Controlled from Braunschweig RTC since Nov 2024.',
+ charts:[{l:'Germany AIP EDVE',u:'https://aip.dfs.de/BasicVFR/'},{l:'SkyVector EDVE',u:'https://skyvector.com/airport/EDVE'}]},
+
+// ===== HUNGARY =====
+{id:'budapest',name:'Budapest Digital Tower',icao:'LHBP',country:'Hungary',lat:47.439,lng:19.261,type:'rtc',status:'operational',vendor:'Indra',ansp:'HungaroControl',
+ desc:'World\'s largest certified digital tower (2017). First multi-mast system integrated with conventional tower + A-SMGCS. 4K resolution, highest in market. Full ops 2026.',
+ techSpecs:'Indra IRTOS + InNOVA A-SMGCS, multi-mast, 4K video wall, proprietary stitching/flattening, zoom, enhanced night mode, object tracking.',
+ charts:[{l:'Hungary AIP LHBP',u:'https://aip.hungarocontrol.hu/'},{l:'SkyVector LHBP',u:'https://skyvector.com/airport/LHBP'}],
+ images:[
+  {l:'Indra Budapest Announcement',u:'https://www.indracompany.com/en/noticia/indra-implementing-worlds-advanced-digital-remote-tower-hungarocontrol-budapest-airport'},
+  {l:'Indra: World\'s Most Advanced',u:'https://airtraffic.indragroup.com/en/blog/the-worlds-most-advanced-remote-digital-tower-is-in'}]},
+
+// ===== ROMANIA =====
+{id:'brasov',name:'Brașov-Ghimbav Airport',icao:'LRBV',country:'Romania',lat:45.687,lng:25.530,type:'airport',status:'operational',vendor:'Other',
+ desc:'Remote tower operational June 12, 2023. New international airport, opened with remote ATS from day one.',
+ charts:[{l:'Romania AIP LRBV',u:'https://www.aisro.ro/'},{l:'SkyVector LRBV',u:'https://skyvector.com/airport/LRBV'}]},
+
+// ===== SPAIN =====
+{id:'menorca',name:'Menorca Airport',icao:'LEMH',country:'Spain',lat:39.863,lng:4.219,type:'airport',status:'operational',vendor:'Kongsberg',
+ desc:'Kongsberg RTS. ENAIRE deployment. Mahón.',
+ charts:[{l:'Spain AIP LEMH',u:'https://aip.enaire.es/AIP/'},{l:'SkyVector LEMH',u:'https://skyvector.com/airport/LEMH'}],
+ images:[{l:'Kongsberg Menorca',u:'https://www.kongsberg.com/kda/news/news-archive/2020/spains-menorca-airport-to-operate-with-kongsbergs-remote-tower-system/'}]},
+
+// ===== BELGIUM =====
+{id:'belgium_rtc',name:'Belgium DiTo RTC (Namur)',icao:'N/A',country:'Belgium',lat:50.467,lng:4.867,type:'rtc',status:'deploying',vendor:'Other',ansp:'Skeyes',
+ desc:'Skeyes DiTo Project. Development Centre commissioned Mar 2024 at Steenokkerzeel. New RTC in Namur by end 2026.',
+ charts:[],
+ images:[{l:'Skeyes DiTo EUROCONTROL',u:'https://www.eurocontrol.int/article/remote-towers-skeyes-dito-project'}]},
+{id:'charleroi',name:'Brussels South Charleroi Airport',icao:'EBCI',country:'Belgium',lat:50.460,lng:4.454,type:'airport',status:'deploying',vendor:'Other',parentRtc:'belgium_rtc',
+ desc:'To be controlled from Namur RTC by end 2026.',
+ charts:[{l:'Belgium AIP EBCI',u:'https://ops.skeyes.be/html/belgocontrol_static/eaip/eAIP_Main/html/index-en-GB.html'},{l:'SkyVector EBCI',u:'https://skyvector.com/airport/EBCI'}]},
+{id:'liege',name:'Liège Airport',icao:'EBLG',country:'Belgium',lat:50.636,lng:5.443,type:'airport',status:'deploying',vendor:'Other',parentRtc:'belgium_rtc',
+ desc:'To be controlled from Namur RTC by end 2026.',
+ charts:[{l:'Belgium AIP EBLG',u:'https://ops.skeyes.be/html/belgocontrol_static/eaip/eAIP_Main/html/index-en-GB.html'},{l:'SkyVector EBLG',u:'https://skyvector.com/airport/EBLG'}]},
+
+// ===== POLAND =====
+{id:'modlin',name:'Warsaw Modlin Airport',icao:'EPMO',country:'Poland',lat:52.451,lng:20.652,type:'airport',status:'deploying',vendor:'Saab',
+ desc:'Saab contract July 2025. Digital Tower. Operations centralized in Warsaw. PANSA.',
+ charts:[{l:'Poland AIP EPMO',u:'https://www.ais.pansa.pl/aip'},{l:'SkyVector EPMO',u:'https://skyvector.com/airport/EPMO'}]},
+
+// ===== AUSTRALIA =====
+{id:'westsydney',name:'Western Sydney International',icao:'YSRI',country:'Australia',lat:-33.881,lng:150.728,type:'airport',status:'deploying',vendor:'Other',
+ desc:'Digital Aerodrome Services launching 2026. 20+ HD cameras, night vision, object tracking. First greenfield designed for digital tower. Nancy-Bird Walton Airport.',
+ charts:[{l:'Airservices Australia AIP',u:'https://www.airservicesaustralia.com/aip/aip.asp'}]},
+
+// ===== USA FAA PROGRAM =====
+{id:'jyo',name:'Leesburg Executive Airport',icao:'KJYO',country:'USA',lat:39.078,lng:-77.558,type:'airport',status:'usa',vendor:'Frequentis',
+ desc:'Primary US test site since 2015. Saab Sensis originally, departed 2023. Now Frequentis smartVISION / RTX. 12+ video panels, 360° HD panorama, IR, data overlays. Adam\'s deep familiarity.',
+ charts:[{l:'AirNav KJYO',u:'https://www.airnav.com/airport/KJYO'},{l:'SkyVector KJYO',u:'https://skyvector.com/airport/KJYO'},{l:'FAA Airport Diagram',u:'https://aeronav.faa.gov/d-tpp/2413/00571AD.PDF'}],
+ images:[
+  {l:'Flight Safety Foundation',u:'https://flightsafety.org/asw-article/controlling-interests/'},
+  {l:'Frequentis smartVISION',u:'https://www.frequentis.com/en/air-traffic-management/tower/tower-products/smartvision'}]},
+{id:'fnl',name:'Northern Colorado Regional Airport',icao:'KFNL',country:'USA',lat:40.452,lng:-105.011,type:'airport',status:'usa',vendor:'Frequentis',
+ desc:'Second FAA test site. Colorado DOT backing. Originally Searidge (departed 2023), now RTX/Frequentis. First to integrate video + track-based surveillance (radar).',
+ charts:[{l:'AirNav KFNL',u:'https://www.airnav.com/airport/KFNL'},{l:'SkyVector KFNL',u:'https://skyvector.com/airport/KFNL'},{l:'FAA Airport Diagram',u:'https://aeronav.faa.gov/d-tpp/2413/00324AD.PDF'}],
+ images:[
+  {l:'Colorado DOT Remote Tower',u:'https://www.codot.gov/programs/remotetower'},
+  {l:'Fly NoCo: Remote Tower',u:'https://www.flynoco.com/about/remote-tower/'}]},
+{id:'acy',name:'Atlantic City International Airport',icao:'KACY',country:'USA',lat:39.458,lng:-74.577,type:'airport',status:'usa',vendor:'Frequentis',
+ desc:'FAA Tech Center testbed. Vendor testing began Feb 2025. Brandon Yarmark works here.',
+ charts:[{l:'AirNav KACY',u:'https://www.airnav.com/airport/KACY'},{l:'SkyVector KACY',u:'https://skyvector.com/airport/KACY'},{l:'FAA Airport Diagram',u:'https://aeronav.faa.gov/d-tpp/2413/00014AD.PDF'}],
+ images:[{l:'FAA RT Program PDF',u:'https://www.faa.gov/sites/faa.gov/files/508.16-Spring-2023-REDAC-NAS-Ops-Remote-Towers.pdf'}]},
+{id:'ena',name:'Kenai Municipal Airport',icao:'PAEN',country:'USA',lat:60.573,lng:-151.244,type:'airport',status:'usa',vendor:'Frequentis',
+ desc:'FIRST existing FAA tower replacement via remote tower. Federal Contract Tower (FCT) acquisition. Frequentis system. Construction slated to begin spring 2026. Must complete before Alaska winter freeze. Template for all future FAA tower replacements. Different certification, implementation, and training processes vs non-federal (BOW/GIF) track.',
+ charts:[{l:'AirNav PAEN',u:'https://www.airnav.com/airport/PAEN'},{l:'SkyVector PAEN',u:'https://skyvector.com/airport/PAEN'},{l:'FAA Airport Diagram',u:'https://aeronav.faa.gov/d-tpp/2413/00243AD.PDF'}]},
+{id:'bow',name:'Bartow Municipal Airport',icao:'KBOW',country:'USA',lat:27.943,lng:-81.783,type:'airport',status:'usa',vendor:'Frequentis',
+ desc:'Non-federal track. State of Florida. Mini RT center concept with GIF. Adam demonstrated capabilities here.',
+ charts:[{l:'AirNav KBOW',u:'https://www.airnav.com/airport/KBOW'},{l:'SkyVector KBOW',u:'https://skyvector.com/airport/KBOW'}]},
+{id:'gif',name:'Winter Haven\'s Gilbert Airport',icao:'KGIF',country:'USA',lat:28.063,lng:-81.753,type:'airport',status:'usa',vendor:'Frequentis',
+ desc:'Paired with BOW. Non-federal, State of Florida.',
+ charts:[{l:'AirNav KGIF',u:'https://www.airnav.com/airport/KGIF'},{l:'SkyVector KGIF',u:'https://skyvector.com/airport/KGIF'}]},
+{id:'jnx',name:'Johnston Regional Airport',icao:'KJNX',country:'USA',lat:35.540,lng:-78.390,type:'airport',status:'usa',vendor:'Frequentis',
+ desc:'Pursuing digital RT instead of traditional build ($10-20M). FAA-approved for ATC tower. Digital at half cost. Could house RTC for Smithfield + Sanford. ~300 ops/day.',
+ charts:[{l:'AirNav KJNX',u:'https://www.airnav.com/airport/KJNX'},{l:'SkyVector KJNX',u:'https://skyvector.com/airport/KJNX'}],
+ images:[{l:'WRAL: Johnston Regional RT',u:'https://www.wral.com/news/investigates/local-airport-johnston-regional-remote-tower-initiative-smithfield-october-2025/'}]},
+
+// ===== CONCEPT / PLANNING =====
+{id:'nl',name:'Netherlands (LVNL)',icao:'EHAM',country:'Netherlands',lat:52.308,lng:4.764,type:'airport',status:'concept',vendor:'Other',
+ desc:'LVNL developing RTC for smaller Dutch airports. Schiphol region.',
+ charts:[{l:'Netherlands AIP',u:'https://www.lvnl.nl/eaip/'}]},
+{id:'dk',name:'Denmark (Naviair)',icao:'EKCH',country:'Denmark',lat:55.618,lng:12.656,type:'airport',status:'concept',vendor:'Other',
+ desc:'Naviair remote tower program for regional airports.',
+ charts:[{l:'Denmark AIP',u:'https://aim.naviair.dk/'}]},
+{id:'es',name:'Spain (ENAIRE expansion)',icao:'LEMD',country:'Spain',lat:40.472,lng:-3.561,type:'airport',status:'concept',vendor:'Other',
+ desc:'ENAIRE expanding beyond Menorca.',
+ charts:[{l:'Spain AIP',u:'https://aip.enaire.es/AIP/'}]},
+{id:'ie',name:'Ireland/Iceland (IAA/ISAVIA)',icao:'EIDW',country:'Ireland',lat:53.421,lng:-6.270,type:'airport',status:'concept',vendor:'Other',
+ desc:'Cross-border dual-redundant voice comms. Unique international model.',
+ charts:[{l:'Ireland AIP',u:'https://iaip.iaa.ie/iaip/'}]},
+{id:'in',name:'India (AAI)',icao:'VIDP',country:'India',lat:28.556,lng:77.100,type:'airport',status:'concept',vendor:'Other',
+ desc:'AAI exploring remote ATS for regional airports. Massive market potential.',
+ charts:[{l:'India AIP',u:'https://aim-india.aai.aero/eaip-v2-01-2024AIRAC/index-en-GB.html'}]},
+{id:'nz',name:'New Zealand (Airways NZ)',icao:'NZWN',country:'New Zealand',lat:-41.286,lng:174.776,type:'airport',status:'concept',vendor:'Other',
+ desc:'Airways NZ digital tower exploration.',
+ charts:[{l:'NZ AIP',u:'https://www.aip.net.nz/'}]},
+{id:'ca',name:'Canada (NAV CANADA)',icao:'CYOW',country:'Canada',lat:45.322,lng:-75.669,type:'airport',status:'concept',vendor:'Searidge',
+ desc:'NAV CANADA concept studies. Searidge home market.',
+ charts:[{l:'Canada AIP',u:'https://www.navcanada.ca/en/aeronautical-information/aeronautical-information-publications-aip.aspx'}]}
+];
+
+// OPERATIONAL DATA LOOKUP (keyed by data id)
+const opsData={
+  // NORWAY
+  bodo_rtc:{elev:'42 ft',rwys:'RWY 08/26: 2,802m (9,193 ft) asphalt',freq:'TWR 118.100, APP 120.150',notes:'Military/civil joint use. RTC facility in airport terminal area.'},
+  rost:{elev:'7 ft',rwys:'RWY 04/22: 800m (2,625 ft) asphalt',freq:'AFIS 118.550',notes:'Remote island, Lofoten chain. Short runway, visual approaches. No instrument approaches.'},
+  vardo:{elev:'42 ft',rwys:'RWY 12/30: 1,023m (3,356 ft) asphalt',freq:'AFIS 118.350',notes:'Svartnes. Northernmost remote-controlled airport. Arctic ops.'},
+  hasvik:{elev:'21 ft',rwys:'RWY 04/22: 940m (3,084 ft) asphalt',freq:'AFIS 120.225',notes:'Finnmark. Short runway, visual operations.'},
+  berlevag:{elev:'42 ft',rwys:'RWY 17/35: 940m (3,084 ft) asphalt',freq:'AFIS 118.150',notes:'East Finnmark. Paired with Vardø.'},
+  mehamn:{elev:'16 ft',rwys:'RWY 17/35: 840m (2,756 ft) asphalt',freq:'AFIS 118.150',notes:'Gamvik municipality. Coastal operations.'},
+  rorvik:{elev:'14 ft',rwys:'RWY 04/22: 800m (2,625 ft) asphalt',freq:'AFIS 118.250',notes:'Ryum. Trøndelag. Paired with Namsos.'},
+  namsos:{elev:'7 ft',rwys:'RWY 03/21: 845m (2,772 ft) asphalt',freq:'AFIS 120.950',notes:'Høknesøra. Trøndelag.'},
+  svolvaer:{elev:'31 ft',rwys:'RWY 02/20: 800m (2,625 ft) asphalt',freq:'AFIS 118.550',notes:'Helle. Lofoten. Paired with Røst.'},
+  honningsvag:{elev:'44 ft',rwys:'RWY 07/25: 880m (2,887 ft) asphalt',freq:'AFIS 118.450',notes:'Valan. Gateway to North Cape (Nordkapp).'},
+  lakselv:{elev:'25 ft',rwys:'RWY 17/35: 2,788m (9,147 ft) asphalt',freq:'TWR 118.100',notes:'Banak. Former NATO military, long runway. IFR capable.'},
+  sorkjosen:{elev:'16 ft',rwys:'RWY 16/34: 925m (3,035 ft) asphalt',freq:'AFIS 120.350',notes:'Troms. Short field operations.'},
+  stokmarknes:{elev:'4 ft',rwys:'RWY 03/21: 800m (2,625 ft) asphalt',freq:'AFIS 120.050',notes:'Skagen. Vesterålen islands.'},
+  leknes:{elev:'26 ft',rwys:'RWY 09/27: 800m (2,625 ft) asphalt',freq:'AFIS 120.650',notes:'Lofoten. Scenic approach over mountains.'},
+  narvik:{elev:'29 ft',rwys:'RWY 09/27: 840m (2,756 ft) asphalt',freq:'AFIS 118.450',notes:'Framnes. Ofoten fjord. Closed 2024, operations to Harstad/Narvik (ENEV).'},
+  sandnessjoen:{elev:'56 ft',rwys:'RWY 14/32: 840m (2,756 ft) asphalt',freq:'AFIS 118.550',notes:'Stokka. Helgeland coast.'},
+  moirana:{elev:'229 ft',rwys:'RWY 14/32: 842m (2,762 ft) asphalt',freq:'AFIS 120.350',notes:'Røssvoll. Inland, near Arctic Circle. Higher elevation.'},
+  // SWEDEN
+  sundsvall_rtc:{elev:'33 ft',rwys:'RWY 16/34: 2,102m (6,896 ft) asphalt',freq:'TWR 118.300',notes:'Co-located at Sundsvall-Timrå Airport (ESNN). World\'s first operational RTC.'},
+  ornskoldsvik:{elev:'354 ft',rwys:'RWY 12/30: 1,610m (5,282 ft) asphalt',freq:'TWR 118.700 (remote)',notes:'150km from Sundsvall. First remote-controlled airport worldwide (2015).'},
+  sundsvall_apt:{elev:'33 ft',rwys:'RWY 16/34: 2,102m (6,896 ft) asphalt',freq:'TWR 118.300',notes:'Midlanda. RTC co-located. Second airport connected Dec 2017.'},
+  linkoping:{elev:'172 ft',rwys:'RWY 11/29: 2,300m (7,546 ft) asphalt',freq:'TWR 118.050',notes:'Saab Airport. Saab AB factory adjacent. Military/civil.'},
+  arlanda_rtc:{elev:'137 ft',rwys:'RWY 01L/19R: 3,301m, 01R/19L: 2,500m, 08/26: 2,500m',freq:'TWR 118.500, APP 120.600',notes:'Stockholm Arlanda. Major international hub. RTC for remote airports, not Arlanda itself.'},
+  kiruna:{elev:'1,508 ft',rwys:'RWY 03/21: 2,503m (8,212 ft) asphalt',freq:'TWR 118.300',notes:'Arctic Sweden. Esrange Space Center nearby. Being relocated due to mining.'},
+  ostersund:{elev:'1,233 ft',rwys:'RWY 12/30: 2,460m (8,071 ft) asphalt',freq:'TWR 118.300',notes:'Frösön. F4 air force wing. Winter sports region.'},
+  umea:{elev:'24 ft',rwys:'RWY 14/32: 2,051m (6,729 ft) asphalt',freq:'TWR 118.300',notes:'Västerbotten. University city. 5th busiest in Sweden.'},
+  malmo:{elev:'72 ft',rwys:'RWY 17/35: 2,800m (9,186 ft), 05/23: 2,200m',freq:'TWR 118.100',notes:'Sturup. Southern Sweden. Two runways. Cat III ILS.'},
+  scandmtn:{elev:'1,608 ft',rwys:'RWY 14/32: 2,480m (8,136 ft) asphalt',freq:'TWR 118.700 (remote)',notes:'Sälen-Trysil. First airport EVER built without a tower. Remote from day one (2019).'},
+  // UK
+  swanwick_rtc:{elev:'N/A',rwys:'N/A (ATC Centre)',freq:'N/A',notes:'Not an airport. Dedicated ATC facility in Hampshire. Controls en-route and approach for southern England.'},
+  lcy:{elev:'19 ft',rwys:'RWY 09/27: 1,508m (4,948 ft) asphalt',freq:'TWR 118.075',notes:'Steep 5.5° glideslope. London Docklands. STOL operations. Controlled from Swanwick 115km away.'},
+  cranfield:{elev:'365 ft',rwys:'RWY 03/21: 1,799m (5,902 ft) asphalt',freq:'TWR 122.850',notes:'Cranfield University. First UK remote tower Dec 2018. Testbed.'},
+  heathrow_rtc:{elev:'83 ft',rwys:'RWY 09L/27R: 3,902m, 09R/27L: 3,658m',freq:'TWR 118.500/118.700',notes:'Europe\'s busiest airport. Contingency digital tower capability. Class A.'},
+  // GERMANY
+  braunschweig_rtc:{elev:'295 ft',rwys:'RWY 08/26: 1,668m (5,472 ft) asphalt',freq:'TWR 120.350',notes:'DFS Aviation Services facility. Inaugurated Nov 2024.'},
+  braunschweig_apt:{elev:'295 ft',rwys:'RWY 08/26: 1,668m (5,472 ft) asphalt',freq:'TWR 120.350',notes:'Waggum. DLR aerospace research center adjacent.'},
+  // HUNGARY
+  budapest:{elev:'495 ft',rwys:'RWY 13L/31R: 3,707m, 13R/31L: 3,010m',freq:'TWR 118.100/118.300',notes:'Liszt Ferenc. Dual parallel runways. 4K digital tower augments conventional tower. A-SMGCS integrated.'},
+  // ROMANIA
+  brasov:{elev:'1,120 ft',rwys:'RWY 07/25: 2,800m (9,186 ft) asphalt',freq:'TWR 118.800',notes:'Transylvania. Brand new airport (2023). Built without conventional tower.'},
+  // SPAIN
+  menorca:{elev:'302 ft',rwys:'RWY 01/19: 2,350m (7,710 ft) asphalt',freq:'TWR 118.300',notes:'Mahón. Balearic Islands. ENAIRE managed.'},
+  // BELGIUM
+  belgium_rtc:{elev:'N/A',rwys:'N/A (RTC facility)',freq:'N/A',notes:'Planned RTC in Namur. Currently development centre at Steenokkerzeel.'},
+  charleroi:{elev:'614 ft',rwys:'RWY 07/25: 2,550m (8,366 ft) asphalt',freq:'TWR 120.875',notes:'Brussels South. Major Ryanair hub. 8M+ passengers/year.'},
+  liege:{elev:'660 ft',rwys:'RWY 05L/23R: 3,290m, 05R/23L: 2,340m',freq:'TWR 119.325',notes:'Major cargo hub (FedEx/TNT). Two runways. Cat III.'},
+  // POLAND
+  modlin:{elev:'341 ft',rwys:'RWY 08/26: 2,500m (8,202 ft) asphalt',freq:'TWR 118.800',notes:'Former military. Ryanair hub. 40km from Warsaw centre.'},
+  // AUSTRALIA
+  westsydney:{elev:'275 ft',rwys:'RWY 05/23: 3,700m (12,139 ft) asphalt (planned)',freq:'TBD',notes:'Nancy-Bird Walton Airport. Opens 2026. First greenfield designed for digital tower. Single runway initial, expandable.'},
+  // USA
+  jyo:{elev:'389 ft',rwys:'RWY 17/35: 5,500 ft (1,676m) asphalt',freq:'CTAF 123.075',notes:'Non-towered GA airport. 60,000+ ops/year. FAA primary RT test site since 2015. Loudoun County, VA.'},
+  fnl:{elev:'5,016 ft',rwys:'RWY 15/33: 8,500 ft (2,591m) asphalt, RWY 06/24: 4,800 ft',freq:'CTAF 120.100',notes:'Two runways. High altitude. First to integrate RT video with radar surveillance. Loveland, CO.'},
+  acy:{elev:'75 ft',rwys:'RWY 13/31: 10,000 ft (3,048m), RWY 04/22: 6,145 ft',freq:'TWR 120.300',notes:'FAA William J. Hughes Technical Center. Two runways. Vendor testbed. ILS both runways.'},
+  ena:{elev:'99 ft',rwys:'RWY 02/20: 7,575 ft (2,309m) asphalt',freq:'TWR 118.800',notes:'Kenai Peninsula, AK. First FAA FCT acquisition for remote tower. Frequentis system. Construction spring 2026. Must complete before Alaska winter. Template for all future federal tower replacements.'},
+  bow:{elev:'125 ft',rwys:'RWY 05/23: 5,000 ft (1,524m), RWY 09L/27R: 3,989 ft, RWY 09R/27L: 4,001 ft',freq:'CTAF 120.200',notes:'Three runways. Central FL. Non-federal. State of Florida funding. Paired with GIF.'},
+  gif:{elev:'145 ft',rwys:'RWY 05/23: 4,005 ft (1,221m), RWY 10/28: 3,500 ft',freq:'CTAF 126.175',notes:'Gilbert Field. Two runways. Central FL. Paired with BOW. Non-federal.'},
+  jnx:{elev:'164 ft',rwys:'RWY 08/26: 5,500 ft (1,676m) asphalt',freq:'CTAF 122.700',notes:'Smithfield, NC. ~300 ops/day. Pursuing digital RT over traditional build ($10-20M vs $5M). FAA-approved for ATC.'}
+};
+// Attach ops data to entries
+data.forEach(d=>{if(opsData[d.id])d.ops=opsData[d.id]});
+
+// MAP INIT
+const map=L.map('map',{center:[55,10],zoom:4,zoomControl:true});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, CARTO',maxZoom:19}).addTo(map);
+
+// LAYERS
+const connectionLayer=L.layerGroup().addTo(map);
+const markerLayer=L.layerGroup().addTo(map);
+const markers={};
+
+// BUILD CONNECTION LINES (airport -> parent RTC)
+data.forEach(d=>{
+  if(d.parentRtc){
+    const parent=data.find(p=>p.id===d.parentRtc);
+    if(parent){
+      const line=L.polyline([[d.lat,d.lng],[parent.lat,parent.lng]],{
+        color:VC[d.vendor]||'#6b7280', weight:1.5, opacity:0.35, dashArray:'6,4'
+      });
+      connectionLayer.addLayer(line);
+    }
+  }
+});
+
+// BUILD MARKERS
+data.forEach(d=>{
+  let icon;
+  const vc=VC[d.vendor]||'#a3a3a3';
+  const sc=SC[d.status]||'#6b7280';
+
+  if(d.type==='rtc'){
+    icon=L.divIcon({
+      className:'rtc-icon',
+      html:`<div style="width:18px;height:18px;background:${vc};border-radius:4px;border:2px solid #38bdf8;box-shadow:0 0 12px ${vc}60,0 0 4px #38bdf880;"></div>`,
+      iconSize:[18,18],iconAnchor:[9,9]
+    });
+  } else {
+    const size=d.parentRtc?10:11;
+    icon=L.divIcon({
+      className:'airport-connected',
+      html:`<div style="width:${size}px;height:${size}px;border-radius:50%;background:${sc};border:2px solid ${vc};box-shadow:0 0 6px ${sc}40;"></div>`,
+      iconSize:[size,size],iconAnchor:[size/2,size/2]
+    });
+  }
+
+  const m=L.marker([d.lat,d.lng],{icon:icon});
+  const typeLabel=d.type==='rtc'?'REMOTE TOWER CENTRE':'AIRPORT';
+  const parentNote=d.parentRtc?`<br/><span style="color:#38bdf8;font-size:10px;">Controlled from: ${data.find(p=>p.id===d.parentRtc)?.name||''}</span>`:'';
+  const anspNote=d.ansp?` | <span style="color:#9ca3af;">${d.ansp}</span>`:'';
+  const icaoTag=d.icao&&d.icao!=='N/A'?` <span style="font-family:monospace;color:#38bdf8;font-weight:700;">[${d.icao}]</span>`:'';
+  m.bindPopup(`<strong>${d.name}</strong>${icaoTag}<br/><span style="color:${d.type==='rtc'?'#38bdf8':sc};font-size:10px;">${typeLabel}</span> | <span style="color:${vc};font-size:10px;">${d.vendor}</span>${anspNote}${parentNote}`);
+  m.on('click',()=>showD(d));
+  m.siteData=d;
+  markers[d.id]=m;
+  markerLayer.addLayer(m);
+});
+
+// STATS
+function updateStats(list){
+  const l=list||data;
+  document.getElementById('st-t').textContent=l.length;
+  document.getElementById('st-rtc').textContent=l.filter(d=>d.type==='rtc').length;
+  document.getElementById('st-apt').textContent=l.filter(d=>d.type==='airport').length;
+  document.getElementById('st-c').textContent=[...new Set(l.map(d=>d.country))].length;
+}
+updateStats();
+
+// SIDEBAR LIST
+function renderList(list){
+  const l=list||data;
+  const c=document.getElementById('site-list');
+  c.innerHTML='';
+  const sorted=[...l].sort((a,b)=>{
+    if(a.type==='rtc'&&b.type!=='rtc')return -1;
+    if(a.type!=='rtc'&&b.type==='rtc')return 1;
+    return a.country.localeCompare(b.country)||a.name.localeCompare(b.name);
+  });
+  sorted.forEach(d=>{
+    const card=document.createElement('div');
+    card.className='sc';
+    card.dataset.id=d.id;
+    const vc=VC[d.vendor]||'#a3a3a3';
+    const sLabel={operational:'Operational',deploying:'Deploying',concept:'Concept',usa:'USA/FAA'}[d.status];
+    const tLabel=d.type==='rtc'?'<span class="tag t-rtc">RTC</span>':'';
+    const parentTag=d.parentRtc?`<span class="tag" style="background:rgba(56,189,248,.1);color:#38bdf8;font-size:8px;">from ${data.find(p=>p.id===d.parentRtc)?.name.split(' ')[0]||''}</span>`:'';
+    const icaoDisplay=d.icao&&d.icao!=='N/A'?`<span class="icao-tag">${d.icao}</span>`:'';
+    card.innerHTML=`<div class="sn">${d.name}${icaoDisplay}</div><div class="sl">${d.country}${d.ansp?' | '+d.ansp:''}</div><div class="sm">${tLabel}<span class="tag t-${d.status==='usa'?'usa':d.status==='operational'?'op':d.status==='deploying'?'dep':'con'}">${sLabel}</span><span class="tag t-v" style="color:${vc};border:1px solid ${vc}30;background:${vc}12;">${d.vendor}</span>${parentTag}</div>`;
+    card.addEventListener('click',()=>{
+      map.setView([d.lat,d.lng],d.type==='rtc'?7:9,{animate:true});
+      markers[d.id].openPopup();
+      showD(d);
+      document.querySelectorAll('.sc').forEach(x=>x.classList.remove('sel'));
+      card.classList.add('sel');
+    });
+    c.appendChild(card);
+  });
+}
+renderList();
+
+// FILTERS
+document.querySelectorAll('.fbtn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.f;
+    let filtered;
+    if(f==='all')filtered=data;
+    else if(f==='rtc')filtered=data.filter(d=>d.type==='rtc');
+    else filtered=data.filter(d=>d.status===f);
+
+    markerLayer.clearLayers();
+    connectionLayer.clearLayers();
+    filtered.forEach(d=>markerLayer.addLayer(markers[d.id]));
+    filtered.forEach(d=>{
+      if(d.parentRtc){
+        const parent=data.find(p=>p.id===d.parentRtc);
+        if(parent){
+          connectionLayer.addLayer(L.polyline([[d.lat,d.lng],[parent.lat,parent.lng]],{
+            color:VC[d.vendor]||'#6b7280',weight:1.5,opacity:0.35,dashArray:'6,4'
+          }));
+        }
+      }
+    });
+    renderList(filtered);
+    updateStats(filtered);
+    if(filtered.length>0){
+      const bounds=L.latLngBounds(filtered.map(d=>[d.lat,d.lng]));
+      map.fitBounds(bounds,{padding:[50,50]});
+    }
+  });
+});
+
+// SEARCH (now includes ICAO)
+document.getElementById('search-box').addEventListener('input',function(){
+  const q=this.value.toLowerCase();
+  if(!q){
+    markerLayer.clearLayers();connectionLayer.clearLayers();
+    data.forEach(d=>markerLayer.addLayer(markers[d.id]));
+    data.forEach(d=>{if(d.parentRtc){const p=data.find(x=>x.id===d.parentRtc);if(p)connectionLayer.addLayer(L.polyline([[d.lat,d.lng],[p.lat,p.lng]],{color:VC[d.vendor]||'#6b7280',weight:1.5,opacity:0.35,dashArray:'6,4'}))}});
+    renderList();updateStats();return;
+  }
+  const filtered=data.filter(d=>
+    d.name.toLowerCase().includes(q)||
+    d.country.toLowerCase().includes(q)||
+    d.vendor.toLowerCase().includes(q)||
+    d.desc.toLowerCase().includes(q)||
+    (d.ansp&&d.ansp.toLowerCase().includes(q))||
+    (d.icao&&d.icao.toLowerCase().includes(q))
+  );
+  markerLayer.clearLayers();connectionLayer.clearLayers();
+  filtered.forEach(d=>markerLayer.addLayer(markers[d.id]));
+  filtered.forEach(d=>{if(d.parentRtc){const p=data.find(x=>x.id===d.parentRtc);if(p)connectionLayer.addLayer(L.polyline([[d.lat,d.lng],[p.lat,p.lng]],{color:VC[d.vendor]||'#6b7280',weight:1.5,opacity:0.35,dashArray:'6,4'}))}});
+  renderList(filtered);updateStats(filtered);
+});
+
+// DETAIL PANEL
+function showD(d){
+  document.getElementById('dp').style.display='block';
+  const icaoBadge=d.icao&&d.icao!=='N/A'?`<span class="icao-badge">${d.icao}</span>`:'';
+  document.getElementById('dt').innerHTML=d.name+icaoBadge;
+  const vc=VC[d.vendor]||'#a3a3a3';
+  const sc=SC[d.status]||'#6b7280';
+  const sLabel={operational:'Operational',deploying:'In Progress',concept:'Concept / Planning',usa:'USA / FAA Program'}[d.status];
+  let h=`<div class="ds"><div class="dtags"><span class="tag ${d.type==='rtc'?'t-rtc':('t-'+(d.status==='usa'?'usa':d.status==='operational'?'op':d.status==='deploying'?'dep':'con'))}">${d.type==='rtc'?'Remote Tower Centre':sLabel}</span><span class="tag t-v" style="color:${vc};border:1px solid ${vc}30;background:${vc}12;">${d.vendor}</span>`;
+  if(d.ansp)h+=`<span class="tag" style="background:rgba(255,255,255,.05);color:#9ca3af;">${d.ansp}</span>`;
+  h+=`<span class="tag" style="background:rgba(255,255,255,.05);color:#9ca3af;">${d.country}</span></div></div>`;
+  h+=`<div class="ds"><h3>Overview</h3><p>${d.desc}</p></div>`;
+
+  // Operational Data section
+  if(d.ops){
+    h+=`<div class="ds"><h3>Airport Operations</h3>`;
+    if(d.ops.rwys&&d.ops.rwys!=='N/A (ATC Centre)'&&d.ops.rwys!=='N/A (RTC facility)')h+=`<p style="margin-bottom:4px;"><span style="color:#6b7280;font-size:10px;">RUNWAYS:</span> ${d.ops.rwys}</p>`;
+    if(d.ops.elev&&d.ops.elev!=='N/A')h+=`<p style="margin-bottom:4px;"><span style="color:#6b7280;font-size:10px;">ELEVATION:</span> ${d.ops.elev}</p>`;
+    if(d.ops.freq&&d.ops.freq!=='N/A')h+=`<p style="margin-bottom:4px;"><span style="color:#6b7280;font-size:10px;">FREQUENCIES:</span> ${d.ops.freq}</p>`;
+    if(d.ops.notes)h+=`<p style="margin-bottom:4px;"><span style="color:#6b7280;font-size:10px;">NOTES:</span> ${d.ops.notes}</p>`;
+    h+=`</div>`;
+  }
+
+  // Maps & Charts section (combined)
+  h+=`<div class="ds"><h3>Maps &amp; Charts</h3><div class="glinks">`;
+  // Always show Google Maps satellite link
+  h+=`<a href="${gmapUrl(d.lat,d.lng)}" target="_blank" class="chart-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>Google Maps Satellite</a>`;
+  h+=`<a href="${gmapSearchUrl(d.name,d.lat,d.lng)}" target="_blank" class="chart-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Google Maps Search</a>`;
+  // Chart links
+  if(d.charts&&d.charts.length>0){
+    d.charts.forEach(c=>{
+      h+=`<a href="${c.u}" target="_blank" class="chart-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>${c.l}</a>`;
+    });
+  }
+  // AirNav link for US airports
+  if(d.icao&&d.icao.startsWith('K')||d.icao&&d.icao.startsWith('PA')){
+    h+=`<a href="${airnavUrl(d.icao)}" target="_blank" class="chart-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l9-9v5c10 0 10 9 10 9s-2-5-10-5v5z"/></svg>AirNav ${d.icao}</a>`;
+  }
+  h+=`</div></div>`;
+
+  if(d.parentRtc){
+    const parent=data.find(p=>p.id===d.parentRtc);
+    if(parent)h+=`<div class="ds"><h3>Controlled From</h3><p style="color:#38bdf8;cursor:pointer;" onclick="flyTo('${d.parentRtc}')">${parent.name}${parent.icao&&parent.icao!=='N/A'?' ['+parent.icao+']':''} (${parent.country})</p></div>`;
+  }
+  if(d.type==='rtc'){
+    const children=data.filter(x=>x.parentRtc===d.id);
+    if(children.length>0){
+      h+=`<div class="ds"><h3>Airports Controlled (${children.length})</h3><p>${children.map(c=>`<span style="cursor:pointer;color:#34d399;margin-right:8px;" onclick="flyTo('${c.id}')">${c.name} <span style="color:#38bdf8;font-family:monospace;font-size:10px;">${c.icao||''}</span></span>`).join('')}</p></div>`;
+    }
+  }
+  if(d.techSpecs)h+=`<div class="ds"><h3>Technical</h3><p>${d.techSpecs}</p></div>`;
+  if(d.images&&d.images.length>0){
+    h+=`<div class="ds"><h3>Reference Links</h3><div class="glinks">`;
+    d.images.forEach(i=>{h+=`<a href="${i.u}" target="_blank" class="gl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>${i.l}</a>`});
+    h+=`</div></div>`;
+  }
+  document.getElementById('dbd').innerHTML=h;
+}
+function closeD(){document.getElementById('dp').style.display='none'}
+function flyTo(id){
+  const d=data.find(x=>x.id===id);
+  if(d){map.setView([d.lat,d.lng],9,{animate:true});markers[id].openPopup();showD(d)}
+}
+map.on('click',closeD);
+
+// FIT BOUNDS
+const allBounds=L.latLngBounds(data.map(d=>[d.lat,d.lng]));
+map.fitBounds(allBounds,{padding:[50,50]});
+</script>
+</body>
+</html>
