@@ -187,3 +187,31 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .tools input[type=search]{flex:1;min-width:200px;min-height:44px;border-radius:var(--r-pill);border:1px solid var(--line-2);background:var(--surface);color:var(--ink);padding:0 16px;font:15px var(--font)}
 .tools select{min-height:44px;border-radius:var(--r-pill);border:1px solid var(--line-2);background:var(--surface-2);color:var(--ink);padding:0 14px;font:14px var(--font)}
 [hidden]{display:none!important}
+
+/* sites3_1011: connections, timeline, coverage, map photo */
+.chiprow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.ctools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ctools select{min-height:40px;max-width:100%}
+.cg{margin-top:14px;border:1px solid var(--line);background:var(--surface);border-radius:var(--r-lg);padding:8px 0;overflow:hidden;max-width:100%}
+.cg svg{display:block;max-width:100%}
+.stc i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c,var(--mute));margin-right:7px;flex:none}
+.stc{text-align:left;min-height:32px;padding:4px 12px;line-height:1.25}
+.hubcard h3 a:hover{color:var(--accent-2)}
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+ul.plain li{min-width:0;overflow-wrap:anywhere}
+.mrow{display:flex;gap:10px;align-items:center;padding:7px 4px;border-radius:var(--r-sm);color:var(--ink);min-width:0}
+.mrow:hover{background:var(--surface);text-decoration:none}
+.mrow>span:last-child{min-width:0;overflow-wrap:anywhere}
+.tag.tl-approval{color:var(--ok);border-color:rgba(94,211,154,.4)}
+.tag.tl-golive{color:var(--accent-2);border-color:var(--accent-line)}
+.tag.tl-ended{color:var(--bad);border-color:rgba(255,107,107,.4)}
+.tag.tl-scheduled{color:var(--plan);border-color:rgba(196,181,253,.4)}
+li.tl[hidden],h2.yr[hidden],ul.tlist[hidden]{display:none}
+.timeline li>div{min-width:0;overflow-wrap:anywhere}
+.mphoto{margin:10px 0 12px;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:var(--surface-2)}
+.mphoto img{width:100%;height:150px;object-fit:cover;display:block}
+.mphoto .ph0{height:96px;display:flex;align-items:center;justify-content:center;color:var(--faint);font:600 22px var(--font);letter-spacing:.06em;background:linear-gradient(135deg,var(--surface-2),var(--surface-3))}
+.mphoto .cr{font-size:11px;color:var(--faint);padding:6px 10px}
+.mphoto .cr a{color:var(--mute)}
+.subnav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 0}
+.tbl td,.tbl th{vertical-align:top}

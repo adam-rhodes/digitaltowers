@@ -3,8 +3,9 @@
 import csv, json, os, sys, datetime, collections
 BASE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE)
-from dt_data_c import TOWERS, S
+from dt_data_d import TOWERS, S
 import dt_entities as E
+import dt_entities_d
 
 oa = {}
 with open(BASE + "/data/ourairports.csv", newline="", encoding="utf8") as f:
@@ -29,7 +30,14 @@ for t in TOWERS:
 ids = {t["id"] for t in TOWERS}
 for t in TOWERS:
     assert not t["controlled_from"] or t["controlled_from"] in ids, (t["id"], t["controlled_from"])
-    t["dates"] = [{"d": a, "t": b} for a, b in t["dates"]]
+    t["dates"] = [({"d": x[0], "t": x[1], "u": S[x[2]]} if len(x) > 2 else {"d": x[0], "t": x[1]}) for x in t["dates"]]
+# photos (credit per ICAO) so the map panel can show one
+_NOPH = {"EGPE", "LHBP", "EGDG", "KACY", "ENBO"}
+try: _ph = json.load(open(BASE + "/data/photos.json", encoding="utf8"))
+except Exception: _ph = {}
+for t in TOWERS:
+    p = _ph.get(t.get("icao") or "")
+    t["photo"] = ({"file": p["file"], "artist": p["artist"], "license": p["license"], "page": p["page"]} if p and (t.get("icao") not in _NOPH) else None)
 # connections
 by = {t["id"]: t for t in TOWERS}
 for t in TOWERS:
@@ -46,11 +54,11 @@ meta = {
   "count": len(TOWERS), "countries": len({t["country"] for t in TOWERS}),
   "by_status": dict(collections.Counter(t["status"] for t in TOWERS)),
   "license": "Compiled facts with source URLs per fact; coordinates from OurAirports (public domain) where an ICAO code exists. Free to reuse with attribution to digitaltowers.org.",
-  "note": "Statuses: operational, trial, planned, decommissioned, cancelled, unverified. Confidence: high, medium, low. Hybrid and contingency kinds are not remote towers.",
+  "by_kind": dict(collections.Counter(t["kind"] for t in TOWERS)), "note": "Statuses: operational, trial, planned, decommissioned, cancelled, unverified. Confidence: high, medium, low. Hybrid and contingency kinds are not remote towers.",
 }
 os.makedirs(BASE + "/data", exist_ok=True)
 json.dump({"meta": meta, "towers": TOWERS}, open(BASE + "/data/towers.json", "w"), ensure_ascii=False, indent=1)
-json.dump({"vendors": E.VENDORS, "ansps": E.ANSPS, "regulators": E.REGULATORS, "programs": E.PROGRAMS, "us_timeline": E.US_TIMELINE, "faa_docs": E.FAA_DOCS}, open(BASE + "/data/entities.json", "w"), ensure_ascii=False, indent=1)
+json.dump({"vendors": E.VENDORS, "ansps": E.ANSPS, "regulators": E.REGULATORS, "programs": E.PROGRAMS, "us_timeline": E.US_TIMELINE, "faa_docs": E.FAA_DOCS, "coverage": E.COVERAGE, "reflists": E.REFLISTS}, open(BASE + "/data/entities.json", "w"), ensure_ascii=False, indent=1)
 gj = {"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [t["lon"], t["lat"]]},
       "properties": {k: t[k] for k in ("id", "name", "icao", "country", "kind", "status", "conf", "ansp", "controlled_from")} | {"vendors": ", ".join(t["vendors"])}} for t in TOWERS]}
 json.dump(gj, open(BASE + "/data/towers.geojson", "w"), ensure_ascii=False)

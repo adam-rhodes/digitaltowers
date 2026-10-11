@@ -19,7 +19,7 @@ NSTAT = load("data/news_status.json", {}) or {}
 PH = load("data/photos.json", {}) or {}
 NO_PHOTO = {"EGPE", "LHBP", "EGDG", "KACY", "ENBO"}
 LABEL = {"operational": "Operational", "trial": "Trial", "planned": "Planned", "unverified": "Unverified", "decommissioned": "Decommissioned", "cancelled": "Cancelled"}
-KIND = {"remote_tower": "Remote tower", "rtc": "Remote tower centre", "digital_tower": "Digital tower", "hybrid": "Hybrid digital tower", "contingency": "Contingency facility", "test_site": "Test or validation site"}
+KIND = {"remote_tower": "Remote tower", "rtc": "Remote tower centre", "digital_tower": "Digital tower", "hybrid": "Hybrid digital tower", "contingency": "Contingency facility", "test_site": "Test or validation site", "remote_afis": "Remote air-ground service (not air traffic control)"}
 BYID = {t["id"]: t for t in T}
 def photo(t):
     ic = t.get("icao") or ""
@@ -42,7 +42,7 @@ ICON = {
  "more": '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>',
 }
 LOGO = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#151821"/><path d="M11 25l2-12h6l2 12" fill="none" stroke="#7aa7ff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 13h13l-1.5-4h-10z" fill="#5b8dd9"/><path d="M16 9V5.5" stroke="#7aa7ff" stroke-width="1.8" stroke-linecap="round"/></svg>'
-NAV = [("Map", "/map/"), ("Towers", "/towers/"), ("News", "/news/"), ("United States", "/united-states/"), ("Vendors", "/vendors/"), ("About", "/about/")]
+NAV = [("Map", "/map/"), ("Towers", "/towers/"), ("Connections", "/connections/"), ("Timeline", "/timeline/"), ("News", "/news/"), ("United States", "/united-states/"), ("Vendors", "/vendors/"), ("About", "/about/")]
 TABS = [("Home", "/", "home"), ("Map", "/map/", "map"), ("Towers", "/towers/", "list"), ("News", "/news/", "news"), ("More", "/about/", "more")]
 PAGES = []  # (url, lastmod)
 
@@ -64,7 +64,7 @@ def tabbar(path):
     return '<nav class="tabbar" aria-label="Tabs">' + "".join(f'<a href="{u}"{cur(u)}>{ICON[i]}<span>{n}</span></a>' for n, u, i in TABS) + '</nav>'
 def footer():
     return f'''<footer><div class="wrap"><div class="cols2"><div><b style="color:var(--ink)">Digital Towers</b><p style="margin-top:8px;max-width:46ch">An independent reference to remote and digital air traffic control towers, built from public sources only. Not affiliated with, endorsed by, or speaking for the FAA or any other government body. Not for operational use.</p><p class="xs faint">Data built {NOW.strftime("%-d %b %Y %H:%M")} UTC. <a href="/about/">How this is sourced</a></p></div>
-<div><h4>Browse</h4><ul><li><a href="/map/">World map</a></li><li><a href="/towers/">All towers</a></li><li><a href="/countries/">Countries</a></li><li><a href="/vendors/">Vendors</a></li><li><a href="/operators/">Service providers</a></li><li><a href="/regulators/">Regulators and standards</a></li></ul></div>
+<div><h4>Browse</h4><ul><li><a href="/map/">World map</a></li><li><a href="/towers/">All towers</a></li><li><a href="/countries/">Countries</a></li><li><a href="/vendors/">Vendors</a></li><li><a href="/operators/">Service providers</a></li><li><a href="/regulators/">Regulators and standards</a></li><li><a href="/connections/">Connections</a></li><li><a href="/timeline/">Timeline</a></li><li><a href="/coverage/">Coverage and gaps</a></li></ul></div>
 <div><h4>Read</h4><ul><li><a href="/news/">News</a> · <a href="/feed.xml">Feed</a></li><li><a href="/united-states/">United States</a></li><li><a href="/what-is-a-digital-tower/">What is a digital tower</a></li><li><a href="/library/">Library</a></li><li><a href="/data/">Data downloads</a></li><li><a href="https://github.com/adam-rhodes/digitaltowers">Source on GitHub</a></li></ul></div></div></div></footer>'''
 def page(path, title, desc, body, extra_head="", scripts="", body_class="", noindex=False, jsonld=None, og_img=None, lastmod=None):
     out = head(title, desc, path, extra_head, og_img, noindex, jsonld) + f'<body class="{body_class}">{top(path)}<main id="main">{body}</main>' + ("" if "maponly" in body_class else footer()) + tabbar(path) + scripts + '</body></html>'
@@ -98,7 +98,7 @@ VER = NOW.strftime("%Y%m%d%H%M")
 # ------------------------------------------------------------------ pages
 def build_assets():
     os.makedirs(DIST + "/assets", exist_ok=True)
-    for f, dst in (("dt_site.css", "site.css"), ("dt_map.js", "map.js"), ("dt_site.js", "site.js")):
+    for f, dst in (("dt_site.css", "site.css"), ("dt_map.js", "map.js"), ("dt_site.js", "site.js"), ("conn.js", "conn.js")):
         shutil.copy(BASE + "/" + f, DIST + "/assets/" + dst)
     for f in ("maplibre-gl.js", "maplibre-gl.css", "pmtiles.js"): shutil.copy(BASE + "/vendor/" + f, DIST + "/assets/" + f)
     shutil.copy(BASE + "/vendor/bm/package/dist/basemaps.js", DIST + "/assets/basemaps.js")
@@ -136,9 +136,9 @@ def build_home():
         vcards += f'<a class="card flat" href="/vendors/{v["id"]}/" style="color:var(--ink)"><h3>{esc(v["name"])}</h3><p class="mute small" style="margin:6px 0 10px">{esc(v["country"])}</p><span class="tag">{n} sites</span></a>'
     body = f'''<div class="wrap"><section class="hero"><div class="eyebrow">Reference</div><h1>Tracking digital and remote towers worldwide.</h1>
 <p class="lede">Every fact links to its public source, every site carries a status and a confidence label, and the news below refreshes from public feeds. Coverage is not complete, and unverified sites are marked as such.</p>
-<div class="cta"><a class="btn primary" href="/map/">Open the world map</a><a class="btn" href="/towers/">Browse all towers</a><a class="btn" href="/united-states/">United States status</a></div>
+<div class="cta"><a class="btn primary" href="/map/">Open the world map</a><a class="btn" href="/towers/">Browse all towers</a><a class="btn" href="/united-states/">United States status</a><a class="btn" href="/connections/">How towers connect</a></div>
 <div class="stats"><div class="stat"><b>{len(T)}</b><span>sites mapped</span></div><div class="stat"><b>{ops}</b><span>operational</span></div><div class="stat"><b>{status_counts["trial"]}</b><span>trial</span></div><div class="stat"><b>{status_counts["planned"]}</b><span>planned</span></div><div class="stat"><b>{status_counts.get("unverified",0)}</b><span>unverified</span></div><div class="stat"><b>{META["countries"]}</b><span>countries</span></div></div>
-<div class="strip">{strip}</div><p class="credit">Photos from Wikimedia Commons under open licences; credits on each tower page.</p></section>
+<p class="small mute" style="margin-top:16px;max-width:74ch">{len(T)} sites = {", ".join(str(v) + " " + k for k, v in status_counts.most_common())}. {sum(1 for t in T if t["kind"] in ("remote_tower","rtc","digital_tower","remote_afis"))} are remote towers, centres, digital towers or remote air-ground services; the other {sum(1 for t in T if t["kind"] not in ("remote_tower","rtc","digital_tower","remote_afis"))} are hybrid, contingency or test facilities. <a href="/coverage/">What is not covered</a>.</p><div class="strip">{strip}</div><p class="credit">Photos from Wikimedia Commons under open licences; credits on each tower page.</p></section>
 <section class="section"><div class="head"><h2>Latest</h2><a href="/news/">All news</a></div><div class="news">{nl}</div></section>
 <section class="section"><div class="head"><h2>United States right now</h2><a href="/united-states/">Full tracker</a></div><div class="card"><ul class="timeline">{ust}</ul></div></section>
 <section class="section"><div class="head"><h2>By country</h2><a href="/countries/">All countries</a></div><div style="display:flex;gap:8px;flex-wrap:wrap">{cc}</div></section>
@@ -172,7 +172,7 @@ def build_directory():
         rows += f'<tr data-s="{t["status"]}" data-c="{esc(t["country"])}" data-v="{esc(vs)}" data-t="{esc((t["name"]+" "+t["icao"]+" "+t["country"]+" "+" ".join(t["vendors"])+" "+t["ansp"]).lower())}"><td><a class="rowlink" href="/towers/{t["id"]}/">{esc(t["name"])}</a><div class="xs faint">{esc(KIND[t["kind"]])}</div></td><td>{esc(t["icao"])}</td><td>{esc(t["country"])}</td><td>{esc(", ".join(t["vendors"]) or "n/a")}</td><td>{pill(t["status"])}</td><td><span class="tag conf-{t["conf"]}">{t["conf"]}</span></td></tr>'
     co = "".join(f'<option>{esc(c)}</option>' for c in COUNTRIES)
     vn = "".join(f'<option>{esc(v["aliases"][0])}</option>' for v in EN["vendors"])
-    body = f'''<div class="wrap" style="padding-top:28px"><h1 style="font-size:clamp(30px,4.5vw,46px)">All towers</h1><p class="mute" style="margin-top:10px">{len(T)} sites. Filter by status, country or vendor. <a href="/data/">Download the data</a>.</p>
+    body = f'''<div class="wrap" style="padding-top:28px"><h1 style="font-size:clamp(30px,4.5vw,46px)">All towers</h1><p class="mute" style="margin-top:10px">{len(T)} sites. Filter by status, country or vendor. <a href="/data/">Download the data</a>. Also: <a href="/connections/">connections</a>, <a href="/timeline/">timeline</a>, <a href="/coverage/">coverage and gaps</a>.</p>
 <div class="tools" style="margin-top:18px"><input id="dq" type="search" placeholder="Search name, ICAO code, country, vendor" aria-label="Search towers"><select id="dstatus" aria-label="Status"><option value="">Any status</option>{"".join(f'<option value="{k}">{v}</option>' for k,v in LABEL.items())}</select><select id="dcountry" aria-label="Country"><option value="">Any country</option>{co}</select><select id="dvendor" aria-label="Vendor"><option value="">Any vendor</option>{vn}</select><span id="dcount" class="small mute"></span></div>
 <div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Site</th><th>ICAO</th><th>Country</th><th>Vendor</th><th>Status</th><th>Confidence</th></tr></thead><tbody id="dirrows">{rows}</tbody></table></div></div>'''
     page("/towers/", "All remote and digital towers | Digital Towers", f"Directory of {len(T)} remote, digital and hybrid air traffic control tower sites with status, vendor, provider and confidence labels.", body, scripts='<script src="/assets/site.js?v=' + VER + '"></script>')
@@ -182,13 +182,14 @@ KIND_BLURB = {"remote_tower": "a remote tower: cameras and sensors at the airpor
               "digital_tower": "a digital tower: sensor-based tower technology that is not a straight remote tower",
               "hybrid": "a hybrid digital tower: controllers keep the window view and add camera video, so it is not a remote tower",
               "contingency": "a contingency facility: a backup position for use when the main tower is unavailable",
-              "test_site": "a test or validation site rather than an operating tower"}
+              "test_site": "a test or validation site rather than an operating tower",
+              "remote_afis": "a remote aerodrome air-ground (RADIO) service: an officer elsewhere gives advisory information by camera, which is not air traffic control"}
 def build_tower(t):
     p = photo(t); path = f"/towers/{t['id']}/"
     hero = f'<div class="thero"><img src="/{p["file"]}" alt="" decoding="async"><div class="in"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">{pill(t["status"])}<span class="tag conf-{t["conf"]}">confidence {t["conf"]}</span></div><h1>{esc(t["name"])}</h1></div></div>{credit(p)}' if p else \
            f'<div class="thero" style="min-height:150px"><div class="in"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">{pill(t["status"])}<span class="tag conf-{t["conf"]}">confidence {t["conf"]}</span></div><h1>{esc(t["name"])}</h1></div></div>'
     facts = "".join(f'<li>{esc(f["t"])}<a class="src" href="{esc(f["u"])}" rel="noopener" target="_blank">{esc(f["u"])}</a></li>' for f in t["facts"])
-    tl = "".join(f'<li><span class="d">{esc(fdate(d["d"]))}</span><div>{esc(d["t"])}</div></li>' for d in sorted(t["dates"], key=lambda x: x["d"]))
+    tl = "".join(f'<li><span class="d">{esc(fdate(d["d"]))}</span><div>{esc(d["t"])}' + (f' <a class="xs" href="{esc(d["u"])}" rel="noopener" target="_blank">{esc(host(d["u"]))}</a>' if d.get("u") else '') + '</div></li>' for d in sorted(t["dates"], key=lambda x: x["d"]))
     note = f'<div class="note" style="margin-top:16px"><b>Caveat.</b> {esc(t["note"])}</div>' if t["note"] else ""
     if t["status"] in ("unverified",) or t["conf"] == "low":
         note += '<div class="note warn" style="margin-top:12px">The evidence for this entry is old or comes from a single source. Treat the status as unconfirmed.</div>'
@@ -204,14 +205,14 @@ def build_tower(t):
     sm = "".join(f'<a class="chip" href="/towers/{x["id"]}/">{esc(x["name"])}</a> ' for x in same)
     gl = {"i": 0}
     srcs = sorted({f["u"] for f in t["facts"]})
-    glance = f'''<div class="card"><h3 style="margin-bottom:12px">At a glance</h3><dl class="kv"><dt>ICAO</dt><dd>{esc(t["icao"] or "n/a")}</dd><dt>Country</dt><dd><a href="/countries/{slug(t["country"])}/">{esc(t["country"])}</a></dd><dt>Type</dt><dd>{esc(KIND[t["kind"]])}</dd><dt>Vendor</dt><dd>{esc(", ".join(t["vendors"]) or "not named in sources")}</dd><dt>Provider</dt><dd>{esc(t["ansp"] or "n/a")}</dd><dt>Status</dt><dd>{LABEL[t["status"]]}</dd><dt>Position</dt><dd>{t["lat"]:.3f}, {t["lon"]:.3f}</dd></dl></div>
+    glance = f'''<div class="card"><h3 style="margin-bottom:12px">At a glance</h3><dl class="kv"><dt>ICAO</dt><dd>{esc(t["icao"] or "n/a")}</dd><dt>Country</dt><dd><a href="/countries/{slug(t["country"])}/">{esc(t["country"])}</a></dd><dt>Type</dt><dd>{esc(KIND[t["kind"]])}</dd><dt>Vendor</dt><dd>{esc(", ".join(t["vendors"]) or "not named in sources")}</dd><dt>Provider</dt><dd>{esc(t["ansp"] or "n/a")}</dd><dt>Status</dt><dd>{LABEL[t["status"]]}</dd>{('<dt>Regulator</dt><dd>' + esc(t["regulator"]) + '</dd>') if t.get("regulator") else ''}{('<dt>Program</dt><dd><a href="/regulators/#' + esc(t["program"]) + '">' + esc(t["program"]) + '</a></dd>') if t.get("program") else ''}<dt>Position</dt><dd>{t["lat"]:.3f}, {t["lon"]:.3f}</dd></dl></div>
 <div class="card"><h3 style="margin-bottom:8px">Sources</h3><p class="small mute" style="margin:0">{len(srcs)} public source{"s" if len(srcs)!=1 else ""}: {", ".join(esc(host(s)) for s in srcs)}.</p><p class="small" style="margin:12px 0 0"><a href="https://github.com/adam-rhodes/digitaltowers/issues/new?title={esc("Correction: " + t["name"]).replace(" ", "%20")}&body=Tower%20id%3A%20{t["id"]}%0AWhat%20is%20wrong%3A%20%0APublic%20source%20link%3A%20">Suggest a correction</a></p></div>'''
     body = f'''<div class="wrap"><div class="crumbs"><a href="/towers/">Towers</a> / <a href="/countries/{slug(t["country"])}/">{esc(t["country"])}</a></div>{hero}
 <div class="cols"><div><p style="font-size:17px;max-width:62ch;margin-top:6px">{esc(t["name"])} is {KIND_BLURB[t["kind"]]}. {esc(t["facts"][0]["t"]) if t["facts"] else ""}</p>{note}
-<h2 style="margin:30px 0 12px;font-size:22px">What the sources say</h2><ul class="facts">{facts}</ul>
+<h2 id="sources" style="margin:30px 0 12px;font-size:22px">What the sources say</h2><ul class="facts">{facts}</ul>
 {('<h2 style="margin:30px 0 12px;font-size:22px">Timeline</h2><div class="card"><ul class="timeline" style="margin:0">' + tl + '</ul></div>') if tl else ''}
 <h2 style="margin:30px 0 12px;font-size:22px">Connections</h2><div id="minimap" class="minimap"></div><p class="xs faint" style="margin:8px 0 14px">Lines join each airport to the centre that controls it. Basemap: OpenStreetMap data via Protomaps.</p>
-<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">{conn}{v}{av}</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">{conn}{v}{av}</div><p class="small" style="margin:6px 0 14px"><a href="/connections/?focus={t["id"]}">Open in the connections view</a> · <a href="/timeline/?tower={t["id"]}">Timeline for this site</a></p>
 {('<p class="xs faint" style="margin:18px 0 8px">Other sites in ' + esc(t["country"]) + '</p><div style="display:flex;gap:6px;flex-wrap:wrap">' + sm + '</div>') if sm else ''}
 <p style="margin-top:22px"><a class="btn" href="/map/#{t["id"]}">Show on the world map</a></p></div><div class="side">{glance}</div></div></div>'''
     sc = MAPJS + f'<script>fetch("/data/towers.json?v={VER}").then(function(r){{return r.json()}}).then(function(d){{window.DTMini("{t["id"]}",d.towers)}});</script>'
@@ -277,7 +278,7 @@ def build_us():
 <div class="grid g3" style="margin-top:22px"><div class="card"><div class="tag">2 Sep 2026</div><h3 style="margin:10px 0 6px">Design approval, with conditions</h3><p class="small mute" style="margin:0">AIP guidance states the FAA granted system design approval to Frequentis USA on 2 September 2026, with conditions. The conditions are not in the sources reviewed. <a href="https://www.faa.gov/airports/aip/guidance_letters/aip_pgl_26_06" rel="noopener" target="_blank">PGL 26-06</a></p></div>
 <div class="card"><div class="tag">28 Sep 2026</div><h3 style="margin:10px 0 6px">AIP funding guidance</h3><p class="small mute" style="margin:0">PGL 26-06 says a digital tower with FAA system design approval may be funded at Contract Tower candidates, and that it does not grant operational approval. The sponsor must own, operate and maintain the system.</p></div>
 <div class="card"><div class="tag">18 Sep to 19 Oct 2026</div><h3 style="margin:10px 0 6px">FY27 contract tower grants</h3><p class="small mute" style="margin:0">The FAA Contract Tower Competitive Grant Program lists FAA-certified digital towers as eligible; up to $100 million this year. Applications close 19 October 2026. <a href="https://www.faa.gov/iija/airport-infrastructure/fct" rel="noopener" target="_blank">FAA page</a></p></div></div>
-<div class="note" style="margin-top:16px"><b>Sources disagree on timing.</b> The FAA Remote Tower Systems page, last updated 6 February 2025, says no remote tower system is approved for the NAS and lists no design approval. The September 2026 guidance letter postdates it. Both are linked below.</div>
+<div class="note" style="margin-top:16px"><b>Sources disagree on timing.</b> The FAA page for this program, now titled Digital Tower Systems, was last updated 4 September 2026. It does not list the approval and says the FAA will update it when (and if) it issues one. The earlier Remote Tower Systems page, updated 6 February 2025, said no system was approved. The guidance letter PGL 26-06, dated 28 September 2026, states that the FAA granted Frequentis USA an approval on 2 September 2026, with conditions. We show the approval as that letter words it. <a href="https://www.faa.gov/airports/planning_capacity/non_federal/digital_tower_systems" rel="noopener" target="_blank">FAA page</a></div>
 <h2 style="margin:36px 0 14px">US sites</h2><div class="grid g3">{"".join(tcard(t) for t in ustow)}</div>
 <h2 style="margin:40px 0 14px">Timeline</h2><div class="card"><ul class="timeline" style="margin:0">{tl}</ul></div>
 <h2 style="margin:40px 0 14px">FAA documents (public)</h2><div class="card"><ul style="margin:0;padding-left:18px;display:grid;gap:8px">{docs}</ul><p class="xs faint" style="margin:14px 0 0">Copies of public FAA documents. Latest versions: <a href="https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems" rel="noopener" target="_blank">faa.gov remote tower systems</a>.</p></div></div>'''
@@ -293,6 +294,7 @@ def build_static():
     lib = "".join(f'<li><a href="{u}" rel="noopener" target="_blank">{esc(n)}</a><div class="xs faint">{esc(d)}</div></li>' for n, u, d in [
         ("FAA Remote Tower Systems page", "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems", "Concept of operations, safety assessment, requirements. Last updated 6 Feb 2025."),
         ("AIP Program Guidance Letter 26-06", "https://www.faa.gov/airports/aip/guidance_letters/aip_pgl_26_06", "28 Sep 2026. Digital airport traffic control tower systems."),
+        ("FAA Digital Tower Systems page", "https://www.faa.gov/airports/planning_capacity/non_federal/digital_tower_systems", "Renamed from Remote Tower Systems; last updated 4 Sep 2026."),
         ("FAA Contract Tower Competitive Grant Program", "https://www.faa.gov/iija/airport-infrastructure/fct", "FY27 round open 18 Sep to 19 Oct 2026."),
         ("EUROCAE ED-240A", "https://www.eurocae.net/product/ed-240a-minimum-aviation-system-performance-standards-masps-for-remote-tower-optical-systems", "Minimum aviation system performance standards for remote tower optical systems."),
         ("Avinor remote towers", "https://om.avinor.no/en/aviation-safety/remote-controlled-towers", "Implementation list for the Bodø centre."),
@@ -307,7 +309,7 @@ def build_static():
     about = f'''<div class="wrap" style="padding-top:28px"><div class="prose"><h1 style="font-size:clamp(30px,4.5vw,46px)">About and method</h1>
 <p class="mute" style="margin-top:14px">Digital Towers is an independent reference to remote and digital air traffic control towers. It is built only from public sources. It is not affiliated with, endorsed by, or speaking for the FAA or any other government body, and it is not for operational use.</p>
 <h2>How entries are made</h2><ul><li>Every fact on a tower page carries the URL of the public page it came from.</li><li><b>Status</b>: operational, trial, planned, decommissioned, cancelled or unverified. Unverified means the last source we found is old and no go-live notice turned up.</li><li><b>Confidence</b>: high when an operator, regulator or the airport states the fact; medium when a vendor or trade press does; low when the evidence is old, secondary or single-sourced.</li><li>Hybrid and contingency facilities are listed with their own type and are not counted as remote towers in the headline claim.</li><li>Coordinates come from OurAirports (public domain) by ICAO code. Centres without a code are placed approximately and marked.</li></ul>
-<h2>News</h2><p>A scheduled job reads public feeds (Google News search, Federal Register API, CANSO, NATS, AVweb, Aviation Tech Today, Airport Improvement), keeps only items that match remote or digital tower terms, removes duplicates, tags them, and puts new ones in a review queue. They publish after 24 hours unless flagged. The FAA newsroom feed blocks automated readers, and the Congress.gov API needs a free key, so neither is wired yet.</p>
+<h2>News</h2><p>A scheduled job reads public feeds (Google News search, Federal Register API, CANSO, NATS, AVweb, Aviation Tech Today, Airport Improvement), keeps only items that match remote or digital tower terms, removes duplicates, tags them, and puts new ones in a review queue. They publish after 24 hours unless flagged. The FAA website and transportation.gov refuse automated requests from server addresses (even their robots.txt), so FAA coverage comes from the Federal Register API and from Google News searches limited to faa.gov and transportation.gov. The Congress.gov API needs a free key and is not wired yet. Items that look like opinion pieces or use risky wording are held for a person.</p>
 <h2>Corrections</h2><p>Use "Suggest a correction" on any tower page, which opens an issue on <a href="https://github.com/adam-rhodes/digitaltowers">GitHub</a> with a public source link.</p>
 <h2>Reuse</h2><p>The dataset is free to reuse with attribution to digitaltowers.org: <a href="/data/">downloads</a>. Map data © OpenStreetMap contributors (ODbL), tiles by Protomaps, rendered with MapLibre GL.</p>
 <h2>Photo credits</h2><ul class="small mute">{credits}</ul></div></div>'''
@@ -321,7 +323,7 @@ def build_map():
     body = f'''<div class="mapwrap"><div id="map" aria-label="World map of remote and digital towers"></div>
 <aside class="mpanel" aria-label="Tower list"><div class="sheetbar"><button type="button" aria-label="Resize panel" onclick="this.closest('.mpanel').classList.toggle('min')"></button></div><div class="ph1" id="mfilters"><input id="mq" type="search" placeholder="Search {len(T)} towers" aria-label="Search towers"><div class="chips" id="mchips"></div>
 <div class="chips"><select id="mcountry" aria-label="Country"><option value="">All countries</option></select><select id="mvendor" aria-label="Vendor"><option value="">All vendors</option></select></div>
-<div class="chips" style="align-items:center;justify-content:space-between"><span class="small mute" id="mcount"></span><span><button class="chip" id="mlinks" type="button" aria-pressed="true">Connections</button> <button class="chip" id="mfit" type="button">Reset view</button></span></div></div>
+<div class="chips" style="align-items:center;justify-content:space-between"><span class="small mute" id="mcount"></span><span><button class="chip" id="mlinks" type="button" aria-pressed="true">Connections</button> <button class="chip" id="mfit" type="button">Reset view</button> <a class="chip" href="/connections/">Connections view</a></span></div></div>
 <div class="mlist" id="mlist"></div><div class="mdetail" id="mdetail" hidden></div></aside>
 <div class="legend"><span style="--c:#5ed39a"><i></i>Operational</span><span style="--c:#7aa7ff"><i></i>Trial</span><span style="--c:#c4b5fd"><i></i>Planned</span><span style="--c:#9aa2b1"><i></i>Unverified</span><span style="--c:#ff6b6b"><i></i>Decommissioned or cancelled</span><span class="faint">White ring: remote tower centre</span></div></div>'''
     sc = MAPJS + '<script>fetch("/data/towers.json?v=' + VER + '").then(function(r){return r.json()}).then(function(d){DTMap(d.towers)});</script>'
@@ -384,6 +386,7 @@ def main():
     build_assets(); build_home(); build_news(); build_directory()
     for t in T: build_tower(t)
     build_countries(); build_entities(); build_us(); build_static(); build_map()
+    import dt_views; dt_views.build_all(sys.modules[__name__])
     nred = build_redirects(); build_misc()
     print("built pages", len(PAGES), "redirect stubs", nred, "towers", len(T))
     if "--deploy" in sys.argv: deploy()

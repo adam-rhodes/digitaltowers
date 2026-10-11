@@ -1,17 +1,26 @@
 {
  "meta": {
-  "generated": "2026-10-11T16:47:06Z",
-  "count": 97,
-  "countries": 25,
+  "generated": "2026-10-11T19:47:56Z",
+  "count": 115,
+  "countries": 32,
   "by_status": {
-   "operational": 44,
-   "planned": 33,
-   "cancelled": 1,
-   "trial": 9,
-   "unverified": 8,
-   "decommissioned": 2
+   "operational": 47,
+   "planned": 44,
+   "cancelled": 4,
+   "trial": 16,
+   "decommissioned": 2,
+   "unverified": 2
   },
   "license": "Compiled facts with source URLs per fact; coordinates from OurAirports (public domain) where an ICAO code exists. Free to reuse with attribution to digitaltowers.org.",
+  "by_kind": {
+   "rtc": 17,
+   "remote_tower": 81,
+   "digital_tower": 6,
+   "contingency": 2,
+   "hybrid": 3,
+   "test_site": 5,
+   "remote_afis": 1
+  },
   "note": "Statuses: operational, trial, planned, decommissioned, cancelled, unverified. Confidence: high, medium, low. Hybrid and contingency kinds are not remote towers."
  },
  "towers": [
@@ -65,6 +74,7 @@
    "lon": 14.3653,
    "iata": "BOO",
    "elev_ft": "42",
+   "photo": null,
    "connections": [
     {
      "rel": "serves",
@@ -207,6 +217,12 @@
    "lon": 12.10158,
    "iata": "RET",
    "elev_ft": "7",
+   "photo": {
+    "file": "img/towers/enrs.jpg",
+    "artist": "Kjetil Eggen",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:R%C3%B8st_lufthavn.JPG"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -249,6 +265,12 @@
    "lon": 31.0449,
    "iata": "VAW",
    "elev_ft": "42",
+   "photo": {
+    "file": "img/towers/enss.jpg",
+    "artist": "Fanny Schertzer",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vard%C3%B8_Airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -291,6 +313,12 @@
    "lon": 22.1397,
    "iata": "HAA",
    "elev_ft": "21",
+   "photo": {
+    "file": "img/towers/enhk.jpg",
+    "artist": "Manxruler",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hasvik_Airport_(2015).jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -333,6 +361,12 @@
    "lon": 29.0341,
    "iata": "BVG",
    "elev_ft": "42",
+   "photo": {
+    "file": "img/towers/enbv.jpg",
+    "artist": "Algkalv (talk)",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Berlevag-lufthavn.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -375,6 +409,7 @@
    "lon": 11.3423,
    "iata": "RRS",
    "elev_ft": "2054",
+   "photo": null,
    "connections": [
     {
      "rel": "controlled from",
@@ -417,6 +452,12 @@
    "lon": 27.8267,
    "iata": "MEH",
    "elev_ft": "39",
+   "photo": {
+    "file": "img/towers/enmh.jpg",
+    "artist": "Bair175",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Mehamn_airport,_Finnmark,_Norway_2013.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -459,6 +500,12 @@
    "lon": 11.1461,
    "iata": "RVK",
    "elev_ft": "14",
+   "photo": {
+    "file": "img/towers/enrm.jpg",
+    "artist": "Kjetil Eggen",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:R%C3%B8rvik_lufthavn_Ryum.JPG"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -501,6 +548,12 @@
    "lon": 11.5786,
    "iata": "OSY",
    "elev_ft": "7",
+   "photo": {
+    "file": "img/towers/ennm.jpg",
+    "artist": "Alasdair McLellan",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Namsos_Airport_5.JPG"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -543,6 +596,12 @@
    "lon": 14.6692,
    "iata": "SVJ",
    "elev_ft": "27",
+   "photo": {
+    "file": "img/towers/ensh.jpg",
+    "artist": "Algkalv (talk)",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Svolvaer-lufthavn.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -585,6 +644,12 @@
    "lon": 7.13778,
    "iata": "SOG",
    "elev_ft": "1633",
+   "photo": {
+    "file": "img/towers/ensg.jpg",
+    "artist": "Peter John Acklam",
+    "license": "CC BY 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Sogndal-lufthamn-Hauk%C3%A5sen-Norway.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -627,6 +692,7 @@
    "lon": 5.89043,
    "iata": "",
    "elev_ft": "19",
+   "photo": null,
    "connections": [
     {
      "rel": "controlled from",
@@ -669,6 +735,12 @@
    "lon": 7.2625,
    "iata": "MOL",
    "elev_ft": "10",
+   "photo": {
+    "file": "img/towers/enml.jpg",
+    "artist": "Stryn",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Molde_Airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -711,6 +783,12 @@
    "lon": 13.6094,
    "iata": "LKN",
    "elev_ft": "78",
+   "photo": {
+    "file": "img/towers/enlk.jpg",
+    "artist": "Lars Røed Hansen",
+    "license": "CC BY-SA 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Leknes_lufthavn.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -753,6 +831,12 @@
    "lon": 12.4689,
    "iata": "SSJ",
    "elev_ft": "56",
+   "photo": {
+    "file": "img/towers/enst.jpg",
+    "artist": "Martin Dahl",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sandnessj%C3%B8en_lufthavn,_Stokka.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -798,6 +882,12 @@
    "lon": 29.69261,
    "iata": "BJF",
    "elev_ft": "490",
+   "photo": {
+    "file": "img/towers/enbs.jpg",
+    "artist": "Algkalv (talk)",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Batsfjord-lufthavn.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -843,6 +933,12 @@
    "lon": 29.8447,
    "iata": "VDS",
    "elev_ft": "127",
+   "photo": {
+    "file": "img/towers/envd.jpg",
+    "artist": "Felix Maschek, Hamburg.",
+    "license": "CC BY-SA 2.0 de",
+    "page": "https://commons.wikimedia.org/wiki/File:Vads%C3%B8_Airport_20080718.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -888,6 +984,12 @@
    "lon": 20.9594,
    "iata": "SOJ",
    "elev_ft": "16",
+   "photo": {
+    "file": "img/towers/ensr.jpg",
+    "artist": "Algkalv (talk)",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sorkjosen-lufthavn-runway.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -933,6 +1035,12 @@
    "lon": 6.10583,
    "iata": "SDN",
    "elev_ft": "196",
+   "photo": {
+    "file": "img/towers/ensd.jpg",
+    "artist": "LK-Nor",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sandane_Airport_Anda.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -978,6 +1086,12 @@
    "lon": 13.2149,
    "iata": "MJF",
    "elev_ft": "237",
+   "photo": {
+    "file": "img/towers/enms.jpg",
+    "artist": "No machine-readable author provided. ZorroIII assumed (based on copyright claims",
+    "license": "CC BY 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Mosj%C3%B8en_lufthavn_-_MJF-2006-07-17.JPG"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1023,6 +1137,12 @@
    "lon": 6.0741,
    "iata": "HOV",
    "elev_ft": "243",
+   "photo": {
+    "file": "img/towers/enov.jpg",
+    "artist": "Egil Arne",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%C3%98rsta_Volda_lufthamn_Hovden.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1068,6 +1188,12 @@
    "lon": 14.3014,
    "iata": "MQN",
    "elev_ft": "229",
+   "photo": {
+    "file": "img/towers/enra.jpg",
+    "artist": "Skistar",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Mo_I_Rana_Airport.JPG"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1113,6 +1239,7 @@
    "regulator": "",
    "iata": "BOO",
    "elev_ft": "42",
+   "photo": null,
    "connections": []
   },
   {
@@ -1141,6 +1268,12 @@
    "lon": 29.8913,
    "iata": "KKN",
    "elev_ft": "283",
+   "photo": {
+    "file": "img/towers/enkr.jpg",
+    "artist": "Felix Maschek, Hamburg.",
+    "license": "CC BY-SA 3.0 de",
+    "page": "https://commons.wikimedia.org/wiki/File:Kirkenes_Airport_20081006.jpg"
+   },
    "connections": []
   },
   {
@@ -1180,6 +1313,12 @@
    "lon": 17.4439,
    "iata": "SDL",
    "elev_ft": "16",
+   "photo": {
+    "file": "img/towers/esnn.jpg",
+    "artist": "Felix Wikström",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Midlanda.JPG"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -1253,6 +1392,12 @@
    "lon": 18.99,
    "iata": "OER",
    "elev_ft": "354",
+   "photo": {
+    "file": "img/towers/esno.jpg",
+    "artist": "(Petey21)",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:%C3%96rnsk%C3%B6ldsvik_Airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1289,6 +1434,12 @@
    "dates": [],
    "iata": "SDL",
    "elev_ft": "16",
+   "photo": {
+    "file": "img/towers/esnn.jpg",
+    "artist": "Felix Wikström",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Midlanda.JPG"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1334,6 +1485,12 @@
    "lon": 12.83352,
    "iata": "SCR",
    "elev_ft": "1608",
+   "photo": {
+    "file": "img/towers/esks.jpg",
+    "artist": "Bengt-Inge Larsson",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:S%C3%A4len_airport_20200105_144437.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1370,6 +1527,7 @@
    "lon": 15.6845,
    "iata": "LPI",
    "elev_ft": "172",
+   "photo": null,
    "connections": [
     {
      "rel": "controlled from",
@@ -1411,6 +1569,12 @@
    "regulator": "",
    "iata": "ARN",
    "elev_ft": "137",
+   "photo": {
+    "file": "img/towers/essa.jpg",
+    "artist": "Brorsson at English Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Arlanda_1_Publish.jpg"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -1467,6 +1631,12 @@
    "lon": 20.3368,
    "iata": "KRN",
    "elev_ft": "1508",
+   "photo": {
+    "file": "img/towers/esnq.jpg",
+    "artist": "Uploaded by Stahlkocher",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kiruna_flygplats.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1508,6 +1678,12 @@
    "lon": 14.50417,
    "iata": "OSD",
    "elev_ft": "1233",
+   "photo": {
+    "file": "img/towers/esnz.jpg",
+    "artist": "Andreas Eriksson",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:%C3%85re_%C3%B6stersund_flygplats.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1544,6 +1720,12 @@
    "lon": 20.2828,
    "iata": "UME",
    "elev_ft": "24",
+   "photo": {
+    "file": "img/towers/esnu.jpg",
+    "artist": "MikaelLindmark",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ume%C3%A5_Flygplats-20080726.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1580,6 +1762,7 @@
    "lon": 13.37633,
    "iata": "MMX",
    "elev_ft": "236",
+   "photo": null,
    "connections": [
     {
      "rel": "controlled from",
@@ -1610,12 +1793,26 @@
     {
      "d": "2028-01-01",
      "t": "Agreement takes effect"
+    },
+    {
+     "d": "2026-09-21",
+     "t": "Saab announces a 15-year service contract for remote ATC at Stockholm-Västerås",
+     "u": "https://www.saab.com/newsroom/press-releases/2026/saab-is-digitalizing-stockholm-vasteras-airport-with-remote-air-traffic-control-services"
+    },
+    {
+     "d": "2028-01-01",
+     "t": "Planned start of remote service from Sundsvall",
+     "u": "https://www.saab.com/newsroom/press-releases/2026/saab-is-digitalizing-stockholm-vasteras-airport-with-remote-air-traffic-control-services"
     }
    ],
    "facts": [
     {
      "t": "Saab won a 15-year contract to install and operate remote air traffic control services; announced 22 September 2026, effective 1 January 2028.",
      "u": "https://defence-industry.eu/saab-wins-15-year-stockholm-vasteras-airport-contract-to-expand-remote-air-traffic-control-operations-from-sundsvall/"
+    },
+    {
+     "t": "Saab's 21 September 2026 release gives a 15-year agreement, a camera tower and digital workstation, and a start date of 1 January 2028 with traffic controlled from its Remote Tower Center in Sundsvall.",
+     "u": "https://www.saab.com/newsroom/press-releases/2026/saab-is-digitalizing-stockholm-vasteras-airport-with-remote-air-traffic-control-services"
     }
    ],
    "conf": "high",
@@ -1625,6 +1822,12 @@
    "lon": 16.6336,
    "iata": "VST",
    "elev_ft": "21",
+   "photo": {
+    "file": "img/towers/esow.jpg",
+    "artist": "Dependability",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Stockholm-V%C3%A4ster%C3%A5s_flygplats.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1661,6 +1864,7 @@
    "dates": [],
    "iata": "",
    "elev_ft": "",
+   "photo": null,
    "connections": [
     {
      "rel": "serves",
@@ -1706,6 +1910,12 @@
    "lon": 0.05528,
    "iata": "LCY",
    "elev_ft": "19",
+   "photo": {
+    "file": "img/towers/eglc.jpg",
+    "artist": "Alexander Baxevanis",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:London_City_Airport_(December_2025).jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -1751,6 +1961,12 @@
    "lon": -0.61667,
    "iata": "",
    "elev_ft": "360",
+   "photo": {
+    "file": "img/towers/egtc.jpg",
+    "artist": "Thomas Nugent",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cranfield_Airport_by_Thomas_Nugent.jpg"
+   },
    "connections": []
   },
   {
@@ -1790,6 +2006,7 @@
    "lon": -0.45991,
    "iata": "LHR",
    "elev_ft": "83",
+   "photo": null,
    "connections": []
   },
   {
@@ -1833,6 +2050,12 @@
    "regulator": "",
    "iata": "",
    "elev_ft": "295",
+   "photo": {
+    "file": "img/towers/egdo.jpg",
+    "artist": "Rod Allday",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:The_control_tower_at_Predannack_Airfield_-_geograph.org.uk_-_2060224.jpg"
+   },
    "connections": []
   },
   {
@@ -1876,6 +2099,12 @@
    "regulator": "",
    "iata": "",
    "elev_ft": "267",
+   "photo": {
+    "file": "img/towers/egdr.jpg",
+    "artist": "Andrew Thomas from Shrewsbury, UK",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:ZH850_-_WM-462_EHI_EH-101_Merlin_HM2_(Mk111)_(cn_50125-RN30)_Royal_Navy._(9505740843).jpg"
+   },
    "connections": []
   },
   {
@@ -1915,6 +2144,12 @@
    "lon": -2.27952,
    "iata": "MAN",
    "elev_ft": "257",
+   "photo": {
+    "file": "img/towers/egcc.jpg",
+    "artist": "320jacko",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Manchester_Airport_EGCC.jpg"
+   },
    "connections": []
   },
   {
@@ -1950,6 +2185,12 @@
    "lon": -0.77633,
    "iata": "FAB",
    "elev_ft": "238",
+   "photo": {
+    "file": "img/towers/eglf.jpg",
+    "artist": "MilborneOne",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Farnborough2008-073.jpg"
+   },
    "connections": []
   },
   {
@@ -1987,6 +2228,7 @@
    "lon": -4.0475,
    "iata": "INV",
    "elev_ft": "31",
+   "photo": null,
    "connections": []
   },
   {
@@ -2026,6 +2268,12 @@
    "lon": 12.2327,
    "iata": "LEJ",
    "elev_ft": "465",
+   "photo": {
+    "file": "img/towers/eddp.jpg",
+    "artist": "Mitteldeutsche Airport Holding",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Leipzig-Halle_Airport_Logo.svg"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -2077,6 +2325,12 @@
    "lon": 7.10973,
    "iata": "SCN",
    "elev_ft": "1058",
+   "photo": {
+    "file": "img/towers/eddr.jpg",
+    "artist": "Leander Jost",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Flughafen_Saarbr%C3%BCcken.svg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2118,6 +2372,7 @@
    "lon": 10.96071,
    "iata": "ERF",
    "elev_ft": "1036",
+   "photo": null,
    "connections": [
     {
      "rel": "controlled from",
@@ -2159,6 +2414,12 @@
    "lon": 13.76783,
    "iata": "DRS",
    "elev_ft": "755",
+   "photo": {
+    "file": "img/towers/eddc.jpg",
+    "artist": "Carsten Steger",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Dresden_Airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2200,6 +2461,12 @@
    "lon": 10.5561,
    "iata": "BWE",
    "elev_ft": "295",
+   "photo": {
+    "file": "img/towers/edve.jpg",
+    "artist": "Carsten Steger",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Braunschweig-Wolfsburg_airport.jpg"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -2246,6 +2513,12 @@
    "note": "",
    "iata": "BWE",
    "elev_ft": "295",
+   "photo": {
+    "file": "img/towers/edve.jpg",
+    "artist": "Carsten Steger",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Braunschweig-Wolfsburg_airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2282,6 +2555,12 @@
    "lon": 7.2275,
    "iata": "EME",
    "elev_ft": "3",
+   "photo": {
+    "file": "img/towers/edwe.jpg",
+    "artist": "Martina Nolte",
+    "license": "CC BY-SA 3.0 de",
+    "page": "https://commons.wikimedia.org/wiki/File:2013-05-03_Fotoflug_Leer_Papenburg_DSCF7188.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2323,6 +2602,7 @@
    "lon": 11.7861,
    "iata": "MUC",
    "elev_ft": "1487",
+   "photo": null,
    "connections": []
   },
   {
@@ -2358,6 +2638,7 @@
    "lon": 10.20731,
    "iata": "KZG",
    "elev_ft": "689",
+   "photo": null,
    "connections": []
   },
   {
@@ -2401,6 +2682,7 @@
    "lon": 19.26239,
    "iata": "BUD",
    "elev_ft": "495",
+   "photo": null,
    "connections": []
   },
   {
@@ -2436,6 +2718,12 @@
    "lon": -6.26212,
    "iata": "DUB",
    "elev_ft": "242",
+   "photo": {
+    "file": "img/towers/eidw.jpg",
+    "artist": "Doyler79",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:T2Dublin_Airport-doyler79.jpg"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -2486,6 +2774,12 @@
    "lon": -8.49111,
    "iata": "ORK",
    "elev_ft": "502",
+   "photo": {
+    "file": "img/towers/eick.jpg",
+    "artist": "J.Stiegler",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:3.5.1_Flughafen_Cork._Irland.JPG"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2531,6 +2825,12 @@
    "lon": -8.92482,
    "iata": "SNN",
    "elev_ft": "46",
+   "photo": {
+    "file": "img/towers/einn.jpg",
+    "artist": "瑞丽江的河水",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Shannon_Airport_2020-07-12_01.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2546,7 +2846,7 @@
    "country": "Netherlands",
    "cc": "NL",
    "kind": "remote_tower",
-   "status": "unverified",
+   "status": "planned",
    "vendors": [
     "Saab"
    ],
@@ -2570,16 +2870,30 @@
     {
      "t": "The airport's project page lists May 2018 to December 2024 and says air traffic control is run remotely from the Remote Tower Centre at Schiphol Oost.",
      "u": "https://www.groningenairport.nl/en/sustainability/project-portfolio/remote-tower"
+    },
+    {
+     "t": "LVNL's 2025 annual report says the Centralised Base programme (Groningen and Maastricht Aachen) has been postponed since 2022 because of capacity and permit delays; further rollout follows full introduction of the iTEC-based centre automation system.",
+     "u": "https://jaarverslag.lvnl.nl/jaarverslag-2025/veiligheid/projectportfolio-overige-projecten"
+    },
+    {
+     "t": "The airport's own project page says 'This project is complete and will not be updated further' and that air traffic is controlled from the Remote Tower Centre at Schiphol Oost.",
+     "u": "https://www.groningenairport.nl/en/sustainability-innovation/project-portfolio/remote-tower"
     }
    ],
    "conf": "low",
-   "note": "No go-live notice found.",
-   "program": "",
+   "note": "Two primary sources disagree. The airport's project page says the project is complete (December 2024) and that traffic is run from Schiphol Oost. LVNL's 2025 annual report says the programme has been postponed since 2022 and that a simulator and test environment was commissioned at Schiphol-Oost in 2025. We follow the operator report and show the site as planned.",
+   "program": "lvnl-centralised",
    "regulator": "",
    "lat": 53.11911,
    "lon": 6.57765,
    "iata": "GRQ",
    "elev_ft": "17",
+   "photo": {
+    "file": "img/towers/ehgg.jpg",
+    "artist": "Kas van Zonneveld",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Luchtfoto_Groningen_Airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2595,7 +2909,7 @@
    "country": "Netherlands",
    "cc": "NL",
    "kind": "rtc",
-   "status": "unverified",
+   "status": "trial",
    "vendors": [
     "Saab"
    ],
@@ -2606,16 +2920,27 @@
     {
      "t": "Named on the Groningen project page as the location from which Groningen is run remotely.",
      "u": "https://www.groningenairport.nl/en/sustainability/project-portfolio/remote-tower"
+    },
+    {
+     "t": "LVNL's 2025 annual report says a remote tower simulator and test environment was commissioned at Schiphol-Oost in 2025; it does not call it a live remote tower centre.",
+     "u": "https://jaarverslag.lvnl.nl/jaarverslag-2025/veiligheid/projectportfolio-overige-projecten"
     }
    ],
-   "conf": "low",
-   "note": "Location approximate.",
+   "conf": "medium",
+   "note": "The 2025 milestone was a remote tower simulator and test environment. The sources do not describe live traffic being handled from here. Location is approximate.",
    "controlled_from": "",
-   "program": "",
+   "program": "lvnl-centralised",
    "regulator": "",
-   "dates": [],
+   "dates": [
+    {
+     "d": "2025",
+     "t": "Remote tower simulator and test environment commissioned at Schiphol-Oost",
+     "u": "https://jaarverslag.lvnl.nl/jaarverslag-2025/veiligheid/projectportfolio-overige-projecten"
+    }
+   ],
    "iata": "",
    "elev_ft": "",
+   "photo": null,
    "connections": [
     {
      "rel": "serves",
@@ -2636,7 +2961,7 @@
    "country": "Netherlands",
    "cc": "NL",
    "kind": "remote_tower",
-   "status": "unverified",
+   "status": "planned",
    "vendors": [
     "Saab"
    ],
@@ -2646,17 +2971,33 @@
     {
      "t": "Named in the December 2019 LVNL contract with Saab; current status not confirmed.",
      "u": "https://www.internationalairportreview.com/news/108966/sdats-contract-build-remote-towers"
+    },
+    {
+     "t": "LVNL's 2025 annual report lists the Centralised Base programme as postponed since 2022; Maastricht Aachen is one of its two airports.",
+     "u": "https://jaarverslag.lvnl.nl/jaarverslag-2025/veiligheid/projectportfolio-overige-projecten"
     }
    ],
-   "conf": "low",
-   "program": "",
+   "conf": "medium",
+   "program": "lvnl-centralised",
    "regulator": "",
-   "dates": [],
-   "note": "",
+   "dates": [
+    {
+     "d": "2022",
+     "t": "Centralised Base programme postponed (capacity and permit delays)",
+     "u": "https://jaarverslag.lvnl.nl/jaarverslag-2025/veiligheid/projectportfolio-overige-projecten"
+    }
+   ],
+   "note": "Postponed since 2022 according to LVNL.",
    "lat": 50.91109,
    "lon": 5.7694,
    "iata": "MST",
    "elev_ft": "375",
+   "photo": {
+    "file": "img/towers/ehbk.jpg",
+    "artist": "Maastricht Aachen Airport",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Passagiersterminal.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2672,7 +3013,7 @@
    "country": "Denmark",
    "cc": "DK",
    "kind": "remote_tower",
-   "status": "unverified",
+   "status": "planned",
    "vendors": [
     "Frequentis"
    ],
@@ -2687,10 +3028,14 @@
     {
      "t": "Naviair chose Frequentis DFS Aerosense for an integrated remote digital tower with approach automation, Billund first; centre expected operational in 2022.",
      "u": "https://canso.org/denmarks-naviair-to-tackle-airspace-efficiency-and-service-provision-with-integrated-remote-tower-and-approach-centre-from-frequentis-dfs-aerosense/"
+    },
+    {
+     "t": "Naviair's integrated digital tower and approach solution completed proof-of-concept testing at Frequentis in Austria; the initial remote tower centre is to be at Billund airport. No go-live date is given.",
+     "u": "https://www.frequentis.com/en/pr/first-integrated-digital-tower-denmark-completes-proof-concept-testing-frequentis-dfs-aerosense"
     }
    ],
    "conf": "low",
-   "note": "No go-live notice found.",
+   "note": "Proof of concept done at Frequentis premises; no go-live notice found as of 11 October 2026.",
    "controlled_from": "",
    "program": "",
    "regulator": "",
@@ -2698,6 +3043,12 @@
    "lon": 9.15702,
    "iata": "BLL",
    "elev_ft": "247",
+   "photo": {
+    "file": "img/towers/ekbi.jpg",
+    "artist": "Nico-dk",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Billund_Airport_from_NE.jpg"
+   },
    "connections": []
   },
   {
@@ -2733,6 +3084,12 @@
    "note": "",
    "iata": "HEL",
    "elev_ft": "179",
+   "photo": {
+    "file": "img/towers/efhk.jpg",
+    "artist": "kallerna",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Helsinki-Vantaa_airport.jpg"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -2799,6 +3156,12 @@
    "lon": 19.8982,
    "iata": "MHQ",
    "elev_ft": "17",
+   "photo": {
+    "file": "img/towers/efma.jpg",
+    "artist": "Egon Eagle",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Mariehamn_Airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2835,6 +3198,12 @@
    "lon": 22.2628,
    "iata": "TKU",
    "elev_ft": "161",
+   "photo": {
+    "file": "img/towers/eftu.jpg",
+    "artist": "kallerna",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Turun_lentoasema.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2871,6 +3240,12 @@
    "lon": 21.76254,
    "iata": "VAA",
    "elev_ft": "19",
+   "photo": {
+    "file": "img/towers/efva.jpg",
+    "artist": "Santeri Viinamäki",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vaasa_Airport_20190609.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2907,6 +3282,12 @@
    "lon": 24.8468,
    "iata": "KTT",
    "elev_ft": "644",
+   "photo": {
+    "file": "img/towers/efkt.jpg",
+    "artist": "Magic Foundry",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kittil%C3%A4_airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2943,6 +3324,12 @@
    "lon": 27.4053,
    "iata": "IVL",
    "elev_ft": "481",
+   "photo": {
+    "file": "img/towers/efiv.jpg",
+    "artist": "J-P Kärnä",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ivalon_lentoasema_kes%C3%A4ll%C3%A4.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -2979,6 +3366,12 @@
    "lon": 29.2394,
    "iata": "KAO",
    "elev_ft": "866",
+   "photo": {
+    "file": "img/towers/efks.jpg",
+    "artist": "Otto Karikoski",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kuusamo_Airport_landside_2017-11-27.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -3015,6 +3408,12 @@
    "lon": 25.3546,
    "iata": "OUL",
    "elev_ft": "47",
+   "photo": {
+    "file": "img/towers/efou.jpg",
+    "artist": "Arto häkkilä",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Oulun_lentoasema,C0020-3.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -3060,6 +3459,12 @@
    "lon": 24.83264,
    "iata": "TLL",
    "elev_ft": "131",
+   "photo": {
+    "file": "img/towers/eetn.jpg",
+    "artist": "TLL-EETN",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tallinn_Airport_passenger_terminal_and_runway.jpg"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -3116,6 +3521,12 @@
    "lon": 26.68647,
    "iata": "TAY",
    "elev_ft": "220",
+   "photo": {
+    "file": "img/towers/eetu.jpg",
+    "artist": "Whaleinanutshell",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tartu_Airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -3152,6 +3563,12 @@
    "lon": 22.5095,
    "iata": "URE",
    "elev_ft": "14",
+   "photo": {
+    "file": "img/towers/eeke.jpg",
+    "artist": "WikedKentaur",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kuressaare_lennujaam,_2010.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -3188,6 +3605,12 @@
    "lon": 24.4728,
    "iata": "EPU",
    "elev_ft": "47",
+   "photo": {
+    "file": "img/towers/eepu.jpg",
+    "artist": "Paavo Pihelgas",
+    "license": "CC BY 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:P%C3%A4rnu_airport_terminal_20080610.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -3224,6 +3647,12 @@
    "lon": 22.8307,
    "iata": "KDL",
    "elev_ft": "18",
+   "photo": {
+    "file": "img/towers/eeka.jpg",
+    "artist": "Hiiumaamudeliklubi",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:K%C3%A4rdla_Lennujaam_Hiiumaal.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -3265,6 +3694,12 @@
    "lon": 25.2858,
    "iata": "VNO",
    "elev_ft": "648",
+   "photo": {
+    "file": "img/towers/eyvi.jpg",
+    "artist": "Augustas Didžgalvis",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:EYVI-VNO_by_Augustas_Didzgalvis.jpg"
+   },
    "connections": []
   },
   {
@@ -3300,6 +3735,12 @@
    "lon": 20.6518,
    "iata": "WMI",
    "elev_ft": "341",
+   "photo": {
+    "file": "img/towers/epmo.jpg",
+    "artist": "Rado-NDM",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Warsaw_Modlin_(cropped).jpg"
+   },
    "connections": []
   },
   {
@@ -3313,11 +3754,26 @@
    "vendors": [
     "Saab"
    ],
-   "ansp": "Brașov airport",
+   "ansp": "ROMATSA",
    "dates": [
     {
      "d": "2023-06-15",
      "t": "Flights began under remote air traffic control"
+    },
+    {
+     "d": "2022-02-08",
+     "t": "Saab receives order for the digital tower (customer: UTI-led consortium; ROMATSA operates the service)",
+     "u": "https://www.saab.com/newsroom/press-releases/2022/saab-receives-order-for-a-digital-tower-in-romania"
+    },
+    {
+     "d": "2023-06-15",
+     "t": "Remote air traffic service begins; first flight lands at Brașov",
+     "u": "https://romatsa.ro/en/a/evenimente/premiera-in-romania:-dirijarea-prin-tehnologia-remote-tower"
+    },
+    {
+     "d": "2024-08-18",
+     "t": "Camera feeds to Arad fail for about three hours; airspace around Brașov closed that evening, service restored about 22:30",
+     "u": "https://romania.europalibera.org/a/aeroport-brasov-ghimbav-defectiune-turn-virtual/33084366.html"
     }
    ],
    "facts": [
@@ -3328,10 +3784,18 @@
     {
      "t": "Saab received the order for a digital tower in Romania in 2022.",
      "u": "https://www.saab.com/newsroom/press-releases/2022/saab-receives-order-for-a-digital-tower-in-romania"
+    },
+    {
+     "t": "ROMATSA says the first flight under the remote tower service landed at Brașov-Ghimbav at 08:10 on 15 June, controlled from Arad.",
+     "u": "https://romatsa.ro/en/a/evenimente/premiera-in-romania:-dirijarea-prin-tehnologia-remote-tower"
+    },
+    {
+     "t": "Romanian press reported the airport as the only one in Romania with remote air traffic control; a fault on 18 August 2024 suspended service for a few hours.",
+     "u": "https://romania.europalibera.org/a/aeroport-brasov-ghimbav-defectiune-turn-virtual/33084366.html"
     }
    ],
-   "conf": "medium",
-   "controlled_from": "",
+   "conf": "high",
+   "controlled_from": "lrar",
    "program": "",
    "regulator": "",
    "note": "",
@@ -3339,39 +3803,66 @@
    "lon": 25.52287,
    "iata": "GHV",
    "elev_ft": "1740",
-   "connections": []
-  },
-  {
-   "id": "lrar",
-   "name": "Arad International Airport",
-   "icao": "LRAR",
-   "country": "Romania",
-   "cc": "RO",
-   "kind": "remote_tower",
-   "status": "unverified",
-   "vendors": [
-    "Saab"
-   ],
-   "ansp": "",
-   "controlled_from": "lrbv",
-   "facts": [
-    {
-     "t": "Wikipedia lists Arad as a remote operating site about 400 km from Brașov-Ghimbav.",
-     "u": "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
-    }
-   ],
-   "conf": "low",
-   "note": "Single secondary source; not independently confirmed.",
-   "program": "",
-   "regulator": "",
-   "dates": [],
-   "lat": 46.17614,
-   "lon": 21.26432,
-   "iata": "ARW",
-   "elev_ft": "352",
+   "photo": {
+    "file": "img/towers/lrbv.jpg",
+    "artist": "Whitepixels",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:RO_BV_Ghimbav_Airport_building_02.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
+     "id": "lrar",
+     "name": "ROMATSA Arad control centre (remote tower hub)"
+    }
+   ]
+  },
+  {
+   "id": "lrar",
+   "name": "ROMATSA Arad control centre (remote tower hub)",
+   "icao": "LRAR",
+   "country": "Romania",
+   "cc": "RO",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "ROMATSA",
+   "controlled_from": "lrbv",
+   "facts": [
+    {
+     "t": "ROMATSA says air traffic services for Brașov-Ghimbav are provided from Arad, almost 450 km away, from four working positions and a panoramic screen.",
+     "u": "https://romatsa.ro/en/a/evenimente/premiera-in-romania:-dirijarea-prin-tehnologia-remote-tower"
+    },
+    {
+     "t": "Saab's February 2022 order includes a linked control room at the ROMATSA air traffic control centre in Arad.",
+     "u": "https://www.saab.com/newsroom/press-releases/2022/saab-receives-order-for-a-digital-tower-in-romania"
+    }
+   ],
+   "conf": "high",
+   "note": "Plotted at Arad airport; the building within the airport is not specified in the sources.",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "lat": 46.1766,
+   "lon": 21.262,
+   "iata": "ARW",
+   "elev_ft": "352",
+   "photo": {
+    "file": "img/towers/lrar.jpg",
+    "artist": "Cristina SerbanHawkuletz at English Wikipedia",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Arad_09_approach.JPG"
+   },
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "lrbv",
+     "name": "Brașov-Ghimbav International Airport"
+    },
+    {
+     "rel": "serves",
      "id": "lrbv",
      "name": "Brașov-Ghimbav International Airport"
     }
@@ -3417,12 +3908,18 @@
    "conf": "high",
    "controlled_from": "",
    "program": "",
-   "regulator": "",
+   "regulator": "AESA (Spain)",
    "note": "",
    "lat": 42.2318,
    "lon": -8.62677,
    "iata": "VGO",
    "elev_ft": "856",
+   "photo": {
+    "file": "img/towers/levx.jpg",
+    "artist": "Fernando CaSal",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Aeropuerto_de_Vigo,_foto_aerea.jpg"
+   },
    "connections": []
   },
   {
@@ -3432,7 +3929,7 @@
    "country": "Spain",
    "cc": "ES",
    "kind": "remote_tower",
-   "status": "unverified",
+   "status": "cancelled",
    "vendors": [
     "Kongsberg"
    ],
@@ -3441,18 +3938,38 @@
     {
      "t": "Kongsberg was selected to supply its remote tower system for Menorca, with delivery stated as 2021; the remote location is not stated.",
      "u": "https://www.kongsberg.com/news/news-archive/20202/spains-menorca-airport-to-operate-with-kongsbergs-remote-tower-system/"
+    },
+    {
+     "t": "Menorca.info, 16 September 2026, refers to the 'failure of the virtual system' and reports that the 2027 to 2031 investment plan includes no new tower; the existing tower is still in use.",
+     "u": "https://www.menorca.info/menorca/local/2026/09/16/2709357/gobierno-aprueba-plan-inversiones-del-aeropuerto-menorca-torre-control.html"
+    },
+    {
+     "t": "Vigoe.es, 2 April 2025, calls Menorca a 'failed precedent' and says Menorca ended up abandoning the remote tower system.",
+     "u": "https://vigoe.es/vigo/local/surgen-dudas-sobre-la-futura-torre-de-control-remota-de-peinador-tras-el-precedente-fallido-de-menorca"
     }
    ],
-   "conf": "low",
-   "note": "No go-live notice found.",
+   "conf": "medium",
+   "note": "Spanish press describes the virtual tower as a failure and the physical tower is still in use. No official cancellation notice was found, so this is reported, not confirmed by Aena.",
    "controlled_from": "",
    "program": "",
    "regulator": "",
-   "dates": [],
+   "dates": [
+    {
+     "d": "2020-10",
+     "t": "Kongsberg selected to supply the remote tower system (delivery expected 2021)",
+     "u": "https://www.kongsberg.com/news/news-archive/20202/spains-menorca-airport-to-operate-with-kongsbergs-remote-tower-system/"
+    }
+   ],
    "lat": 39.8626,
    "lon": 4.21865,
    "iata": "MAH",
    "elev_ft": "302",
+   "photo": {
+    "file": "img/towers/lemh.jpg",
+    "artist": "Hugh Llewelyn",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Menorca_Airport_(7336476996).jpg"
+   },
    "connections": []
   },
   {
@@ -3488,6 +4005,12 @@
    "lon": 1.36382,
    "iata": "TLS",
    "elev_ft": "499",
+   "photo": {
+    "file": "img/towers/lfbo.jpg",
+    "artist": "Unknown author",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:TOULOUSE-AEROPORT.jpg"
+   },
    "connections": [
     {
      "rel": "serves",
@@ -3503,7 +4026,7 @@
    "country": "France",
    "cc": "FR",
    "kind": "remote_tower",
-   "status": "unverified",
+   "status": "planned",
    "vendors": [
     "Frequentis"
    ],
@@ -3523,16 +4046,30 @@
     {
      "t": "French press in December 2022 said the remote tower was planned for installation in 2024.",
      "u": "https://www.presse-citron.net/pour-la-premiere-fois-en-france-un-aeroport-va-etre-controle-a-distance/"
+    },
+    {
+     "t": "Le Journal Toulousain, 13 December 2022: Tours to be controlled from Toulouse-Blagnac from 2024, with Frequentis supplying the visualisation.",
+     "u": "https://www.lejournaltoulousain.fr/occitanie/haute-garonne/toulouse/tour-controle-aeroport-tours-delocalisee-toulouse-blagnac-188517/"
+    },
+    {
+     "t": "The air traffic controllers' union SNCTA, 1 March 2023, called the Blagnac remote tower centre project stalled and asked for a pause.",
+     "u": "https://www.sncta.fr/news/comtec-cda-projet-rtc-blagnac-crash-ou-remise-de-gaz-29552"
     }
    ],
    "conf": "low",
-   "note": "Schedules conflict; no go-live notice found.",
+   "note": "Schedules slipped: first end of 2023, then 2024. A union (SNCTA) said the project was stalled in March 2023. No go-live notice found as of 11 October 2026.",
    "program": "",
    "regulator": "",
    "lat": 47.4322,
    "lon": 0.72761,
    "iata": "TUF",
    "elev_ft": "357",
+   "photo": {
+    "file": "img/towers/lfot.jpg",
+    "artist": "Duch.seb",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tours_Val_de_Loire_airport.jpg"
+   },
    "connections": [
     {
      "rel": "controlled from",
@@ -3572,6 +4109,12 @@
    "lon": 17.947,
    "iata": "BDS",
    "elev_ft": "47",
+   "photo": {
+    "file": "img/towers/libr.jpg",
+    "artist": "Saggittarius A",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Aeroporto_di_Brindisi_dalla_pista.jpg"
+   },
    "connections": []
   },
   {
@@ -3588,12 +4131,21 @@
     {
      "d": "2022-09-21",
      "t": "Reported plan to replace the 1980s tower"
+    },
+    {
+     "d": "2022-09-21",
+     "t": "skyguide plans a virtual tower for Geneva (vendor and date not stated)",
+     "u": "https://www.worldradio.ch/news/bitesize-news/airport-control-tower-to-go-virtual"
     }
    ],
    "facts": [
     {
      "t": "Skyguide plans to replace the tower with a remote tower, initially on site.",
      "u": "https://worldradio.ch/news/bitesize-news/airport-control-tower-to-go-virtual"
+    },
+    {
+     "t": "skyguide said in September 2022 that Geneva's tower would close in favour of a virtual tower that would initially stay on site; no vendor or date is given.",
+     "u": "https://www.worldradio.ch/news/bitesize-news/airport-control-tower-to-go-virtual"
     }
    ],
    "conf": "low",
@@ -3605,6 +4157,12 @@
    "lon": 6.10895,
    "iata": "GVA",
    "elev_ft": "1411",
+   "photo": {
+    "file": "img/towers/lsgg.jpg",
+    "artist": "Schutz",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Geneva_airport_from_air.jpg"
+   },
    "connections": []
   },
   {
@@ -3634,12 +4192,18 @@
    ],
    "conf": "high",
    "controlled_from": "",
-   "regulator": "",
+   "regulator": "Transport Canada",
    "note": "",
    "lat": 44.2253,
    "lon": -76.5969,
    "iata": "YGK",
    "elev_ft": "305",
+   "photo": {
+    "file": "img/towers/cygk.jpg",
+    "artist": "Moodude34",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Norman_Rogers_Airport_Terminal_Departures.jpg"
+   },
    "connections": []
   },
   {
@@ -3658,12 +4222,21 @@
     {
      "d": "2019-10-18",
      "t": "smartVISION system installed"
+    },
+    {
+     "d": "2019-10-21",
+     "t": "Frequentis reports the remote tower installed at Santa Cruz",
+     "u": "https://www.aviationpros.com/airport-business/airport-infrastructure-operations/airport-technology/communications/press-release/21111194/frequentis-usa-inc-brazil-implements-south-americas-first-remote-air-traffic-control-tower-with-frequentis"
     }
    ],
    "facts": [
     {
      "t": "Frequentis and DECEA installed the first remote tower in South America at the Santa Cruz air base in October 2019.",
      "u": "https://canso.org/?p=11248"
+    },
+    {
+     "t": "Frequentis reported on 21 October 2019 that its smartVISION remote tower was installed at Santa Cruz in six months for DECEA's CISCEA, calling it the first in South America to provide actual remote ATC services.",
+     "u": "https://www.aviationpros.com/airport-business/airport-infrastructure-operations/airport-technology/communications/press-release/21111194/frequentis-usa-inc-brazil-implements-south-americas-first-remote-air-traffic-control-tower-with-frequentis"
     }
    ],
    "conf": "medium",
@@ -3675,6 +4248,12 @@
    "lon": -43.7191,
    "iata": "SNZ",
    "elev_ft": "10",
+   "photo": {
+    "file": "img/towers/sbsc.jpg",
+    "artist": "Rcandre",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hangar_de_Zeppelins.jpg"
+   },
    "connections": []
   },
   {
@@ -3726,6 +4305,7 @@
    "lon": -77.5575,
    "iata": "",
    "elev_ft": "389",
+   "photo": null,
    "connections": []
   },
   {
@@ -3769,6 +4349,12 @@
    "lon": -105.01127,
    "iata": "FNL",
    "elev_ft": "5016",
+   "photo": {
+    "file": "img/towers/kfnl.jpg",
+    "artist": "Jeffrey Beall",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Northern_Colorado_Regional_Airport.JPG"
+   },
    "connections": []
   },
   {
@@ -3807,6 +4393,10 @@
     {
      "t": "Frequentis reports its X10 voice system went live there; the CANSO story is dated 12 March 2026.",
      "u": "https://canso.org/?p=117565"
+    },
+    {
+     "t": "The FAA's Digital Tower Systems page (renamed from Remote Tower Systems, last updated 4 September 2026) says the FAA is evaluating designs at the Technical Center and will update it when (and if) it issues a System Design Approval.",
+     "u": "https://www.faa.gov/airports/planning_capacity/non_federal/digital_tower_systems"
     }
    ],
    "conf": "high",
@@ -3816,6 +4406,12 @@
    "lon": -81.7834,
    "iata": "BOW",
    "elev_ft": "125",
+   "photo": {
+    "file": "img/towers/kbow.jpg",
+    "artist": "US Geological Survey",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Bartow_Municipal_Airport_-_Florida.jpg"
+   },
    "connections": []
   },
   {
@@ -3855,6 +4451,7 @@
    "lon": -81.7533,
    "iata": "GIF",
    "elev_ft": "145",
+   "photo": null,
    "connections": [
     {
      "rel": "controlled from",
@@ -3895,6 +4492,7 @@
    "lon": -74.57751,
    "iata": "ACY",
    "elev_ft": "75",
+   "photo": null,
    "connections": []
   },
   {
@@ -3928,6 +4526,7 @@
    "lon": -78.3903,
    "iata": "",
    "elev_ft": "164",
+   "photo": null,
    "connections": []
   },
   {
@@ -3963,6 +4562,7 @@
    "lon": 38.11705,
    "iata": "ULH",
    "elev_ft": "2050",
+   "photo": null,
    "connections": []
   },
   {
@@ -3983,6 +4583,16 @@
     {
      "d": "2024-03-05",
      "t": "Airservices announces the digital tower"
+    },
+    {
+     "d": "2024-03-05",
+     "t": "Airservices announces a purpose-built digital aerodrome service for Western Sydney",
+     "u": "https://www.airservicesaustralia.com/airservices-australia-launches-nations-first-purpose-built-digital-air-traffic-control-service-at-western-sydney-international-airport"
+    },
+    {
+     "d": "2026-02-12",
+     "t": "Navy helicopter flight calibrates and validates the camera feeds; CASA reviewing safety cases",
+     "u": "https://australianaviation.com.au/2026/02/navy-and-airservices-test-western-sydneys-digital-tower/"
     }
    ],
    "facts": [
@@ -3993,16 +4603,36 @@
     {
      "t": "A July 2026 Frequentis article describes the digital work positions as in use.",
      "u": "https://www.boerse-online.de/dpa-afx/irw-news-dr-reuter-investor-relations-von-sydney-bis-muenchen-wie-frequentis-mit-digitalen-flugtowern-weltweit-neue-standards-fuer-die-zivile-und-militaerische-infrastruktur-setzt-541645.html"
+    },
+    {
+     "t": "Airservices says the airport will have no traditional tower and will be monitored by more than 20 cameras feeding a digital aerodrome service centre at Eastern Creek; partners are CDC and Frequentis Australasia.",
+     "u": "https://www.airservicesaustralia.com/airservices-australia-launches-nations-first-purpose-built-digital-air-traffic-control-service-at-western-sydney-international-airport"
+    },
+    {
+     "t": "Australian Aviation, 12 February 2026: not yet operational, CASA is reviewing the safety cases, and Airservices aims to bring it online in July (about 25 cameras on a 45 m mast).",
+     "u": "https://australianaviation.com.au/2026/02/navy-and-airservices-test-western-sydneys-digital-tower/"
     }
    ],
    "conf": "medium",
    "note": "Airport opening date and ATC go-live not confirmed here.",
-   "controlled_from": "",
+   "controlled_from": "eastern-creek-dac",
    "program": "",
-   "regulator": "",
+   "regulator": "CASA",
    "iata": "",
    "elev_ft": "",
-   "connections": []
+   "photo": {
+    "file": "img/towers/ysws.jpg",
+    "artist": "BulbazaurREX",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:WSI_airport_terminal_2025.jpg"
+   },
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "eastern-creek-dac",
+     "name": "Airservices Digital Aerodrome Service centre, Eastern Creek"
+    }
+   ]
   },
   {
    "id": "vhhh",
@@ -4037,6 +4667,7 @@
    "lon": 113.91486,
    "iata": "HKG",
    "elev_ft": "28",
+   "photo": null,
    "connections": []
   },
   {
@@ -4055,6 +4686,10 @@
     {
      "t": "NATS built a smart digital tower prototype for CAAS as a 22-month trial, with Searidge, ST Engineering and HungaroControl involved.",
      "u": "https://www.nats.aero/news/nats-wins-major-smart-digital-tower-contract-changi-airport/"
+    },
+    {
+     "t": "NATS was awarded the CAAS contract for a smart digital tower prototype at Changi (a 22-month project with Searidge cameras; HungaroControl and ST Engineering also named); the release gives no go-live.",
+     "u": "https://www.nats.aero/news/nats-wins-major-smart-digital-tower-contract-changi-airport/"
     }
    ],
    "conf": "medium",
@@ -4067,6 +4702,7 @@
    "lon": 103.994,
    "iata": "SIN",
    "elev_ft": "22",
+   "photo": null,
    "connections": []
   },
   {
@@ -4076,7 +4712,7 @@
    "country": "New Zealand",
    "cc": "NZ",
    "kind": "contingency",
-   "status": "unverified",
+   "status": "trial",
    "vendors": [
     "Frequentis"
    ],
@@ -4085,23 +4721,806 @@
     {
      "d": "2019-08-22",
      "t": "Frequentis announces the system"
+    },
+    {
+     "d": "2017-11-30",
+     "t": "Prototype digital tower trial announced at Auckland",
+     "u": "https://www.internationalairportreview.com/news/40553/auckland-trials-digital-air-traffic-control/"
     }
    ],
    "facts": [
     {
      "t": "Frequentis said its Digital Tower System would initially be used as a back-up contingency system.",
      "u": "https://www.frequentis.com/sites/default/files/pr/2019-08/20190822_FREQUENTIS_digitalTower_Auckland_IR_EN.pdf"
+    },
+    {
+     "t": "Airways New Zealand and Frequentis began trialling a prototype digital tower at Auckland on 30 November 2017; the prototype was not used to manage live traffic.",
+     "u": "https://www.internationalairportreview.com/news/40553/auckland-trials-digital-air-traffic-control/"
     }
    ],
    "conf": "low",
    "controlled_from": "",
    "program": "",
    "regulator": "",
-   "note": "",
+   "note": "A prototype was shown in 2017 and was not handling live traffic. Frequentis said in 2019 that its system would initially serve as a contingency backup. No later notice found.",
    "lat": -37.01199,
    "lon": 174.78633,
    "iata": "AKL",
    "elev_ft": "23",
+   "photo": {
+    "file": "img/towers/nzaa.jpg",
+    "artist": "Land Information New Zealand",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Auckland_International_Airport_2017_aerial.png"
+   },
+   "connections": []
+  },
+  {
+   "id": "eastern-creek-dac",
+   "name": "Airservices Digital Aerodrome Service centre, Eastern Creek",
+   "icao": "",
+   "country": "Australia",
+   "cc": "AU",
+   "kind": "rtc",
+   "status": "trial",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "Airservices Australia",
+   "regulator": "CASA",
+   "program": "airservices-das",
+   "lat": -33.801,
+   "lon": 150.856,
+   "conf": "medium",
+   "note": "Location approximate (suburb of Eastern Creek).",
+   "dates": [
+    {
+     "d": "2024-03-05",
+     "t": "Centre announced for Western Sydney",
+     "u": "https://www.airservicesaustralia.com/airservices-australia-launches-nations-first-purpose-built-digital-air-traffic-control-service-at-western-sydney-international-airport"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Airservices says air traffic services for Western Sydney will be provided from a digital aerodrome service centre at Eastern Creek.",
+     "u": "https://www.airservicesaustralia.com/airservices-australia-launches-nations-first-purpose-built-digital-air-traffic-control-service-at-western-sydney-international-airport"
+    },
+    {
+     "t": "Australian Aviation, February 2026, says the digital tower is not yet operational and is expected to open with the airport in 2026.",
+     "u": "https://australianaviation.com.au/2026/02/navy-and-airservices-test-western-sydneys-digital-tower/"
+    }
+   ],
+   "controlled_from": "",
+   "iata": "",
+   "elev_ft": "",
+   "photo": null,
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "ysws",
+     "name": "Western Sydney International Airport"
+    }
+   ]
+  },
+  {
+   "id": "adelaide-atc",
+   "name": "Airservices Adelaide centre (2012 remote tower trial hub)",
+   "icao": "",
+   "country": "Australia",
+   "cc": "AU",
+   "kind": "rtc",
+   "status": "cancelled",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Airservices Australia",
+   "program": "airservices-das",
+   "lat": -34.9462,
+   "lon": 138.5306,
+   "conf": "medium",
+   "note": "Plotted at Adelaide airport; the exact facility is not specified in the sources.",
+   "facts": [
+    {
+     "t": "The Saab and Airservices trial was to control aircraft at Alice Springs remotely from the Airservices facility in Adelaide, more than 1,500 km away.",
+     "u": "https://www.saab.com/newsroom/press-releases/2011/saab-and-airservices-australia-sign-contract-to-conduct-remote-atm-tower-trial"
+    }
+   ],
+   "controlled_from": "",
+   "regulator": "",
+   "dates": [],
+   "iata": "",
+   "elev_ft": "",
+   "photo": null,
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "ybas",
+     "name": "Alice Springs Airport (2012 remote tower trial)"
+    }
+   ]
+  },
+  {
+   "id": "yssy",
+   "name": "Sydney Airport (digital tower prototype)",
+   "icao": "YSSY",
+   "country": "Australia",
+   "cc": "AU",
+   "kind": "test_site",
+   "status": "trial",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "Airservices Australia",
+   "program": "airservices-das",
+   "dates": [
+    {
+     "d": "2019-11-15",
+     "t": "Airservices selects Searidge for a prototype digital tower at Sydney",
+     "u": "https://canso.org/airservices-australia-selects-searidge-for-digital-aerodrome-services-program/"
+    }
+   ],
+   "conf": "low",
+   "note": "The sources describe a prototype and an evaluation, not a service. No later notice found.",
+   "facts": [
+    {
+     "t": "CANSO, 15 November 2019: Airservices selected Searidge to deliver a prototype 4K display with a wide view of a Sydney runway, as a first step toward possible contingency use and use at other aerodromes.",
+     "u": "https://canso.org/airservices-australia-selects-searidge-for-digital-aerodrome-services-program/"
+    },
+    {
+     "t": "The Define stage was due to finish by March 2020.",
+     "u": "https://canso.org/airservices-australia-selects-searidge-for-digital-aerodrome-services-program/"
+    }
+   ],
+   "controlled_from": "",
+   "regulator": "",
+   "lat": -33.9461,
+   "lon": 151.177,
+   "iata": "SYD",
+   "elev_ft": "21",
+   "photo": {
+    "file": "img/towers/yssy.jpg",
+    "artist": "Andrew Harvey",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_Airport_(Kingsford_Smith)_-_aerial_view_(cropped).jpg"
+   },
+   "connections": []
+  },
+  {
+   "id": "ybas",
+   "name": "Alice Springs Airport (2012 remote tower trial)",
+   "icao": "YBAS",
+   "country": "Australia",
+   "cc": "AU",
+   "kind": "remote_tower",
+   "status": "cancelled",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Airservices Australia",
+   "controlled_from": "adelaide-atc",
+   "program": "airservices-das",
+   "dates": [
+    {
+     "d": "2011-06-01",
+     "t": "Saab and Airservices sign contract for a remote tower trial controlled from Adelaide",
+     "u": "https://www.saab.com/newsroom/press-releases/2011/saab-and-airservices-australia-sign-contract-to-conduct-remote-atm-tower-trial"
+    },
+    {
+     "d": "2012",
+     "t": "Trial run; network capability judged inadequate for a service",
+     "u": "https://www.frequentis.com/sites/default/files/news/2018-11/AustralianAviation_FrequentisArticle2018_11.pdf"
+    }
+   ],
+   "conf": "medium",
+   "note": "A trial that ended without a service, not a decommissioned operating tower.",
+   "facts": [
+    {
+     "t": "Saab's 1 June 2011 release says Airservices staff would control Alice Springs from Adelaide during the trial, with no change to existing ATC arrangements.",
+     "u": "https://www.saab.com/newsroom/press-releases/2011/saab-and-airservices-australia-sign-contract-to-conduct-remote-atm-tower-trial"
+    },
+    {
+     "t": "Airservices' executive said in a 2018 article that the trial exposed weaknesses in the data network and 'network capability was not adequate to provide an air traffic control service' at the time.",
+     "u": "https://www.frequentis.com/sites/default/files/news/2018-11/AustralianAviation_FrequentisArticle2018_11.pdf"
+    }
+   ],
+   "regulator": "",
+   "lat": -23.80659,
+   "lon": 133.90343,
+   "iata": "ASP",
+   "elev_ft": "1789",
+   "photo": null,
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "adelaide-atc",
+     "name": "Airservices Adelaide centre (2012 remote tower trial hub)"
+    }
+   ]
+  },
+  {
+   "id": "mosnov-rtc",
+   "name": "ŘLP planned remote tower centre, Mošnov (Ostrava)",
+   "icao": "",
+   "country": "Czech Republic",
+   "cc": "CZ",
+   "kind": "rtc",
+   "status": "planned",
+   "conf": "low",
+   "ansp": "ŘLP ČR",
+   "program": "",
+   "lat": 49.6963,
+   "lon": 18.1111,
+   "note": "Planned. In August 2023 the ŘLP chief said it should open in two to three years; a later report says construction had not started and an operational concept was still being drafted. No vendor is named.",
+   "dates": [
+    {
+     "d": "2023-08-19",
+     "t": "ŘLP chief says remote tower in Ostrava targeted within two to three years",
+     "u": "https://zdopravy.cz/virtualni-vez-provoz-na-letisti-v-budejovicich-se-bude-ridit-na-dalku-z-ostravy-172109/"
+    }
+   ],
+   "facts": [
+    {
+     "t": "ŘLP, the Czech air navigation provider, plans a remote tower at Mošnov near Ostrava to control České Budějovice, which could later serve other regional airports.",
+     "u": "https://zdopravy.cz/virtualni-vez-provoz-na-letisti-v-budejovicich-se-bude-ridit-na-dalku-z-ostravy-172109/"
+    },
+    {
+     "t": "A later Zdopravy.cz report says the stated deadline had passed, construction had not started at either site, and an operational concept and cost-benefit analysis come first. A floor of the Mošnov control tower was reserved in 2016.",
+     "u": "https://zdopravy.cz/nova-era-rizeni-letadel-virtualni-vez-budou-mit-i-v-polsku-pripravy-bezi-take-u-nas-256221/"
+    }
+   ],
+   "vendors": [],
+   "controlled_from": "",
+   "regulator": "",
+   "iata": "",
+   "elev_ft": "",
+   "photo": null,
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "lkcs",
+     "name": "České Budějovice Airport"
+    }
+   ]
+  },
+  {
+   "id": "lkcs",
+   "name": "České Budějovice Airport",
+   "icao": "LKCS",
+   "country": "Czech Republic",
+   "cc": "CZ",
+   "kind": "remote_tower",
+   "status": "planned",
+   "conf": "low",
+   "ansp": "ŘLP ČR",
+   "controlled_from": "mosnov-rtc",
+   "lat": 48.9458,
+   "lon": 14.4272,
+   "note": "Planned only. No vendor named and no approval or contract found.",
+   "dates": [
+    {
+     "d": "2022-09-01",
+     "t": "ŘLP confirms it is considering a remote tower for the airport",
+     "u": "https://www.aeroweb.cz/clanky/7831-letiste-ceske-budejovice-se-docka-rozsireni-provozu-pomuze-rlp"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Aeroweb.cz, 1 September 2022: ŘLP was considering a remote virtual tower for České Budějovice within three to four years; no vendor is named.",
+     "u": "https://www.aeroweb.cz/clanky/7831-letiste-ceske-budejovice-se-docka-rozsireni-provozu-pomuze-rlp"
+    },
+    {
+     "t": "Zdopravy.cz, 19 August 2023: all traffic including taxiing and parking would be controlled from Ostrava, probably starting as an on-request service.",
+     "u": "https://zdopravy.cz/virtualni-vez-provoz-na-letisti-v-budejovicich-se-bude-ridit-na-dalku-z-ostravy-172109/"
+    }
+   ],
+   "vendors": [],
+   "program": "",
+   "regulator": "",
+   "iata": "JCL",
+   "elev_ft": "1417",
+   "photo": {
+    "file": "img/towers/lkcs.jpg",
+    "artist": "Jana Sekyrová",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Leti%C5%A1t%C4%9B_%C4%8Cesk%C3%A9_Bud%C4%9Bjovice_(04).jpg"
+   },
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "mosnov-rtc",
+     "name": "ŘLP planned remote tower centre, Mošnov (Ostrava)"
+    }
+   ]
+  },
+  {
+   "id": "rjka",
+   "name": "Amami Airport (remote aerodrome air-ground service)",
+   "icao": "RJKA",
+   "country": "Japan",
+   "cc": "JP",
+   "kind": "remote_afis",
+   "status": "operational",
+   "conf": "high",
+   "vendors": [
+    "OKI"
+   ],
+   "ansp": "JCAB",
+   "regulator": "JCAB",
+   "program": "",
+   "lat": 28.4306,
+   "lon": 129.7125,
+   "note": "This is a remote aerodrome air-ground (RADIO) service from Naha, not remote air traffic control. Japan has no remote tower providing control service in the sources reviewed.",
+   "dates": [
+    {
+     "d": "2021-10-01",
+     "t": "Remote RADIO operation from Naha begins (Japan's first)",
+     "u": "https://www.oki.com/jp/press/2022/02/z21090.html"
+    },
+    {
+     "d": "2022-02-28",
+     "t": "OKI announces delivery of the RVA-19 system to the Civil Aviation Bureau",
+     "u": "https://www.oki.com/jp/press/2022/02/z21090.html"
+    }
+   ],
+   "facts": [
+    {
+     "t": "OKI says Amami began remote RADIO operation on 1 October 2021, with a flight information officer at Naha Airport providing air-ground service through its RVA-19 remote tower device.",
+     "u": "https://www.oki.com/jp/press/2022/02/z21090.html"
+    },
+    {
+     "t": "A July 2021 trade report describes Japan's remote tower work as research at the Electronic Navigation Research Institute, with a small remote air-ground system serving some low-traffic airports.",
+     "u": "https://www.jwing.net/news/40463"
+    }
+   ],
+   "controlled_from": "",
+   "iata": "ASJ",
+   "elev_ft": "27",
+   "photo": {
+    "file": "img/towers/rjka.jpg",
+    "artist": "ブルーノ",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Amami.airport.jpg"
+   },
+   "connections": []
+  },
+  {
+   "id": "namur-dtc",
+   "name": "skeyes digital tower control centre, Namur",
+   "icao": "",
+   "country": "Belgium",
+   "cc": "BE",
+   "kind": "rtc",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "skeyes",
+   "program": "skeyes-namur",
+   "conf": "high",
+   "lat": 50.4674,
+   "lon": 4.872,
+   "note": "Plotted at Namur; exact site approximate.",
+   "dates": [
+    {
+     "d": "2025",
+     "t": "Building completed",
+     "u": "https://annualreport.skeyes.be/en/innovation/digital-towers"
+    },
+    {
+     "d": "2027",
+     "t": "Planned to become operational (equipped in 2026)",
+     "u": "https://annualreport.skeyes.be/en/innovation/digital-towers"
+    }
+   ],
+   "facts": [
+    {
+     "t": "skeyes says the Namur building was completed in 2025, will be further equipped in 2026 and become operational in 2027; Liège and Charleroi will be controlled from it.",
+     "u": "https://annualreport.skeyes.be/en/innovation/digital-towers"
+    }
+   ],
+   "controlled_from": "",
+   "regulator": "",
+   "iata": "",
+   "elev_ft": "",
+   "photo": null,
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "ebci",
+     "name": "Charleroi Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "eblg",
+     "name": "Liège Airport"
+    }
+   ]
+  },
+  {
+   "id": "ebci",
+   "name": "Charleroi Airport",
+   "icao": "EBCI",
+   "country": "Belgium",
+   "cc": "BE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "skeyes",
+   "controlled_from": "namur-dtc",
+   "program": "skeyes-namur",
+   "conf": "high",
+   "lat": 50.4592,
+   "lon": 4.4538,
+   "facts": [
+    {
+     "t": "Charleroi and Liège are the first skeyes airports to get digital towers, controlled from Namur from 2027.",
+     "u": "https://annualreport.skeyes.be/en/innovation/digital-towers"
+    }
+   ],
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "iata": "CRL",
+   "elev_ft": "614",
+   "photo": {
+    "file": "img/towers/ebci.jpg",
+    "artist": "Eric Salard",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:CRL_AIRPORT_FROM_FLIGHT_DUS-CDG_A320_AIR_FRANCE_F-GFKY_(14544559166).jpg"
+   },
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "namur-dtc",
+     "name": "skeyes digital tower control centre, Namur"
+    }
+   ]
+  },
+  {
+   "id": "eblg",
+   "name": "Liège Airport",
+   "icao": "EBLG",
+   "country": "Belgium",
+   "cc": "BE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "skeyes",
+   "controlled_from": "namur-dtc",
+   "program": "skeyes-namur",
+   "conf": "high",
+   "lat": 50.6374,
+   "lon": 5.4432,
+   "facts": [
+    {
+     "t": "Charleroi and Liège are the first skeyes airports to get digital towers, controlled from Namur from 2027.",
+     "u": "https://annualreport.skeyes.be/en/innovation/digital-towers"
+    }
+   ],
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "iata": "LGG",
+   "elev_ft": "659",
+   "photo": {
+    "file": "img/towers/eblg.jpg",
+    "artist": "The original uploader was Vberger at French Wikipedia.",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Liege_airport.jpg"
+   },
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "namur-dtc",
+     "name": "skeyes digital tower control centre, Namur"
+    }
+   ]
+  },
+  {
+   "id": "ebbr-dttc",
+   "name": "skeyes Digital Tower Test Centre, Steenokkerzeel",
+   "icao": "",
+   "country": "Belgium",
+   "cc": "BE",
+   "kind": "test_site",
+   "status": "trial",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "skeyes",
+   "program": "skeyes-namur",
+   "conf": "high",
+   "lat": 50.904,
+   "lon": 4.49,
+   "note": "Plotted near Brussels Airport; exact site approximate.",
+   "dates": [
+    {
+     "d": "2024-05-31",
+     "t": "Digital Tower Test Centre unveiled",
+     "u": "https://www.saab.com/newsroom/press-releases/2024/saab-technology-in-new-digital-air-traffic-test-centre-in-belgium"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Saab's 31 May 2024 release says skeyes unveiled a Digital Tower Test Centre in Steenokkerzeel, a prototype for the Namur centre, built on Saab's Remote Tower solution, for training controllers.",
+     "u": "https://www.saab.com/newsroom/press-releases/2024/saab-technology-in-new-digital-air-traffic-test-centre-in-belgium"
+    }
+   ],
+   "controlled_from": "",
+   "regulator": "",
+   "iata": "",
+   "elev_ft": "",
+   "photo": null,
+   "connections": []
+  },
+  {
+   "id": "othh",
+   "name": "Hamad International Airport (hybrid virtual tower)",
+   "icao": "OTHH",
+   "lat": 25.2731,
+   "lon": 51.6081,
+   "country": "Qatar",
+   "cc": "QA",
+   "kind": "hybrid",
+   "status": "operational",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "Qatar CAA",
+   "regulator": "Qatar CAA",
+   "conf": "medium",
+   "dates": [
+    {
+     "d": "2025-12-01",
+     "t": "Searidge and AIN report the virtual tower in operational service",
+     "u": "https://backend.ainonline.com/aviation-news/aerospace/2025-12-01/hamad-international-activates-virtual-tower-qatar"
+    }
+   ],
+   "facts": [
+    {
+     "t": "AIN, 1 December 2025: Hamad's virtual tower, built on Searidge's Chorus platform, 'has entered operational service' under a hybrid model adopted by the Qatar CAA; two positions are in the main tower and two in the backup and approach training centre.",
+     "u": "https://backend.ainonline.com/aviation-news/aerospace/2025-12-01/hamad-international-activates-virtual-tower-qatar"
+    },
+    {
+     "t": "NATS lists Hamad as a certified hybrid digital tower and the first large-scale digital tower certified by safety regulators in the Middle East.",
+     "u": "https://www.nats.aero/our-solutions/digital-towers/"
+    }
+   ],
+   "controlled_from": "",
+   "program": "",
+   "note": "",
+   "iata": "DOH",
+   "elev_ft": "13",
+   "photo": {
+    "file": "img/towers/othh.jpg",
+    "artist": "Contrarian Metal Resources President Jim Halliday: jhalliday@metalresources.net",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hamad_International_Airport_Qatar.jpg"
+   },
+   "connections": []
+  },
+  {
+   "id": "bgqq",
+   "name": "Qaqortoq Airport (new, local digital tower)",
+   "icao": "",
+   "country": "Greenland",
+   "cc": "GL",
+   "kind": "digital_tower",
+   "status": "planned",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "",
+   "conf": "low",
+   "lat": 60.7164,
+   "lon": -46.0297,
+   "note": "Plotted at Qaqortoq town; exact site approximate. Frequentis says similar systems are already in place at Nuuk and Ilulissat, but gives no dates, so those are not listed here.",
+   "facts": [
+    {
+     "t": "Frequentis was awarded a contract (via the construction firm COMSA) for a Local Digital Tower at the new Qaqortoq airport; it describes a vision of centralised control from Nuuk.",
+     "u": "https://www.airport-technology.com/contractors/traffic/frequentis/pressreleases/frequentis-digital-tower-solution-greenland/"
+    }
+   ],
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "iata": "",
+   "elev_ft": "",
+   "photo": null,
+   "connections": []
+  },
+  {
+   "id": "nznv",
+   "name": "Invercargill Airport",
+   "icao": "NZNV",
+   "country": "New Zealand",
+   "cc": "NZ",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "Airways New Zealand",
+   "conf": "low",
+   "lat": -46.4124,
+   "lon": 168.3129,
+   "note": "Contract awarded in 2019 with go-live expected in 2020. No go-live notice found.",
+   "dates": [
+    {
+     "d": "2019-02-27",
+     "t": "Airways awards Frequentis the contract for the first New Zealand digital tower",
+     "u": "https://www.airport-technology.com/news/frequentis-invercargill-airport/"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Airways New Zealand awarded Frequentis a contract for a remotely operated digital tower at Invercargill; controllers would start at the airfield and later move to a hub, with operation expected by 2020.",
+     "u": "https://www.airport-technology.com/news/frequentis-invercargill-airport/"
+    }
+   ],
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "iata": "IVC",
+   "elev_ft": "5",
+   "photo": null,
+   "connections": []
+  },
+  {
+   "id": "saez",
+   "name": "Buenos Aires Ezeiza International Airport",
+   "icao": "SAEZ",
+   "country": "Argentina",
+   "cc": "AR",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "",
+   "conf": "low",
+   "lat": -34.8222,
+   "lon": -58.5358,
+   "note": "Vendor page only; customer and dates not stated. Treat as unconfirmed.",
+   "facts": [
+    {
+     "t": "Frequentis says Ezeiza will receive an airport camera system as a first step toward what it calls South America's first remote virtual tower, with tower control to follow completion of a new tower.",
+     "u": "https://www.frequentis.com/en/pr/frequentis-deploy-south-americas-first-remote-virtual-tower-buenos-aires-international-airport"
+    }
+   ],
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "iata": "EZE",
+   "elev_ft": "67",
+   "photo": {
+    "file": "img/towers/saez.jpg",
+    "artist": "Pierre Markuse from Hamm, Germany",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ezeiza_International_Airport_satellite.jpg"
+   },
+   "connections": []
+  },
+  {
+   "id": "zsjh",
+   "name": "Chizhou Jiuhuashan Airport (remote tower trial)",
+   "icao": "ZSJH",
+   "country": "China",
+   "cc": "CN",
+   "kind": "remote_tower",
+   "status": "trial",
+   "conf": "medium",
+   "ansp": "CAAC",
+   "regulator": "CAAC",
+   "lat": 30.7403,
+   "lon": 117.6856,
+   "note": "A trial under the CAAC. The paper does not name a vendor.",
+   "dates": [
+    {
+     "d": "2021-09",
+     "t": "Remote tower optical system installed",
+     "u": "https://www.icao.int/sites/default/files/APAC/Meetings/2024/2024%20SURICG-9/4-Information%20Papers/IP07_CHN-AI.7-Trial-Application-of-Remote-Tower-Optical-System-Technology-in-Civil-Aviation-Industry-of-China.pdf"
+    }
+   ],
+   "facts": [
+    {
+     "t": "A Chinese paper to ICAO describes a remote tower optical system installed at Chizhou in September 2021 and operated from the Anhui ATC Bureau about 180 km away; trial operations, with full remote service planned after trial and transition phases.",
+     "u": "https://www.icao.int/sites/default/files/APAC/Meetings/2024/2024%20SURICG-9/4-Information%20Papers/IP07_CHN-AI.7-Trial-Application-of-Remote-Tower-Optical-System-Technology-in-Civil-Aviation-Industry-of-China.pdf"
+    }
+   ],
+   "vendors": [],
+   "controlled_from": "",
+   "program": "",
+   "iata": "",
+   "elev_ft": "",
+   "photo": null,
+   "connections": []
+  },
+  {
+   "id": "zwnl",
+   "name": "Xinyuan Nalati Airport (remote tower trial)",
+   "icao": "ZWNL",
+   "country": "China",
+   "cc": "CN",
+   "kind": "remote_tower",
+   "status": "trial",
+   "conf": "low",
+   "ansp": "Xinjiang Airport Group",
+   "regulator": "CAAC",
+   "lat": 43.4318,
+   "lon": 83.3786,
+   "note": "One report, May 2020; no later notice found.",
+   "dates": [
+    {
+     "d": "2020-05-22",
+     "t": "China Express flight controlled remotely from Urumqi in what Aviation Week called China's first remote tower operation",
+     "u": "https://ngstage.aviationweek.com/air-transport/safety-ops-regulation/china-trials-remote-tower-operations-xinjiang"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Aviation Week, 22 May 2020: a China Express Airlines flight was controlled remotely from the Xinjiang Airport Group's centre in Urumqi, 385 km away, at Xinyuan Nalati.",
+     "u": "https://ngstage.aviationweek.com/air-transport/safety-ops-regulation/china-trials-remote-tower-operations-xinjiang"
+    }
+   ],
+   "vendors": [],
+   "controlled_from": "",
+   "program": "",
+   "iata": "NLT",
+   "elev_ft": "3050",
+   "photo": null,
+   "connections": []
+  },
+  {
+   "id": "lfvm",
+   "name": "Miquelon Airport (remote from Saint-Pierre)",
+   "icao": "LFVM",
+   "country": "France",
+   "cc": "FR",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "DSNA",
+   "conf": "low",
+   "lat": 47.0958,
+   "lon": -56.3803,
+   "note": "Selected in 2016. NATS lists a Miquelon and Saint-Pierre digital tower as a reference, while a union document calls earlier French attempts failures. Neither gives a service date.",
+   "dates": [
+    {
+     "d": "2016-03-09",
+     "t": "DSNA selects Searidge's remote tower for Miquelon, to be controlled from Saint-Pierre",
+     "u": "https://militaryaerospace.com/commercial-aerospace/article/14228780/french-ansp-selects-searidge-remote-tower-for-remote-management-of-miquelon-airport"
+    }
+   ],
+   "facts": [
+    {
+     "t": "DSNA selected Searidge in March 2016 to remote Miquelon from Saint-Pierre, about 40 km away; cameras to be installed at Miquelon.",
+     "u": "https://militaryaerospace.com/commercial-aerospace/article/14228780/french-ansp-selects-searidge-remote-tower-for-remote-management-of-miquelon-airport"
+    },
+    {
+     "t": "NATS's digital tower page lists Miquelon and Saint-Pierre as a digital tower where controllers manage both airfields remotely from one location; no date is given.",
+     "u": "https://www.nats.aero/our-solutions/digital-towers/"
+    }
+   ],
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "iata": "MQC",
+   "elev_ft": "10",
+   "photo": {
+    "file": "img/towers/lfvm.jpg",
+    "artist": "NASA World Wind",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Miquelon_Airport.jpg"
+   },
    "connections": []
   }
  ]

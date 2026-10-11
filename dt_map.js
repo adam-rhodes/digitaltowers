@@ -85,10 +85,11 @@ window.DTMap=function(T){
     if(fly)map.flyTo({center:[t.lon,t.lat],zoom:Math.max(map.getZoom(),window.innerWidth<820?5.2:5.6),duration:900,padding:window.innerWidth<820?{bottom:window.innerHeight*.5}:{left:380}});
     var facts=t.facts.slice(0,3).map(function(f){return '<li>'+esc(f.t)+'<a class="src" href="'+esc(f.u)+'" rel="noopener" target="_blank">'+esc(host(f.u))+'</a></li>';}).join("");
     var conn=t.connections.slice(0,8).map(function(c){return '<button class="chip" type="button" data-id="'+esc(c.id)+'">'+esc(c.rel)+": "+esc(c.name)+'</button>';}).join(" ");
-    detail.innerHTML='<button class="chip" type="button" id="mback">All towers</button><h2>'+esc(t.name)+'</h2><p><span class="pill st-'+t.status+'">'+LABEL[t.status]+'</span> <span class="tag conf-'+t.conf+'">confidence '+t.conf+'</span></p>'
+    var ph=t.photo?'<div class="mphoto"><img src="/'+esc(t.photo.file)+'" alt="" loading="lazy"><div class="cr">Photo: '+esc(t.photo.artist)+', <a href="'+esc(t.photo.page)+'" rel="noopener" target="_blank">'+esc(t.photo.license)+'</a>, via Wikimedia Commons</div></div>':'<div class="mphoto"><div class="ph0">'+esc(t.icao||t.country)+'</div><div class="cr">No openly licensed photo found yet.</div></div>';
+    detail.innerHTML='<button class="chip" type="button" id="mback">All towers</button><h2>'+esc(t.name)+'</h2><p><span class="pill st-'+t.status+'">'+LABEL[t.status]+'</span> <span class="tag conf-'+t.conf+'">confidence '+t.conf+'</span></p>'+ph
      +'<dl class="kv small" style="margin:12px 0"><dt>ICAO</dt><dd>'+esc(t.icao||"n/a")+'</dd><dt>Country</dt><dd>'+esc(t.country)+'</dd><dt>Vendor</dt><dd>'+esc(t.vendors.join(", ")||"not named in sources")+'</dd><dt>Provider</dt><dd>'+esc(t.ansp||"n/a")+'</dd></dl>'
      +'<ul class="facts small">'+facts+'</ul>'+(conn?'<p class="xs faint" style="margin:14px 0 6px">Connections</p><div style="display:flex;gap:6px;flex-wrap:wrap">'+conn+'</div>':'')
-     +'<p style="margin-top:16px"><a class="btn primary" href="/towers/'+esc(t.id)+'/">Open full page</a></p>';
+     +'<p style="margin-top:16px"><a class="btn primary" href="/towers/'+esc(t.id)+'/">Open full page</a> <a class="btn" href="/connections/?focus='+esc(t.id)+'">Connections</a></p>';
     detail.hidden=false;document.getElementById("mfilters").hidden=true;list.hidden=true;
     document.getElementById("mback").addEventListener("click",close);
     detail.querySelectorAll("[data-id]").forEach(function(b){b.addEventListener("click",function(){open(b.getAttribute("data-id"),true);});});
