@@ -3,6 +3,7 @@
 Usage: build.py [--deploy]. Deploy rsyncs dist/ to /var/www/digitaltowers (keeping docs/ and the live ADS-B data)."""
 import os, sys, json, html, re, shutil, datetime, subprocess, collections, glob
 BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE)
 DIST = BASE + "/dist"
 SITE = "https://digitaltowers.org"
 WEB = "/var/www/digitaltowers"
@@ -42,7 +43,7 @@ ICON = {
  "more": '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>',
 }
 LOGO = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#151821"/><path d="M11 25l2-12h6l2 12" fill="none" stroke="#7aa7ff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 13h13l-1.5-4h-10z" fill="#5b8dd9"/><path d="M16 9V5.5" stroke="#7aa7ff" stroke-width="1.8" stroke-linecap="round"/></svg>'
-NAV = [("Map", "/map/"), ("Towers", "/towers/"), ("Connections", "/connections/"), ("Timeline", "/timeline/"), ("News", "/news/"), ("United States", "/united-states/"), ("Vendors", "/vendors/"), ("About", "/about/")]
+NAV = [("Map", "/map/"), ("Towers", "/towers/"), ("Connections", "/connections/"), ("Future", "/future/"), ("Timeline", "/timeline/"), ("News", "/news/"), ("United States", "/united-states/"), ("Vendors", "/vendors/"), ("About", "/about/")]
 TABS = [("Home", "/", "home"), ("Map", "/map/", "map"), ("Towers", "/towers/", "list"), ("News", "/news/", "news"), ("More", "/about/", "more")]
 PAGES = []  # (url, lastmod)
 
@@ -64,7 +65,7 @@ def tabbar(path):
     return '<nav class="tabbar" aria-label="Tabs">' + "".join(f'<a href="{u}"{cur(u)}>{ICON[i]}<span>{n}</span></a>' for n, u, i in TABS) + '</nav>'
 def footer():
     return f'''<footer><div class="wrap"><div class="cols2"><div><b style="color:var(--ink)">Digital Towers</b><p style="margin-top:8px;max-width:46ch">An independent reference to remote and digital air traffic control towers, built from public sources only. Not affiliated with, endorsed by, or speaking for the FAA or any other government body. Not for operational use.</p><p class="xs faint">Data built {NOW.strftime("%-d %b %Y %H:%M")} UTC. <a href="/about/">How this is sourced</a></p></div>
-<div><h4>Browse</h4><ul><li><a href="/map/">World map</a></li><li><a href="/towers/">All towers</a></li><li><a href="/countries/">Countries</a></li><li><a href="/vendors/">Vendors</a></li><li><a href="/operators/">Service providers</a></li><li><a href="/regulators/">Regulators and standards</a></li><li><a href="/connections/">Connections</a></li><li><a href="/timeline/">Timeline</a></li><li><a href="/coverage/">Coverage and gaps</a></li></ul></div>
+<div><h4>Browse</h4><ul><li><a href="/map/">World map</a></li><li><a href="/towers/">All towers</a></li><li><a href="/countries/">Countries</a></li><li><a href="/vendors/">Vendors</a></li><li><a href="/operators/">Service providers</a></li><li><a href="/regulators/">Regulators and standards</a></li><li><a href="/connections/">Connections</a></li><li><a href="/timeline/">Timeline</a></li><li><a href="/coverage/">Coverage and gaps</a></li><li><a href="/future/">Future state (hypothetical)</a></li></ul></div>
 <div><h4>Read</h4><ul><li><a href="/news/">News</a> · <a href="/feed.xml">Feed</a></li><li><a href="/united-states/">United States</a></li><li><a href="/what-is-a-digital-tower/">What is a digital tower</a></li><li><a href="/library/">Library</a></li><li><a href="/data/">Data downloads</a></li><li><a href="https://github.com/adam-rhodes/digitaltowers">Source on GitHub</a></li></ul></div></div></div></footer>'''
 def page(path, title, desc, body, extra_head="", scripts="", body_class="", noindex=False, jsonld=None, og_img=None, lastmod=None):
     out = head(title, desc, path, extra_head, og_img, noindex, jsonld) + f'<body class="{body_class}">{top(path)}<main id="main">{body}</main>' + ("" if "maponly" in body_class else footer()) + tabbar(path) + scripts + '</body></html>'
@@ -136,7 +137,7 @@ def build_home():
         vcards += f'<a class="card flat" href="/vendors/{v["id"]}/" style="color:var(--ink)"><h3>{esc(v["name"])}</h3><p class="mute small" style="margin:6px 0 10px">{esc(v["country"])}</p><span class="tag">{n} sites</span></a>'
     body = f'''<div class="wrap"><section class="hero"><div class="eyebrow">Reference</div><h1>Tracking digital and remote towers worldwide.</h1>
 <p class="lede">Every fact links to its public source, every site carries a status and a confidence label, and the news below refreshes from public feeds. Coverage is not complete, and unverified sites are marked as such.</p>
-<div class="cta"><a class="btn primary" href="/map/">Open the world map</a><a class="btn" href="/towers/">Browse all towers</a><a class="btn" href="/united-states/">United States status</a><a class="btn" href="/connections/">How towers connect</a></div>
+<div class="cta"><a class="btn primary" href="/map/">Open the world map</a><a class="btn" href="/towers/">Browse all towers</a><a class="btn" href="/united-states/">United States status</a><a class="btn" href="/connections/">How towers connect</a><a class="btn" href="/future/">Future state</a></div>
 <div class="stats"><div class="stat"><b>{len(T)}</b><span>sites mapped</span></div><div class="stat"><b>{ops}</b><span>operational</span></div><div class="stat"><b>{status_counts["trial"]}</b><span>trial</span></div><div class="stat"><b>{status_counts["planned"]}</b><span>planned</span></div><div class="stat"><b>{status_counts.get("unverified",0)}</b><span>unverified</span></div><div class="stat"><b>{META["countries"]}</b><span>countries</span></div></div>
 <p class="small mute" style="margin-top:16px;max-width:74ch">{len(T)} sites = {", ".join(str(v) + " " + k for k, v in status_counts.most_common())}. {sum(1 for t in T if t["kind"] in ("remote_tower","rtc","digital_tower","remote_afis"))} are remote towers, centres, digital towers or remote air-ground services; the other {sum(1 for t in T if t["kind"] not in ("remote_tower","rtc","digital_tower","remote_afis"))} are hybrid, contingency or test facilities. <a href="/coverage/">What is not covered</a>.</p><div class="strip">{strip}</div><p class="credit">Photos from Wikimedia Commons under open licences; credits on each tower page.</p></section>
 <section class="section"><div class="head"><h2>Latest</h2><a href="/news/">All news</a></div><div class="news">{nl}</div></section>
@@ -387,6 +388,7 @@ def main():
     for t in T: build_tower(t)
     build_countries(); build_entities(); build_us(); build_static(); build_map()
     import dt_views; dt_views.build_all(sys.modules[__name__])
+    import dt_future; dt_future.build_all(sys.modules[__name__])
     nred = build_redirects(); build_misc()
     print("built pages", len(PAGES), "redirect stubs", nred, "towers", len(T))
     if "--deploy" in sys.argv: deploy()
