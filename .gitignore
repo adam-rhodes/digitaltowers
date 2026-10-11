@@ -1,0 +1,14 @@
+dist/
+backups/
+tiles/
+fonts/
+img/
+bin/
+vendor/
+old/
+ts_work/
+__pycache__/
+data/ourairports.csv
+data/news_queue.json
+data/news_status.json
+*.tgz

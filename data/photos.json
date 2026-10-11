@@ -1,0 +1,704 @@
+{
+ "ENRA": {
+  "file": "img/towers/enra.jpg",
+  "title": "Mo I Rana Airport.JPG",
+  "artist": "Skistar",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mo_I_Rana_Airport.JPG",
+  "w": 1280,
+  "h": 769
+ },
+ "ESOW": {
+  "file": "img/towers/esow.jpg",
+  "title": "Stockholm-Västerås flygplats.jpg",
+  "artist": "Dependability",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stockholm-V%C3%A4ster%C3%A5s_flygplats.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "ENBO": {
+  "file": "img/towers/enbo.jpg",
+  "title": "Two F-16 at Bodø Main Air Station.jpg",
+  "artist": "Ssgt. Rodney K. Prouty",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Two_F-16_at_Bod%C3%B8_Main_Air_Station.jpg",
+  "w": 1280,
+  "h": 839
+ },
+ "NZAA": {
+  "file": "img/towers/nzaa.jpg",
+  "title": "Auckland International Airport 2017 aerial.png",
+  "artist": "Land Information New Zealand",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Auckland_International_Airport_2017_aerial.png",
+  "w": 1280,
+  "h": 870
+ },
+ "EGCC": {
+  "file": "img/towers/egcc.jpg",
+  "title": "Manchester Airport EGCC.jpg",
+  "artist": "320jacko",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Manchester_Airport_EGCC.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EGLC": {
+  "file": "img/towers/eglc.jpg",
+  "title": "London City Airport (December 2025).jpg",
+  "artist": "Alexander Baxevanis",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:London_City_Airport_(December_2025).jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EFMA": {
+  "file": "img/towers/efma.jpg",
+  "title": "Mariehamn Airport.jpg",
+  "artist": "Egon Eagle",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Mariehamn_Airport.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EFTU": {
+  "file": "img/towers/eftu.jpg",
+  "title": "Turun lentoasema.jpg",
+  "artist": "kallerna",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Turun_lentoasema.jpg",
+  "w": 1280,
+  "h": 844
+ },
+ "EFOU": {
+  "file": "img/towers/efou.jpg",
+  "title": "Oulun lentoasema,C0020-3.jpg",
+  "artist": "Arto häkkilä",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Oulun_lentoasema,C0020-3.jpg",
+  "w": 1280,
+  "h": 420
+ },
+ "EGLF": {
+  "file": "img/towers/eglf.jpg",
+  "title": "Farnborough2008-073.jpg",
+  "artist": "MilborneOne",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Farnborough2008-073.jpg",
+  "w": 1280,
+  "h": 854
+ },
+ "EFVA": {
+  "file": "img/towers/efva.jpg",
+  "title": "Vaasa Airport 20190609.jpg",
+  "artist": "Santeri Viinamäki",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vaasa_Airport_20190609.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "EICK": {
+  "file": "img/towers/eick.jpg",
+  "title": "3.5.1 Flughafen Cork. Irland.JPG",
+  "artist": "J.Stiegler",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:3.5.1_Flughafen_Cork._Irland.JPG",
+  "w": 1280,
+  "h": 960
+ },
+ "EFKT": {
+  "file": "img/towers/efkt.jpg",
+  "title": "Kittilä airport.jpg",
+  "artist": "Magic Foundry",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kittil%C3%A4_airport.jpg",
+  "w": 1280,
+  "h": 857
+ },
+ "EPMO": {
+  "file": "img/towers/epmo.jpg",
+  "title": "Warsaw Modlin (cropped).jpg",
+  "artist": "Rado-NDM",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Warsaw_Modlin_(cropped).jpg",
+  "w": 1280,
+  "h": 705
+ },
+ "LEVX": {
+  "file": "img/towers/levx.jpg",
+  "title": "Aeropuerto de Vigo, foto aerea.jpg",
+  "artist": "Fernando CaSal",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aeropuerto_de_Vigo,_foto_aerea.jpg",
+  "w": 1280,
+  "h": 755
+ },
+ "LRAR": {
+  "file": "img/towers/lrar.jpg",
+  "title": "Arad 09 approach.JPG",
+  "artist": "Cristina SerbanHawkuletz at English Wikipedia",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Arad_09_approach.JPG",
+  "w": 1280,
+  "h": 720
+ },
+ "KACY": {
+  "file": "img/towers/kacy.jpg",
+  "title": "Viper visuals 140629-Z-NI803-062.jpg",
+  "artist": "Tech. Sgt. Matt Hecht",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Viper_visuals_140629-Z-NI803-062.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "EGPE": {
+  "file": "img/towers/egpe.jpg",
+  "title": "Inverness air logo.svg",
+  "artist": "Highlands and Islands Airports Limited (HIAL); vectorised by 20Panorama15",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Inverness_air_logo.svg",
+  "w": 1280,
+  "h": 418
+ },
+ "EEKA": {
+  "file": "img/towers/eeka.jpg",
+  "title": "Kärdla Lennujaam Hiiumaal.jpg",
+  "artist": "Hiiumaamudeliklubi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:K%C3%A4rdla_Lennujaam_Hiiumaal.jpg",
+  "w": 1280,
+  "h": 719
+ },
+ "ENKR": {
+  "file": "img/towers/enkr.jpg",
+  "title": "Kirkenes Airport 20081006.jpg",
+  "artist": "Felix Maschek, Hamburg.",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Kirkenes_Airport_20081006.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "ESNQ": {
+  "file": "img/towers/esnq.jpg",
+  "title": "Kiruna flygplats.jpg",
+  "artist": "Uploaded by Stahlkocher",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kiruna_flygplats.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EEPU": {
+  "file": "img/towers/eepu.jpg",
+  "title": "Pärnu airport terminal 20080610.jpg",
+  "artist": "Paavo Pihelgas",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:P%C3%A4rnu_airport_terminal_20080610.jpg",
+  "w": 1280,
+  "h": 457
+ },
+ "ENSR": {
+  "file": "img/towers/ensr.jpg",
+  "title": "Sorkjosen-lufthavn-runway.jpg",
+  "artist": "Algkalv (talk)",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sorkjosen-lufthavn-runway.jpg",
+  "w": 1280,
+  "h": 719
+ },
+ "LFOT": {
+  "file": "img/towers/lfot.jpg",
+  "title": "Tours Val de Loire airport.jpg",
+  "artist": "Duch.seb",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tours_Val_de_Loire_airport.jpg",
+  "w": 1280,
+  "h": 857
+ },
+ "ESKS": {
+  "file": "img/towers/esks.jpg",
+  "title": "Sälen airport 20200105 144437.jpg",
+  "artist": "Bengt-Inge Larsson",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:S%C3%A4len_airport_20200105_144437.jpg",
+  "w": 1280,
+  "h": 720
+ },
+ "KFNL": {
+  "file": "img/towers/kfnl.jpg",
+  "title": "Northern Colorado Regional Airport.JPG",
+  "artist": "Jeffrey Beall",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Northern_Colorado_Regional_Airport.JPG",
+  "w": 1280,
+  "h": 612
+ },
+ "EGDG": {
+  "file": "img/towers/egdg.jpg",
+  "title": "Shackleton Aircraft near entrance to RAF St Mawgan - geograph.org.uk - 30408.jpg",
+  "artist": "Robin Phillips",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shackleton_Aircraft_near_entrance_to_RAF_St_Mawgan_-_geograph.org.uk_-_30408.jpg",
+  "w": 1280,
+  "h": 846
+ },
+ "SBSC": {
+  "file": "img/towers/sbsc.jpg",
+  "title": "Hangar de Zeppelins.jpg",
+  "artist": "Rcandre",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hangar_de_Zeppelins.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "YSWS": {
+  "file": "img/towers/ysws.jpg",
+  "title": "WSI airport terminal 2025.jpg",
+  "artist": "BulbazaurREX",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:WSI_airport_terminal_2025.jpg",
+  "w": 1280,
+  "h": 720
+ },
+ "LRBV": {
+  "file": "img/towers/lrbv.jpg",
+  "title": "RO BV Ghimbav Airport building 02.jpg",
+  "artist": "Whitepixels",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:RO_BV_Ghimbav_Airport_building_02.jpg",
+  "w": 1280,
+  "h": 640
+ },
+ "ESNU": {
+  "file": "img/towers/esnu.jpg",
+  "title": "Umeå Flygplats-20080726.jpg",
+  "artist": "MikaelLindmark",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ume%C3%A5_Flygplats-20080726.jpg",
+  "w": 1280,
+  "h": 637
+ },
+ "ENSS": {
+  "file": "img/towers/enss.jpg",
+  "title": "Vardø Airport.jpg",
+  "artist": "Fanny Schertzer",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vard%C3%B8_Airport.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "ESNZ": {
+  "file": "img/towers/esnz.jpg",
+  "title": "Åre östersund flygplats.jpg",
+  "artist": "Andreas Eriksson",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:%C3%85re_%C3%B6stersund_flygplats.jpg",
+  "w": 1280,
+  "h": 695
+ },
+ "ENOV": {
+  "file": "img/towers/enov.jpg",
+  "title": "Ørsta Volda lufthamn Hovden.jpg",
+  "artist": "Egil Arne",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%C3%98rsta_Volda_lufthamn_Hovden.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "ENML": {
+  "file": "img/towers/enml.jpg",
+  "title": "Molde Airport.jpg",
+  "artist": "Stryn",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Molde_Airport.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "ENSD": {
+  "file": "img/towers/ensd.jpg",
+  "title": "Sandane Airport Anda.jpg",
+  "artist": "LK-Nor",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sandane_Airport_Anda.jpg",
+  "w": 1280,
+  "h": 768
+ },
+ "ENST": {
+  "file": "img/towers/enst.jpg",
+  "title": "Sandnessjøen lufthavn, Stokka.jpg",
+  "artist": "Martin Dahl",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sandnessj%C3%B8en_lufthavn,_Stokka.jpg",
+  "w": 1280,
+  "h": 627
+ },
+ "ENSG": {
+  "file": "img/towers/ensg.jpg",
+  "title": "Sogndal-lufthamn-Haukåsen-Norway.jpg",
+  "artist": "Peter John Acklam",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Sogndal-lufthamn-Hauk%C3%A5sen-Norway.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "ENSH": {
+  "file": "img/towers/ensh.jpg",
+  "title": "Svolvaer-lufthavn.jpg",
+  "artist": "Algkalv (talk)",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Svolvaer-lufthavn.jpg",
+  "w": 1280,
+  "h": 719
+ },
+ "ENBS": {
+  "file": "img/towers/enbs.jpg",
+  "title": "Batsfjord-lufthavn.jpg",
+  "artist": "Algkalv (talk)",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Batsfjord-lufthavn.jpg",
+  "w": 1280,
+  "h": 719
+ },
+ "EGDR": {
+  "file": "img/towers/egdr.jpg",
+  "title": "ZH850 - WM-462 EHI EH-101 Merlin HM2 (Mk111) (cn 50125-RN30) Royal Navy. (9505740843).jpg",
+  "artist": "Andrew Thomas from Shrewsbury, UK",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:ZH850_-_WM-462_EHI_EH-101_Merlin_HM2_(Mk111)_(cn_50125-RN30)_Royal_Navy._(9505740843).jpg",
+  "w": 1280,
+  "h": 838
+ },
+ "ESNO": {
+  "file": "img/towers/esno.jpg",
+  "title": "Örnsköldsvik Airport.jpg",
+  "artist": "(Petey21)",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:%C3%96rnsk%C3%B6ldsvik_Airport.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "ENLK": {
+  "file": "img/towers/enlk.jpg",
+  "title": "Leknes lufthavn.jpg",
+  "artist": "Lars Røed Hansen",
+  "license": "CC BY-SA 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Leknes_lufthavn.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "ENRM": {
+  "file": "img/towers/enrm.jpg",
+  "title": "Rørvik lufthavn Ryum.JPG",
+  "artist": "Kjetil Eggen",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:R%C3%B8rvik_lufthavn_Ryum.JPG",
+  "w": 1280,
+  "h": 960
+ },
+ "ESNN": {
+  "file": "img/towers/esnn.jpg",
+  "title": "Midlanda.JPG",
+  "artist": "Felix Wikström",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Midlanda.JPG",
+  "w": 1280,
+  "h": 721
+ },
+ "KBOW": {
+  "file": "img/towers/kbow.jpg",
+  "title": "Bartow Municipal Airport - Florida.jpg",
+  "artist": "US Geological Survey",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Bartow_Municipal_Airport_-_Florida.jpg",
+  "w": 1280,
+  "h": 1155
+ },
+ "CYGK": {
+  "file": "img/towers/cygk.jpg",
+  "title": "Norman Rogers Airport Terminal Departures.jpg",
+  "artist": "Moodude34",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Norman_Rogers_Airport_Terminal_Departures.jpg",
+  "w": 1280,
+  "h": 839
+ },
+ "ENNM": {
+  "file": "img/towers/ennm.jpg",
+  "title": "Namsos Airport 5.JPG",
+  "artist": "Alasdair McLellan",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Namsos_Airport_5.JPG",
+  "w": 1280,
+  "h": 857
+ },
+ "ENRS": {
+  "file": "img/towers/enrs.jpg",
+  "title": "Røst lufthavn.JPG",
+  "artist": "Kjetil Eggen",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:R%C3%B8st_lufthavn.JPG",
+  "w": 1280,
+  "h": 960
+ },
+ "ENMS": {
+  "file": "img/towers/enms.jpg",
+  "title": "Mosjøen lufthavn - MJF-2006-07-17.JPG",
+  "artist": "No machine-readable author provided. ZorroIII assumed (based on copyright claims",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Mosj%C3%B8en_lufthavn_-_MJF-2006-07-17.JPG",
+  "w": 1280,
+  "h": 960
+ },
+ "EIDW": {
+  "file": "img/towers/eidw.jpg",
+  "title": "T2Dublin Airport-doyler79.jpg",
+  "artist": "Doyler79",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:T2Dublin_Airport-doyler79.jpg",
+  "w": 1280,
+  "h": 625
+ },
+ "ENVD": {
+  "file": "img/towers/envd.jpg",
+  "title": "Vadsø Airport 20080718.jpg",
+  "artist": "Felix Maschek, Hamburg.",
+  "license": "CC BY-SA 2.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Vads%C3%B8_Airport_20080718.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EFHK": {
+  "file": "img/towers/efhk.jpg",
+  "title": "Helsinki-Vantaa airport.jpg",
+  "artist": "kallerna",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Helsinki-Vantaa_airport.jpg",
+  "w": 1280,
+  "h": 810
+ },
+ "ESSA": {
+  "file": "img/towers/essa.jpg",
+  "title": "Arlanda 1 Publish.jpg",
+  "artist": "Brorsson at English Wikipedia",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arlanda_1_Publish.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "ENHK": {
+  "file": "img/towers/enhk.jpg",
+  "title": "Hasvik Airport (2015).jpg",
+  "artist": "Manxruler",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hasvik_Airport_(2015).jpg",
+  "w": 1280,
+  "h": 850
+ },
+ "EETU": {
+  "file": "img/towers/eetu.jpg",
+  "title": "Tartu Airport.jpg",
+  "artist": "Whaleinanutshell",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tartu_Airport.jpg",
+  "w": 1280,
+  "h": 1116
+ },
+ "LSGG": {
+  "file": "img/towers/lsgg.jpg",
+  "title": "Geneva airport from air.jpg",
+  "artist": "Schutz",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Geneva_airport_from_air.jpg",
+  "w": 1280,
+  "h": 793
+ },
+ "LFBO": {
+  "file": "img/towers/lfbo.jpg",
+  "title": "TOULOUSE-AEROPORT.jpg",
+  "artist": "Unknown author",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:TOULOUSE-AEROPORT.jpg",
+  "w": 1280,
+  "h": 833
+ },
+ "LHBP": {
+  "file": "img/towers/lhbp.jpg",
+  "title": "BUD airport logo.svg",
+  "artist": "Budapest Airport Ltd.",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:BUD_airport_logo.svg",
+  "w": 1280,
+  "h": 775
+ },
+ "EFKS": {
+  "file": "img/towers/efks.jpg",
+  "title": "Kuusamo Airport landside 2017-11-27.jpg",
+  "artist": "Otto Karikoski",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kuusamo_Airport_landside_2017-11-27.jpg",
+  "w": 1280,
+  "h": 679
+ },
+ "EDVE": {
+  "file": "img/towers/edve.jpg",
+  "title": "Aerial image of the Braunschweig-Wolfsburg airport.jpg",
+  "artist": "Carsten Steger",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Braunschweig-Wolfsburg_airport.jpg",
+  "w": 1280,
+  "h": 810
+ },
+ "EDWE": {
+  "file": "img/towers/edwe.jpg",
+  "title": "2013-05-03 Fotoflug Leer Papenburg DSCF7188.jpg",
+  "artist": "Martina Nolte",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:2013-05-03_Fotoflug_Leer_Papenburg_DSCF7188.jpg",
+  "w": 1280,
+  "h": 857
+ },
+ "EGTC": {
+  "file": "img/towers/egtc.jpg",
+  "title": "Cranfield Airport by Thomas Nugent.jpg",
+  "artist": "Thomas Nugent",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cranfield_Airport_by_Thomas_Nugent.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EINN": {
+  "file": "img/towers/einn.jpg",
+  "title": "Shannon Airport 2020-07-12 01.jpg",
+  "artist": "瑞丽江的河水",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shannon_Airport_2020-07-12_01.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EKBI": {
+  "file": "img/towers/ekbi.jpg",
+  "title": "Billund Airport from NE.jpg",
+  "artist": "Nico-dk",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Billund_Airport_from_NE.jpg",
+  "w": 1280,
+  "h": 632
+ },
+ "ENBV": {
+  "file": "img/towers/enbv.jpg",
+  "title": "Berlevag-lufthavn.jpg",
+  "artist": "Algkalv (talk)",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Berlevag-lufthavn.jpg",
+  "w": 1280,
+  "h": 719
+ },
+ "EETN": {
+  "file": "img/towers/eetn.jpg",
+  "title": "Tallinn Airport passenger terminal and runway.jpg",
+  "artist": "TLL-EETN",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tallinn_Airport_passenger_terminal_and_runway.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "ENMH": {
+  "file": "img/towers/enmh.jpg",
+  "title": "Mehamn airport, Finnmark, Norway 2013.jpg",
+  "artist": "Bair175",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mehamn_airport,_Finnmark,_Norway_2013.jpg",
+  "w": 1280,
+  "h": 801
+ },
+ "LEMH": {
+  "file": "img/towers/lemh.jpg",
+  "title": "Menorca Airport (7336476996).jpg",
+  "artist": "Hugh Llewelyn",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Menorca_Airport_(7336476996).jpg",
+  "w": 1280,
+  "h": 852
+ },
+ "EDDC": {
+  "file": "img/towers/eddc.jpg",
+  "title": "Aerial image of the Dresden Airport.jpg",
+  "artist": "Carsten Steger",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Dresden_Airport.jpg",
+  "w": 1280,
+  "h": 751
+ },
+ "EDDP": {
+  "file": "img/towers/eddp.jpg",
+  "title": "Leipzig-Halle Airport Logo.svg",
+  "artist": "Mitteldeutsche Airport Holding",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Leipzig-Halle_Airport_Logo.svg",
+  "w": 1280,
+  "h": 478
+ },
+ "EDDR": {
+  "file": "img/towers/eddr.jpg",
+  "title": "Flughafen Saarbrücken.svg",
+  "artist": "Leander Jost",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Flughafen_Saarbr%C3%BCcken.svg",
+  "w": 1280,
+  "h": 620
+ },
+ "EHBK": {
+  "file": "img/towers/ehbk.jpg",
+  "title": "Passagiersterminal.jpg",
+  "artist": "Maastricht Aachen Airport",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Passagiersterminal.jpg",
+  "w": 1280,
+  "h": 851
+ },
+ "EHGG": {
+  "file": "img/towers/ehgg.jpg",
+  "title": "Luchtfoto Groningen Airport.jpg",
+  "artist": "Kas van Zonneveld",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Luchtfoto_Groningen_Airport.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "EYVI": {
+  "file": "img/towers/eyvi.jpg",
+  "title": "EYVI-VNO by Augustas Didzgalvis.jpg",
+  "artist": "Augustas Didžgalvis",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:EYVI-VNO_by_Augustas_Didzgalvis.jpg",
+  "w": 1280,
+  "h": 853
+ },
+ "LIBR": {
+  "file": "img/towers/libr.jpg",
+  "title": "Aeroporto di Brindisi dalla pista.jpg",
+  "artist": "Saggittarius A",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aeroporto_di_Brindisi_dalla_pista.jpg",
+  "w": 1280,
+  "h": 960
+ },
+ "EFIV": {
+  "file": "img/towers/efiv.jpg",
+  "title": "Ivalon lentoasema kesällä.jpg",
+  "artist": "J-P Kärnä",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ivalon_lentoasema_kes%C3%A4ll%C3%A4.jpg",
+  "w": 1280,
+  "h": 565
+ },
+ "EEKE": {
+  "file": "img/towers/eeke.jpg",
+  "title": "Kuressaare lennujaam, 2010.jpg",
+  "artist": "WikedKentaur",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kuressaare_lennujaam,_2010.jpg",
+  "w": 1280,
+  "h": 853
+ }
+}

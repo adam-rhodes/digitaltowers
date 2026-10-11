@@ -1,0 +1,531 @@
+{
+ "vendors": [
+  {
+   "id": "saab",
+   "name": "Saab",
+   "aliases": [
+    "Saab"
+   ],
+   "country": "Sweden",
+   "url": "https://www.saab.com/markets/air-traffic-management/digital-towers",
+   "blurb": "Swedish defence and aerospace group whose Digital Air Traffic Solutions unit sells digital towers. Its system went into the first production remote tower, at Örnsköldsvik in 2015."
+  },
+  {
+   "id": "frequentis",
+   "name": "Frequentis",
+   "aliases": [
+    "Frequentis"
+   ],
+   "country": "Austria",
+   "url": "https://www.frequentis.com",
+   "blurb": "Austrian communications and tower systems supplier. Frequentis USA received FAA system design approval, with conditions, on 2 September 2026."
+  },
+  {
+   "id": "kongsberg",
+   "name": "Kongsberg",
+   "aliases": [
+    "Kongsberg"
+   ],
+   "country": "Norway",
+   "url": "https://www.kongsberg.com",
+   "blurb": "Norwegian defence and technology group. Core developer of the remote tower system behind Avinor's NINOX programme and the NAV CANADA DAATS framework contract (through Kongsberg Geospatial)."
+  },
+  {
+   "id": "indra",
+   "name": "Indra",
+   "aliases": [
+    "Indra"
+   ],
+   "country": "Spain",
+   "url": "https://www.indragroup.com",
+   "blurb": "Spanish defence and air traffic management supplier. Works with Kongsberg on Avinor's Bodø centre and supplies the Fintraffic multi-airport centre, HungaroControl's Budapest centre and AlUla."
+  },
+  {
+   "id": "searidge",
+   "name": "Searidge Technologies",
+   "aliases": [
+    "Searidge"
+   ],
+   "country": "Canada",
+   "url": "https://www.searidgetech.com",
+   "blurb": "Ottawa-based digital tower and apron vision company, partly owned by NATS. Supplier at Vigo, Hong Kong, Manchester, Farnborough, Heathrow and the Changi prototype."
+  },
+  {
+   "id": "adacel",
+   "name": "Adacel",
+   "aliases": [
+    "Adacel"
+   ],
+   "country": "Canada",
+   "url": "https://www.adacel.com",
+   "blurb": "Air traffic simulation and automation company. Took over the remote tower technology developed by Cybernetica for EANS in 2022."
+  },
+  {
+   "id": "ferronats",
+   "name": "FerroNATS",
+   "aliases": [
+    "FerroNATS"
+   ],
+   "country": "Spain",
+   "url": "https://www.ferronats.com",
+   "blurb": "Spanish air navigation services joint venture of Ferrovial and NATS. Delivery partner with Searidge at Vigo."
+  }
+ ],
+ "ansps": [
+  {
+   "id": "avinor",
+   "name": "Avinor",
+   "aliases": [
+    "Avinor"
+   ],
+   "country": "Norway",
+   "url": "https://avinor.no/remote",
+   "blurb": "Norwegian airport operator and air navigation service provider. Runs the Bodø Remote Towers Centre."
+  },
+  {
+   "id": "lfv",
+   "name": "LFV",
+   "aliases": [
+    "LFV"
+   ],
+   "country": "Sweden",
+   "url": "https://lfv.se/en/services/airport-services/remote-tower-services",
+   "blurb": "Swedish air navigation service provider. Runs remote tower centres at Sundsvall and Stockholm."
+  },
+  {
+   "id": "nats",
+   "name": "NATS",
+   "aliases": [
+    "NATS"
+   ],
+   "country": "United Kingdom",
+   "url": "https://www.nats.aero",
+   "blurb": "UK air navigation service provider. Controls London City remotely from Swanwick and operates the Heathrow digital tower laboratory."
+  },
+  {
+   "id": "dfs",
+   "name": "DFS and DFS Aviation Services",
+   "aliases": [
+    "DFS",
+    "DFS Aviation Services"
+   ],
+   "country": "Germany",
+   "url": "https://www.dfs.de",
+   "blurb": "German air navigation service provider and its services subsidiary. Runs the Leipzig and Braunschweig remote tower centres."
+  },
+  {
+   "id": "hungarocontrol",
+   "name": "HungaroControl",
+   "aliases": [
+    "HungaroControl"
+   ],
+   "country": "Hungary",
+   "url": "https://en.hungarocontrol.hu",
+   "blurb": "Hungarian air navigation service provider. Operates a remote tower for Budapest."
+  },
+  {
+   "id": "iaa",
+   "name": "IAA (Irish Aviation Authority)",
+   "aliases": [
+    "IAA"
+   ],
+   "country": "Ireland",
+   "url": "https://www.iaa.ie/air-traffic-management/innovation/remote-towers",
+   "blurb": "Irish air navigation service provider. Trialled multiple remote towers for Cork and Shannon from Dublin."
+  },
+  {
+   "id": "lvnl",
+   "name": "LVNL",
+   "aliases": [
+    "LVNL"
+   ],
+   "country": "Netherlands",
+   "url": "https://en.lvnl.nl",
+   "blurb": "Dutch air navigation service provider. Contracted Saab for remote towers at Groningen and Maastricht."
+  },
+  {
+   "id": "naviair",
+   "name": "Naviair",
+   "aliases": [
+    "Naviair"
+   ],
+   "country": "Denmark",
+   "url": "https://www.naviair.dk",
+   "blurb": "Danish air navigation service provider. Chose an integrated remote tower and approach centre starting with Billund."
+  },
+  {
+   "id": "fintraffic",
+   "name": "Fintraffic ANS",
+   "aliases": [
+    "Fintraffic ANS"
+   ],
+   "country": "Finland",
+   "url": "https://www.fintraffic.fi",
+   "blurb": "Finnish air navigation service provider. Announced a multi-airport remote tower centre at Vantaa in June 2026."
+  },
+  {
+   "id": "eans",
+   "name": "EANS",
+   "aliases": [
+    "EANS"
+   ],
+   "country": "Estonia",
+   "url": "https://eans.ee/en/tegevused/arendustegevused/remote-tower",
+   "blurb": "Estonian air navigation service provider. Has served Tartu from Tallinn since April 2023."
+  },
+  {
+   "id": "oro",
+   "name": "Oro Navigacija",
+   "aliases": [
+    "Oro Navigacija"
+   ],
+   "country": "Lithuania",
+   "url": "https://www.ans.lt",
+   "blurb": "Lithuanian air navigation service provider. Ordered a Saab digital tower for Vilnius in 2025."
+  },
+  {
+   "id": "pansa",
+   "name": "PANSA",
+   "aliases": [
+    "PANSA"
+   ],
+   "country": "Poland",
+   "url": "https://www.pansa.pl",
+   "blurb": "Polish Air Navigation Services Agency. Selected Saab's digital tower for Warsaw Modlin in July 2025."
+  },
+  {
+   "id": "aena",
+   "name": "Aena and ENAIRE",
+   "aliases": [
+    "Aena"
+   ],
+   "country": "Spain",
+   "url": "https://www.aena.es",
+   "blurb": "Spanish airport operator and air navigation provider. Vigo is Spain's first certified digital tower."
+  },
+  {
+   "id": "dsna",
+   "name": "DSNA",
+   "aliases": [
+    "DSNA"
+   ],
+   "country": "France",
+   "url": "https://canso.org/france-selects-frequentis-remote-digital-tower/",
+   "blurb": "French air navigation service provider. Selected Frequentis for a Toulouse centre and a first tower at Tours."
+  },
+  {
+   "id": "enav",
+   "name": "ENAV",
+   "aliases": [
+    "ENAV"
+   ],
+   "country": "Italy",
+   "url": "https://www.enav.it",
+   "blurb": "Italian air navigation service provider. Inaugurated Italy's first remotely managed tower at Brindisi in 2022."
+  },
+  {
+   "id": "skyguide",
+   "name": "skyguide",
+   "aliases": [
+    "skyguide"
+   ],
+   "country": "Switzerland",
+   "url": "https://www.skyguide.ch",
+   "blurb": "Swiss air navigation service provider. Has reported plans for a remote tower at Geneva."
+  },
+  {
+   "id": "navcanada",
+   "name": "NAV CANADA",
+   "aliases": [
+    "NAV CANADA"
+   ],
+   "country": "Canada",
+   "url": "https://www.navcanada.ca",
+   "blurb": "Canadian air navigation service provider. Running the DAATS programme with Kongsberg Geospatial."
+  },
+  {
+   "id": "decea",
+   "name": "DECEA",
+   "aliases": [
+    "DECEA"
+   ],
+   "country": "Brazil",
+   "url": "https://www.decea.mil.br",
+   "blurb": "Brazilian airspace control department. Installed South America's first remote tower at Santa Cruz in 2019."
+  },
+  {
+   "id": "airservices",
+   "name": "Airservices Australia",
+   "aliases": [
+    "Airservices Australia"
+   ],
+   "country": "Australia",
+   "url": "https://www.airservicesaustralia.com",
+   "blurb": "Australian air navigation service provider. Building the digital tower for Western Sydney International."
+  },
+  {
+   "id": "caas",
+   "name": "CAAS",
+   "aliases": [
+    "CAAS"
+   ],
+   "country": "Singapore",
+   "url": "https://www.caas.gov.sg",
+   "blurb": "Civil Aviation Authority of Singapore. Commissioned a smart digital tower prototype at Changi."
+  },
+  {
+   "id": "sans",
+   "name": "SANS",
+   "aliases": [
+    "SANS"
+   ],
+   "country": "Saudi Arabia",
+   "url": "https://sans.com.sa",
+   "blurb": "Saudi Air Navigation Services. Operates AlUla remotely from Jeddah."
+  },
+  {
+   "id": "faa",
+   "name": "FAA",
+   "aliases": [
+    "FAA",
+    "FAA (non-federal)",
+    "FAA / Colorado DOT"
+   ],
+   "country": "United States",
+   "url": "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems",
+   "blurb": "US Federal Aviation Administration. Sets the design approval path for remote tower systems in the National Airspace System."
+  }
+ ],
+ "regulators": [
+  {
+   "id": "faa-reg",
+   "name": "FAA",
+   "country": "United States",
+   "url": "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems",
+   "blurb": "Publishes the remote tower systems concept of operations, operational safety assessment, allocation report, operational visual requirements and draft technical requirements, and evaluates designs at the William J. Hughes Technical Center."
+  },
+  {
+   "id": "eurocae",
+   "name": "EUROCAE",
+   "country": "Europe",
+   "url": "https://www.eurocae.net/product/ed-240a-minimum-aviation-system-performance-standards-masps-for-remote-tower-optical-systems",
+   "blurb": "Publishes ED-240A, minimum aviation system performance standards for remote tower optical systems, which extends ED-240 with visual tracking and pan-tilt-zoom object following."
+  },
+  {
+   "id": "easa",
+   "name": "EASA",
+   "country": "Europe",
+   "url": "https://www.easa.europa.eu",
+   "blurb": "European Union Aviation Safety Agency. National authorities, such as Spain's for Vigo, certify individual systems."
+  },
+  {
+   "id": "icao",
+   "name": "ICAO",
+   "country": "Global",
+   "url": "https://www.icao.int",
+   "blurb": "International Civil Aviation Organization. Global standards and recommended practices for air traffic services."
+  },
+  {
+   "id": "ifatca",
+   "name": "IFATCA",
+   "country": "Global",
+   "url": "https://www.ifatca.org",
+   "blurb": "International Federation of Air Traffic Controllers' Associations. Professional body that publishes policy positions on remote towers."
+  },
+  {
+   "id": "canso",
+   "name": "CANSO",
+   "country": "Global",
+   "url": "https://canso.org",
+   "blurb": "Civil Air Navigation Services Organisation. Industry body that publishes news and guidance from service providers."
+  }
+ ],
+ "programs": [
+  {
+   "id": "ninox",
+   "name": "NINOX (Avinor Remote Towers)",
+   "url": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers",
+   "blurb": "Avinor's programme with Kongsberg, signed 2015. 14 airports run from Bodø as of April 2025, seven more planned."
+  },
+  {
+   "id": "lfv-rtc",
+   "name": "LFV remote tower services",
+   "url": "https://lfv.se/en/services/airport-services/remote-tower-services",
+   "blurb": "LFV's centres at Sundsvall and Stockholm."
+  },
+  {
+   "id": "dfs-rtc",
+   "name": "DFS remote tower centres",
+   "url": "https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf",
+   "blurb": "Leipzig since 2018 and Braunschweig since 2024."
+  },
+  {
+   "id": "fintraffic-rtc",
+   "name": "Fintraffic multi-airport centre",
+   "url": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf",
+   "blurb": "Seven airports from a Vantaa centre, announced June 2026."
+  },
+  {
+   "id": "sesar",
+   "name": "SESAR remote tower demonstrations",
+   "url": "https://www.iaa.ie/air-traffic-management/innovation/remote-towers",
+   "blurb": "EU research programme that co-funded multiple remote tower demonstrations."
+  },
+  {
+   "id": "daats",
+   "name": "NAV CANADA DAATS",
+   "url": "https://www.kongsberggeospatial.com/news/nav-canada-selects-kongsberg-geospatial-as-the-technology-partner-to-equip-digital-aerodrome-air-traffic-services-daats-program",
+   "blurb": "Digital Aerodrome Air Traffic Services programme; Kingston first."
+  },
+  {
+   "id": "faa-rts",
+   "name": "FAA remote tower systems program",
+   "url": "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems",
+   "blurb": "System design approval path, testing at the Technical Center, and eligibility under the Contract Tower Program."
+  }
+ ],
+ "us_timeline": [
+  [
+   "2015-06",
+   "Leesburg Executive Airport tests a remote tower system (summer 2015).",
+   "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+  ],
+  [
+   "2015-10-01",
+   "Colorado announces Northern Colorado Regional as an FAA remote tower test site.",
+   "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+  ],
+  [
+   "2018",
+   "Air traffic services at Leesburg begin through the FAA remote tower program.",
+   "https://www.leesburgva.gov/departments/capital-projects/current-projects/airport-projects/airport-air-traffic-control-tower"
+  ],
+  [
+   "2020-04-07",
+   "FAA publishes Remote Tower Systems Concept of Operations v1.0.",
+   "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+  ],
+  [
+   "2021-04-01",
+   "Operational Safety Assessment v2.7 published (Allocation Report v1.3 follows 16 Sep 2021).",
+   "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+  ],
+  [
+   "2022-02-18",
+   "Draft Advisory Circular v3.0 for non-federal remote tower systems.",
+   "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+  ],
+  [
+   "2023-01-10",
+   "Operational Visual Requirements draft v2.1.",
+   "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+  ],
+  [
+   "2023-03-16",
+   "FAA vendor information meeting on remote towers.",
+   "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+  ],
+  [
+   "2023-06",
+   "FAA discontinues the remote tower program at Leesburg.",
+   "https://www.leesburgva.gov/departments/capital-projects/current-projects/airport-projects/airport-air-traffic-control-tower"
+  ],
+  [
+   "2023-11",
+   "Colorado DOT says the FAA terminated the Northern Colorado project in late 2023 after the vendor stopped work.",
+   "https://www.codot.gov/business/consultants/advertised-projects/2026/statewide-project-specific-digital-airport-traffic-control-tower-project-management-services/cdot-aero-digital-tower-program-management-sow_acc.pdf"
+  ],
+  [
+   "2024-05-16",
+   "FAA Reauthorization Act of 2024 signed. Reason summarizes Section 621: a defined design and operational approval process within 180 days, briefings through September 2028, and eligibility under the Contract Tower Program.",
+   "https://reason.org/aviation-policy-news/faa-reauthorization-boosts-u-s-remote-towers"
+  ],
+  [
+   "2024-06",
+   "Remote Tower System Technical Requirements draft v5.0.",
+   "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+  ],
+  [
+   "2025-02-06",
+   "FAA page states remote tower systems are not currently approved for use in the NAS and lists no system design approval.",
+   "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+  ],
+  [
+   "2025-08-27",
+   "AIN: FAA tests systems at the Technical Center and selected RTX-Frequentis for design approval evaluation; no approvals issued yet.",
+   "https://backend.ainonline.com/aviation-news/2025-08-27/faa-tests-while-winter-haven-preps-remote-tower"
+  ],
+  [
+   "2026-04-22",
+   "Digital Tower Technology Coalition announces its priorities.",
+   "https://backend.ainonline.com/aviation-news/air-transport/2026-04-21/digital-towers-coalition-back-remote-tech-us"
+  ],
+  [
+   "2026-04-29",
+   "Military and Aerospace Electronics reports an FAA request for proposals for remote tower systems, a potential 50 units over five years, responses due 26 June 2026.",
+   "https://www.militaryaerospace.com/communications/news/55373599/faa-seeks-remote-air-traffic-control-tower-tech-for-us-airports"
+  ],
+  [
+   "2026-09-02",
+   "FAA grants system design approval to Frequentis USA, with conditions (as stated in AIP Program Guidance Letter 26-06).",
+   "https://www.faa.gov/airports/aip/guidance_letters/aip_pgl_26_06"
+  ],
+  [
+   "2026-09-18",
+   "FY27 Contract Tower Competitive Grant Program opens; digital towers are eligible if FAA-certified. Applications close 19 October 2026.",
+   "https://www.faa.gov/iija/airport-infrastructure/fct"
+  ],
+  [
+   "2026-09-28",
+   "FAA Office of Airports issues PGL 26-06 on AIP funding of Digital Airport Traffic Control Tower systems. It does not grant operational approval.",
+   "https://www.faa.gov/airports/aip/guidance_letters/aip_pgl_26_06"
+  ],
+  [
+   "2026-10-02",
+   "Colorado Aeronautical Board hears that guidance was issued and design approval granted; award timing is described as uncertain.",
+   "https://citizenportal.ai/articles/10446362/colorado/executive/governors-office/governors-boards-and-commissions/colorado-aeronautical-board/division-says-digitaltower-guidance-issued-faa-system-approval-boosts-fct-eligibility-prospects"
+  ]
+ ],
+ "faa_docs": [
+  [
+   "Concept of Operations v1.0",
+   "2020-04-07",
+   "faa-rts-conops-v1.0-2020-04-07.pdf"
+  ],
+  [
+   "Operational Safety Assessment v2.7",
+   "2021-04-01",
+   "faa-rts-osa-v2.7-2021-04-01.pdf"
+  ],
+  [
+   "Allocation Report v1.3",
+   "2021-09-16",
+   "faa-rts-allocation-report-v1.3-2021-09-16.pdf"
+  ],
+  [
+   "Vendor feedback briefing",
+   "2021-07-21",
+   "faa-rts-vendor-feedback-briefing-2021-07-21.pdf"
+  ],
+  [
+   "Draft Advisory Circular v3.0",
+   "2022-02-18",
+   "faa-rts-advisory-circular-draft-3.0-2022-02-18.pdf"
+  ],
+  [
+   "Operational Visual Requirements draft v2.1",
+   "2023-01-10",
+   "faa-rts-ovr-draft-2.1-2023-01-10.pdf"
+  ],
+  [
+   "Industry awareness briefing",
+   "2023-03-16",
+   "faa-rts-industry-awareness-briefing-2023-03-16.pdf"
+  ],
+  [
+   "Technical Requirements draft v5.0",
+   "2024-06",
+   "faa-rts-technical-requirements-draft-5.0-2024-06.pdf"
+  ]
+ ]
+}

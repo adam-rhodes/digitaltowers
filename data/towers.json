@@ -1,0 +1,4108 @@
+{
+ "meta": {
+  "generated": "2026-10-11T16:47:06Z",
+  "count": 97,
+  "countries": 25,
+  "by_status": {
+   "operational": 44,
+   "planned": 33,
+   "cancelled": 1,
+   "trial": 9,
+   "unverified": 8,
+   "decommissioned": 2
+  },
+  "license": "Compiled facts with source URLs per fact; coordinates from OurAirports (public domain) where an ICAO code exists. Free to reuse with attribution to digitaltowers.org.",
+  "note": "Statuses: operational, trial, planned, decommissioned, cancelled, unverified. Confidence: high, medium, low. Hybrid and contingency kinds are not remote towers."
+ },
+ "towers": [
+  {
+   "id": "bodo-rtc",
+   "name": "Bodø Remote Towers Centre",
+   "icao": "ENBO",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "program": "ninox",
+   "regulator": "Norwegian CAA",
+   "dates": [
+    {
+     "d": "2019-10",
+     "t": "First digital tower (Røst) in service"
+    },
+    {
+     "d": "2025-04",
+     "t": "14 airports operated from the centre"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Avinor lists 14 airports in operational service from the Bodø digital towers centre.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    },
+    {
+     "t": "Kongsberg reports 14 airports managed from the Bodø centre as of April 2025, with seven more scheduled within two to three years.",
+     "u": "https://www.kongsberg.com/news/stories/2025/5/remote-towers-a-new-standard-for-air-traffic-management/"
+    },
+    {
+     "t": "A standalone digital tower for the new Bodø Airport is planned for 2029.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor and Kongsberg signed the NINOX programme agreement in 2015.",
+     "u": "https://www.kongsberg.com/news/stories/2025/5/remote-towers-a-new-standard-for-air-traffic-management/"
+    }
+   ],
+   "conf": "high",
+   "note": "Avinor describes Kongsberg Defence & Aerospace and Indra as suppliers for the first service at Røst.",
+   "controlled_from": "",
+   "lat": 67.2692,
+   "lon": 14.3653,
+   "iata": "BOO",
+   "elev_ft": "42",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "enrs",
+     "name": "Røst Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enss",
+     "name": "Vardø Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enhk",
+     "name": "Hasvik Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enbv",
+     "name": "Berlevåg Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enro",
+     "name": "Røros Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enmh",
+     "name": "Mehamn Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enrm",
+     "name": "Rørvik Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "ennm",
+     "name": "Namsos Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "ensh",
+     "name": "Svolvær Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "ensg",
+     "name": "Sogndal Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enfd",
+     "name": "Førde Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enml",
+     "name": "Molde Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enlk",
+     "name": "Leknes Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enst",
+     "name": "Sandnessjøen Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enbs",
+     "name": "Båtsfjord Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "envd",
+     "name": "Vadsø Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "ensr",
+     "name": "Sørkjosen Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "ensd",
+     "name": "Sandane Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enms",
+     "name": "Mosjøen Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enov",
+     "name": "Ørsta-Volda Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "enra-new",
+     "name": "Mo i Rana Airport (new airport)"
+    }
+   ]
+  },
+  {
+   "id": "enrs",
+   "name": "Røst Airport",
+   "icao": "ENRS",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2019-10",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2019-10.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 67.52648,
+   "lon": 12.10158,
+   "iata": "RET",
+   "elev_ft": "7",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enss",
+   "name": "Vardø Airport",
+   "icao": "ENSS",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2020-10",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2020-10.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 70.3554,
+   "lon": 31.0449,
+   "iata": "VAW",
+   "elev_ft": "42",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enhk",
+   "name": "Hasvik Airport",
+   "icao": "ENHK",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2020-11",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2020-11.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 70.4867,
+   "lon": 22.1397,
+   "iata": "HAA",
+   "elev_ft": "21",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enbv",
+   "name": "Berlevåg Airport",
+   "icao": "ENBV",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2020-11",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2020-11.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 70.87152,
+   "lon": 29.0341,
+   "iata": "BVG",
+   "elev_ft": "42",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enro",
+   "name": "Røros Airport",
+   "icao": "ENRO",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2022-06",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2022-06.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 62.5784,
+   "lon": 11.3423,
+   "iata": "RRS",
+   "elev_ft": "2054",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enmh",
+   "name": "Mehamn Airport",
+   "icao": "ENMH",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2022-06",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2022-06.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 71.0297,
+   "lon": 27.8267,
+   "iata": "MEH",
+   "elev_ft": "39",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enrm",
+   "name": "Rørvik Airport",
+   "icao": "ENRM",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2022-09",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2022-09.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 64.8383,
+   "lon": 11.1461,
+   "iata": "RVK",
+   "elev_ft": "14",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "ennm",
+   "name": "Namsos Airport",
+   "icao": "ENNM",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2022-09",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2022-09.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 64.4722,
+   "lon": 11.5786,
+   "iata": "OSY",
+   "elev_ft": "7",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "ensh",
+   "name": "Svolvær Airport",
+   "icao": "ENSH",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2023-01",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2023-01.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 68.2433,
+   "lon": 14.6692,
+   "iata": "SVJ",
+   "elev_ft": "27",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "ensg",
+   "name": "Sogndal Airport",
+   "icao": "ENSG",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2023-02",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2023-02.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 61.1561,
+   "lon": 7.13778,
+   "iata": "SOG",
+   "elev_ft": "1633",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enfd",
+   "name": "Førde Airport",
+   "icao": "ENFD",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2023-02",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2023-02.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 61.4563,
+   "lon": 5.89043,
+   "iata": "",
+   "elev_ft": "19",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enml",
+   "name": "Molde Airport",
+   "icao": "ENML",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2025-04",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2025-04.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 62.7447,
+   "lon": 7.2625,
+   "iata": "MOL",
+   "elev_ft": "10",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enlk",
+   "name": "Leknes Airport",
+   "icao": "ENLK",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2025-04",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2025-04.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 68.1525,
+   "lon": 13.6094,
+   "iata": "LKN",
+   "elev_ft": "78",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enst",
+   "name": "Sandnessjøen Airport",
+   "icao": "ENST",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Kongsberg",
+    "Indra"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2025-04",
+     "t": "Digital tower in service (Avinor implementation list)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Listed by Avinor as an airport in operational service from Bodø; in-service month 2025-04.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 65.9568,
+   "lon": 12.4689,
+   "iata": "SSJ",
+   "elev_ft": "56",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enbs",
+   "name": "Båtsfjord Airport",
+   "icao": "ENBS",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2027",
+     "t": "Planned operation from Bodø (Kongsberg delivery due 2027)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Avinor's board decided in February 2024 to move this tower to the Bodø centre; Kongsberg delivers sensors for operation from 2027.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor lists it in phase 2, planned for 2026 or 2027.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 70.60025,
+   "lon": 29.69261,
+   "iata": "BJF",
+   "elev_ft": "490",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "envd",
+   "name": "Vadsø Airport",
+   "icao": "ENVD",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2027",
+     "t": "Planned operation from Bodø (Kongsberg delivery due 2027)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Avinor's board decided in February 2024 to move this tower to the Bodø centre; Kongsberg delivers sensors for operation from 2027.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor lists it in phase 2, planned for 2026 or 2027.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 70.0653,
+   "lon": 29.8447,
+   "iata": "VDS",
+   "elev_ft": "127",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "ensr",
+   "name": "Sørkjosen Airport",
+   "icao": "ENSR",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2027",
+     "t": "Planned operation from Bodø (Kongsberg delivery due 2027)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Avinor's board decided in February 2024 to move this tower to the Bodø centre; Kongsberg delivers sensors for operation from 2027.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor lists it in phase 2, planned for 2026 or 2027.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 69.7868,
+   "lon": 20.9594,
+   "iata": "SOJ",
+   "elev_ft": "16",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "ensd",
+   "name": "Sandane Airport",
+   "icao": "ENSD",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2027",
+     "t": "Planned operation from Bodø (Kongsberg delivery due 2027)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Avinor's board decided in February 2024 to move this tower to the Bodø centre; Kongsberg delivers sensors for operation from 2027.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor lists it in phase 2, planned for 2026 or 2027.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 61.83,
+   "lon": 6.10583,
+   "iata": "SDN",
+   "elev_ft": "196",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enms",
+   "name": "Mosjøen Airport",
+   "icao": "ENMS",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2027",
+     "t": "Planned operation from Bodø (Kongsberg delivery due 2027)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Avinor's board decided in February 2024 to move this tower to the Bodø centre; Kongsberg delivers sensors for operation from 2027.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor lists it in phase 2, planned for 2026 or 2027.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 65.784,
+   "lon": 13.2149,
+   "iata": "MJF",
+   "elev_ft": "237",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enov",
+   "name": "Ørsta-Volda Airport",
+   "icao": "ENOV",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2027",
+     "t": "Planned operation from Bodø (Kongsberg delivery due 2027)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Avinor's board decided in February 2024 to move this tower to the Bodø centre; Kongsberg delivers sensors for operation from 2027.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor lists it in phase 2, planned for 2026 or 2027.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 62.18,
+   "lon": 6.0741,
+   "iata": "HOV",
+   "elev_ft": "243",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enra-new",
+   "name": "Mo i Rana Airport (new airport)",
+   "icao": "ENRA",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "controlled_from": "bodo-rtc",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2027",
+     "t": "Planned completion spring 2027"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The new Mo i Rana airport is to be operated from Bodø, with completion planned for spring 2027.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    },
+    {
+     "t": "Kongsberg delivers the remote tower infrastructure for the new airport in 2027.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 66.3639,
+   "lon": 14.3014,
+   "iata": "MQN",
+   "elev_ft": "229",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "bodo-rtc",
+     "name": "Bodø Remote Towers Centre"
+    }
+   ]
+  },
+  {
+   "id": "enbo-new",
+   "name": "New Bodø Airport (local digital tower)",
+   "icao": "ENBO",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "digital_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Avinor",
+   "program": "ninox",
+   "dates": [
+    {
+     "d": "2029",
+     "t": "Delivery due 2029"
+    }
+   ],
+   "lat": 67.2752,
+   "lon": 14.3743,
+   "facts": [
+    {
+     "t": "A separate installation for the new Bodø Airport is due in 2029.",
+     "u": "https://kongsberg.com/kda/news/news-archive/2024/kongsberg-to-deliver-remote-towers-to-seven-new-norwegian-airports"
+    },
+    {
+     "t": "Avinor says the new Bodø and Kirkenes airports will have local digital tower solutions rather than operation from the centre.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "high",
+   "note": "Plotted at the existing Bodø airport; the new airport site is nearby.",
+   "controlled_from": "",
+   "regulator": "",
+   "iata": "BOO",
+   "elev_ft": "42",
+   "connections": []
+  },
+  {
+   "id": "enkr",
+   "name": "Kirkenes Airport",
+   "icao": "ENKR",
+   "country": "Norway",
+   "cc": "NO",
+   "kind": "digital_tower",
+   "status": "planned",
+   "vendors": [],
+   "ansp": "Avinor",
+   "program": "ninox",
+   "facts": [
+    {
+     "t": "Avinor says Kirkenes will have a local digital tower solution.",
+     "u": "https://om.avinor.no/en/aviation-safety/remote-controlled-towers"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 69.7258,
+   "lon": 29.8913,
+   "iata": "KKN",
+   "elev_ft": "283",
+   "connections": []
+  },
+  {
+   "id": "sundsvall-rtc",
+   "name": "LFV Remote Tower Centre Sundsvall",
+   "icao": "ESNN",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "program": "lfv-rtc",
+   "dates": [
+    {
+     "d": "2015-04",
+     "t": "H24 remote operation began at Örnsköldsvik"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The Sundsvall centre serves Sundsvall-Timrå, Sälen, Örnsköldsvik and Linköping; Stockholm-Västerås is to be the fifth.",
+     "u": "https://defence-industry.eu/saab-wins-15-year-stockholm-vasteras-airport-contract-to-expand-remote-air-traffic-control-operations-from-sundsvall/"
+    },
+    {
+     "t": "LFV's page says the Sundsvall centre serves Örnsköldsvik over 150 km away.",
+     "u": "https://lfv.se/en/services/airport-services/remote-tower-services"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 62.5281,
+   "lon": 17.4439,
+   "iata": "SDL",
+   "elev_ft": "16",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "esno",
+     "name": "Örnsköldsvik Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "esnn",
+     "name": "Sundsvall-Timrå Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "esks",
+     "name": "Scandinavian Mountains Airport (Sälen)"
+    },
+    {
+     "rel": "serves",
+     "id": "essl",
+     "name": "Linköping City Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "esow",
+     "name": "Stockholm-Västerås Airport"
+    }
+   ]
+  },
+  {
+   "id": "esno",
+   "name": "Örnsköldsvik Airport",
+   "icao": "ESNO",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "sundsvall-rtc",
+   "program": "lfv-rtc",
+   "dates": [
+    {
+     "d": "2014-10",
+     "t": "Operational approval"
+    },
+    {
+     "d": "2015-04",
+     "t": "H24 remote operation began"
+    }
+   ],
+   "facts": [
+    {
+     "t": "LFV reports operational approval by the end of October 2014 and H24 operation from April 2015.",
+     "u": "https://lfv.se/en/services/airport-services/remote-tower-services"
+    },
+    {
+     "t": "Saab describes Örnsköldsvik as the first airport in the world with remote air traffic control.",
+     "u": "https://ukdefencejournal.org.uk/royal-navy-order-digital-towers-from-saab/"
+    },
+    {
+     "t": "AIN reported the inauguration of LFV's first remote tower operations in April 2015.",
+     "u": "https://ainonline.com/aviation-news/air-transport/2015-04-22/swedens-lfv-inaugurates-first-remote-tower-operations"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 63.4083,
+   "lon": 18.99,
+   "iata": "OER",
+   "elev_ft": "354",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "sundsvall-rtc",
+     "name": "LFV Remote Tower Centre Sundsvall"
+    }
+   ]
+  },
+  {
+   "id": "esnn",
+   "name": "Sundsvall-Timrå Airport",
+   "icao": "ESNN",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "sundsvall-rtc",
+   "program": "lfv-rtc",
+   "facts": [
+    {
+     "t": "Named among the airports served from the Sundsvall centre.",
+     "u": "https://defence-industry.eu/saab-wins-15-year-stockholm-vasteras-airport-contract-to-expand-remote-air-traffic-control-operations-from-sundsvall/"
+    }
+   ],
+   "conf": "medium",
+   "note": "Plotted slightly offset from the centre marker, which shares the airport coordinates.",
+   "lat": 62.5341,
+   "lon": 17.4529,
+   "regulator": "",
+   "dates": [],
+   "iata": "SDL",
+   "elev_ft": "16",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "sundsvall-rtc",
+     "name": "LFV Remote Tower Centre Sundsvall"
+    }
+   ]
+  },
+  {
+   "id": "esks",
+   "name": "Scandinavian Mountains Airport (Sälen)",
+   "icao": "ESKS",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "sundsvall-rtc",
+   "program": "lfv-rtc",
+   "dates": [
+    {
+     "d": "2019-12",
+     "t": "Opened without a conventional tower"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Opened in December 2019 with no traditional tower; run from Sundsvall.",
+     "u": "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+    },
+    {
+     "t": "Named among the airports served from Sundsvall.",
+     "u": "https://defence-industry.eu/saab-wins-15-year-stockholm-vasteras-airport-contract-to-expand-remote-air-traffic-control-operations-from-sundsvall/"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "note": "",
+   "lat": 61.16508,
+   "lon": 12.83352,
+   "iata": "SCR",
+   "elev_ft": "1608",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "sundsvall-rtc",
+     "name": "LFV Remote Tower Centre Sundsvall"
+    }
+   ]
+  },
+  {
+   "id": "essl",
+   "name": "Linköping City Airport",
+   "icao": "ESSL",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "sundsvall-rtc",
+   "program": "lfv-rtc",
+   "facts": [
+    {
+     "t": "Named among the airports served from the Sundsvall centre.",
+     "u": "https://defence-industry.eu/saab-wins-15-year-stockholm-vasteras-airport-contract-to-expand-remote-air-traffic-control-operations-from-sundsvall/"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 58.40491,
+   "lon": 15.6845,
+   "iata": "LPI",
+   "elev_ft": "172",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "sundsvall-rtc",
+     "name": "LFV Remote Tower Centre Sundsvall"
+    }
+   ]
+  },
+  {
+   "id": "stockholm-rtc",
+   "name": "LFV Remote Tower Centre Stockholm",
+   "icao": "ESSA",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "program": "lfv-rtc",
+   "dates": [
+    {
+     "d": "2021-06-01",
+     "t": "Centre opened"
+    }
+   ],
+   "lat": 59.6519,
+   "lon": 17.9186,
+   "facts": [
+    {
+     "t": "RTC Stockholm opened on 1 June 2021 and serves some Swedavia airports.",
+     "u": "https://lfv.se/en/services/airport-services/remote-tower-services"
+    }
+   ],
+   "conf": "medium",
+   "note": "Exact centre location not stated; plotted at Arlanda.",
+   "controlled_from": "",
+   "regulator": "",
+   "iata": "ARN",
+   "elev_ft": "137",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "esnq",
+     "name": "Kiruna Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "esnz",
+     "name": "Åre Östersund Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "esnu",
+     "name": "Umeå Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "esms",
+     "name": "Malmö Airport"
+    }
+   ]
+  },
+  {
+   "id": "esnq",
+   "name": "Kiruna Airport",
+   "icao": "ESNQ",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "stockholm-rtc",
+   "program": "lfv-rtc",
+   "dates": [
+    {
+     "d": "2021",
+     "t": "Connected to RTC Stockholm"
+    }
+   ],
+   "facts": [
+    {
+     "t": "LFV lists it as served from RTC Stockholm. Kiruna was the first airport connected.",
+     "u": "https://lfv.se/en/services/airport-services/remote-tower-services"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "note": "",
+   "lat": 67.822,
+   "lon": 20.3368,
+   "iata": "KRN",
+   "elev_ft": "1508",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "stockholm-rtc",
+     "name": "LFV Remote Tower Centre Stockholm"
+    }
+   ]
+  },
+  {
+   "id": "esnz",
+   "name": "Åre Östersund Airport",
+   "icao": "ESNZ",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "stockholm-rtc",
+   "program": "lfv-rtc",
+   "dates": [
+    {
+     "d": "2021-12-01",
+     "t": "Connected to RTC Stockholm"
+    }
+   ],
+   "facts": [
+    {
+     "t": "LFV lists it as served from RTC Stockholm.",
+     "u": "https://lfv.se/en/services/airport-services/remote-tower-services"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "note": "",
+   "lat": 63.19355,
+   "lon": 14.50417,
+   "iata": "OSD",
+   "elev_ft": "1233",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "stockholm-rtc",
+     "name": "LFV Remote Tower Centre Stockholm"
+    }
+   ]
+  },
+  {
+   "id": "esnu",
+   "name": "Umeå Airport",
+   "icao": "ESNU",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "stockholm-rtc",
+   "program": "lfv-rtc",
+   "dates": [],
+   "facts": [
+    {
+     "t": "LFV lists it as served from RTC Stockholm. Umeå and Malmö are described as the two remaining airports, with no connection date given.",
+     "u": "https://lfv.se/en/services/airport-services/remote-tower-services"
+    }
+   ],
+   "conf": "low",
+   "regulator": "",
+   "note": "",
+   "lat": 63.7918,
+   "lon": 20.2828,
+   "iata": "UME",
+   "elev_ft": "24",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "stockholm-rtc",
+     "name": "LFV Remote Tower Centre Stockholm"
+    }
+   ]
+  },
+  {
+   "id": "esms",
+   "name": "Malmö Airport",
+   "icao": "ESMS",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LFV",
+   "controlled_from": "stockholm-rtc",
+   "program": "lfv-rtc",
+   "dates": [],
+   "facts": [
+    {
+     "t": "LFV lists it as served from RTC Stockholm. Umeå and Malmö are described as the two remaining airports, with no connection date given.",
+     "u": "https://lfv.se/en/services/airport-services/remote-tower-services"
+    }
+   ],
+   "conf": "low",
+   "regulator": "",
+   "note": "",
+   "lat": 55.53556,
+   "lon": 13.37633,
+   "iata": "MMX",
+   "elev_ft": "236",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "stockholm-rtc",
+     "name": "LFV Remote Tower Centre Stockholm"
+    }
+   ]
+  },
+  {
+   "id": "esow",
+   "name": "Stockholm-Västerås Airport",
+   "icao": "ESOW",
+   "country": "Sweden",
+   "cc": "SE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Saab (service contract)",
+   "controlled_from": "sundsvall-rtc",
+   "program": "lfv-rtc",
+   "dates": [
+    {
+     "d": "2026-09-22",
+     "t": "Contract announced"
+    },
+    {
+     "d": "2028-01-01",
+     "t": "Agreement takes effect"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Saab won a 15-year contract to install and operate remote air traffic control services; announced 22 September 2026, effective 1 January 2028.",
+     "u": "https://defence-industry.eu/saab-wins-15-year-stockholm-vasteras-airport-contract-to-expand-remote-air-traffic-control-operations-from-sundsvall/"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 59.5894,
+   "lon": 16.6336,
+   "iata": "VST",
+   "elev_ft": "21",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "sundsvall-rtc",
+     "name": "LFV Remote Tower Centre Sundsvall"
+    }
+   ]
+  },
+  {
+   "id": "swanwick-dtc",
+   "name": "NATS Swanwick Digital Tower Centre",
+   "icao": "",
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "NATS",
+   "program": "",
+   "lat": 50.8737,
+   "lon": -1.2473,
+   "facts": [
+    {
+     "t": "London City is controlled remotely from the NATS centre at Swanwick.",
+     "u": "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+    }
+   ],
+   "conf": "medium",
+   "note": "Plotted at Swanwick; exact building location approximate.",
+   "controlled_from": "",
+   "regulator": "",
+   "dates": [],
+   "iata": "",
+   "elev_ft": "",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "eglc",
+     "name": "London City Airport"
+    }
+   ]
+  },
+  {
+   "id": "eglc",
+   "name": "London City Airport",
+   "icao": "EGLC",
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "NATS",
+   "controlled_from": "swanwick-dtc",
+   "dates": [
+    {
+     "d": "2021",
+     "t": "Switched to remote ATC (first major airport)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Reuters reported the move to remote air traffic control in April 2021.",
+     "u": "https://www.reuters.com/world/uk/ground-control-out-remote-control-london-city-airport-2021-04-29/"
+    },
+    {
+     "t": "Saab names London City as a customer of its digital tower.",
+     "u": "https://ukdefencejournal.org.uk/royal-navy-order-digital-towers-from-saab/"
+    }
+   ],
+   "conf": "high",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 51.5053,
+   "lon": 0.05528,
+   "iata": "LCY",
+   "elev_ft": "19",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "swanwick-dtc",
+     "name": "NATS Swanwick Digital Tower Centre"
+    }
+   ]
+  },
+  {
+   "id": "egtc",
+   "name": "Cranfield Airport",
+   "icao": "EGTC",
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Cranfield University",
+   "dates": [
+    {
+     "d": "2018-12-13",
+     "t": "Digital ATC centre opened (first in the UK)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Wikipedia, citing Cranfield University, gives 13 December 2018 as the opening date of the UK's first digital air traffic control centre.",
+     "u": "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+    },
+    {
+     "t": "Airport Technology feature on the Cranfield digital tower.",
+     "u": "https://www.airport-technology.com/features/cranfield-digital-atc-tower/"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 52.0722,
+   "lon": -0.61667,
+   "iata": "",
+   "elev_ft": "360",
+   "connections": []
+  },
+  {
+   "id": "egll",
+   "name": "Heathrow Virtual Contingency Facility",
+   "icao": "EGLL",
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "contingency",
+   "status": "operational",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "NATS",
+   "dates": [
+    {
+     "d": "2009",
+     "t": "Contingency facility unveiled"
+    }
+   ],
+   "facts": [
+    {
+     "t": "NATS unveiled the world's first approved remote ATC contingency facility in 2009.",
+     "u": "https://www.nats.aero/news/worlds-first-approved-remote-atc-contingency-facility-unveiled/"
+    },
+    {
+     "t": "NATS and Searidge run a Digital Tower Laboratory in the Heathrow tower.",
+     "u": "https://www.nats.aero/news/elevate/april-22/crossing-the-chasm-how-digital-towers-joined-the-mainstream/"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 51.47075,
+   "lon": -0.45991,
+   "iata": "LHR",
+   "elev_ft": "83",
+   "connections": []
+  },
+  {
+   "id": "egdo",
+   "name": "RNAS Predannack",
+   "icao": "EGDO",
+   "lat": 50.0003,
+   "lon": -5.2272,
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Royal Navy",
+   "dates": [
+    {
+     "d": "2021-02",
+     "t": "Saab order for Predannack announced"
+    },
+    {
+     "d": "2025-02-19",
+     "t": "Support and maintenance contract concluded"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Saab signed to provide a digital air traffic control solution at Predannack, announced 25 February 2021.",
+     "u": "https://ukdefencejournal.org.uk/royal-navy-order-digital-towers-from-saab/"
+    },
+    {
+     "t": "A three-year, GBP 710,000 support contract for the remote tower equipment at Predannack and Culdrose was concluded 19 February 2025.",
+     "u": "https://www.find-tender.service.gov.uk/Notice/005940-2025"
+    }
+   ],
+   "conf": "medium",
+   "note": "In-service status is inferred from the 2025 support contract.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "iata": "",
+   "elev_ft": "295",
+   "connections": []
+  },
+  {
+   "id": "egdr",
+   "name": "RNAS Culdrose",
+   "icao": "EGDR",
+   "lat": 50.0859,
+   "lon": -5.2557,
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Royal Navy",
+   "dates": [
+    {
+     "d": "2021-02",
+     "t": "Saab order for Predannack announced"
+    },
+    {
+     "d": "2025-02-19",
+     "t": "Support and maintenance contract concluded"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Saab signed to provide a digital air traffic control solution at Predannack, announced 25 February 2021.",
+     "u": "https://ukdefencejournal.org.uk/royal-navy-order-digital-towers-from-saab/"
+    },
+    {
+     "t": "A three-year, GBP 710,000 support contract for the remote tower equipment at Predannack and Culdrose was concluded 19 February 2025.",
+     "u": "https://www.find-tender.service.gov.uk/Notice/005940-2025"
+    }
+   ],
+   "conf": "medium",
+   "note": "In-service status is inferred from the 2025 support contract.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "iata": "",
+   "elev_ft": "267",
+   "connections": []
+  },
+  {
+   "id": "egcc",
+   "name": "Manchester Airport (hybrid digital tower)",
+   "icao": "EGCC",
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "hybrid",
+   "status": "planned",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "NATS",
+   "dates": [
+    {
+     "d": "2025-02-26",
+     "t": "Announced"
+    },
+    {
+     "d": "2026",
+     "t": "Digital apron management due to go live"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Hybrid digital control tower with camera arrays on Terminal 2 piers; the release says the apron system is due to go live in 2026.",
+     "u": "https://www.nats.aero/news/manchester-airport-partners-with-nats-and-searidge-technologies-for-digital-transformation/"
+    }
+   ],
+   "conf": "medium",
+   "note": "Hybrid means controllers keep the window view and add video; it is not a remote tower. Go-live not confirmed.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 53.34938,
+   "lon": -2.27952,
+   "iata": "MAN",
+   "elev_ft": "257",
+   "connections": []
+  },
+  {
+   "id": "eglf",
+   "name": "Farnborough Airport (hybrid digital tower)",
+   "icao": "EGLF",
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "hybrid",
+   "status": "planned",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "NATS",
+   "dates": [
+    {
+     "d": "2023-10-03",
+     "t": "Announced"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Hybrid digital working position, described as a digital extension of the existing tower.",
+     "u": "https://www.nats.aero/news/farnborough-airport-goes-digital-with-nats-and-searidge-technologies/"
+    }
+   ],
+   "conf": "medium",
+   "note": "Hybrid, not a remote tower. No go-live confirmation found.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 51.2758,
+   "lon": -0.77633,
+   "iata": "FAB",
+   "elev_ft": "238",
+   "connections": []
+  },
+  {
+   "id": "egpe",
+   "name": "Inverness (HIAL Combined Surveillance Centre)",
+   "icao": "EGPE",
+   "country": "United Kingdom",
+   "cc": "GB",
+   "kind": "rtc",
+   "status": "cancelled",
+   "vendors": [],
+   "ansp": "HIAL",
+   "dates": [
+    {
+     "d": "2022-08-24",
+     "t": "Project cancelled"
+    }
+   ],
+   "facts": [
+    {
+     "t": "HIAL planned to move air traffic services for Dundee, Sumburgh, Kirkwall and Stornoway into Inverness; the project of about GBP 34 million was cancelled on 24 August 2022.",
+     "u": "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+    },
+    {
+     "t": "HIAL's 2021 guide describes the plan for remote and digital towers in the north of Scotland.",
+     "u": "https://www.hial.co.uk/downloads/file/326/guide-to-remote-digital-towers-april-2021-hial-plots-its-path-to-a-digital-future-for-air-traffic-services-in-the-north-of-scotland"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 57.5425,
+   "lon": -4.0475,
+   "iata": "INV",
+   "elev_ft": "31",
+   "connections": []
+  },
+  {
+   "id": "leipzig-rtc",
+   "name": "DFS Remote Tower Control Center Leipzig",
+   "icao": "EDDP",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS",
+   "program": "dfs-rtc",
+   "dates": [
+    {
+     "d": "2018-12-04",
+     "t": "First remote landing clearance (Saarbrücken)"
+    }
+   ],
+   "facts": [
+    {
+     "t": "As of October 2023 the Leipzig centre connected Saarbrücken, Erfurt and Dresden.",
+     "u": "https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf"
+    },
+    {
+     "t": "DFS signed with Frequentis for remote tower technology.",
+     "u": "https://www.internationalairportreview.com/news/19736/dfs-signs-contract-with-frequentis-to-install-remote-tower-technology"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 51.42066,
+   "lon": 12.2327,
+   "iata": "LEJ",
+   "elev_ft": "465",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "eddr",
+     "name": "Saarbrücken Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "edde",
+     "name": "Erfurt-Weimar Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "eddc",
+     "name": "Dresden Airport"
+    }
+   ]
+  },
+  {
+   "id": "eddr",
+   "name": "Saarbrücken Airport",
+   "icao": "EDDR",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS",
+   "controlled_from": "leipzig-rtc",
+   "program": "dfs-rtc",
+   "dates": [
+    {
+     "d": "2018-12-04",
+     "t": "Remote operation began; about 450 km from Leipzig"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Operational since 4 December 2018, when a Luxair flight was the first aircraft controlled remotely from Leipzig.",
+     "u": "https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 49.21455,
+   "lon": 7.10973,
+   "iata": "SCN",
+   "elev_ft": "1058",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "leipzig-rtc",
+     "name": "DFS Remote Tower Control Center Leipzig"
+    }
+   ]
+  },
+  {
+   "id": "edde",
+   "name": "Erfurt-Weimar Airport",
+   "icao": "EDDE",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS",
+   "controlled_from": "leipzig-rtc",
+   "program": "dfs-rtc",
+   "dates": [
+    {
+     "d": "2022-04-28",
+     "t": "Remote operation began"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Operational since 28 April 2022, about 110 km from Leipzig.",
+     "u": "https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf"
+    }
+   ],
+   "conf": "high",
+   "regulator": "",
+   "note": "",
+   "lat": 50.97828,
+   "lon": 10.96071,
+   "iata": "ERF",
+   "elev_ft": "1036",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "leipzig-rtc",
+     "name": "DFS Remote Tower Control Center Leipzig"
+    }
+   ]
+  },
+  {
+   "id": "eddc",
+   "name": "Dresden Airport",
+   "icao": "EDDC",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "remote_tower",
+   "status": "trial",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS",
+   "controlled_from": "leipzig-rtc",
+   "program": "dfs-rtc",
+   "dates": [
+    {
+     "d": "2023-10",
+     "t": "Validation under way"
+    }
+   ],
+   "facts": [
+    {
+     "t": "In October 2023 the new system's implementation was almost complete, with validations planned for 2024.",
+     "u": "https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf"
+    }
+   ],
+   "conf": "medium",
+   "note": "Whether it moved to operation after 2024 is not confirmed here.",
+   "regulator": "",
+   "lat": 51.13412,
+   "lon": 13.76783,
+   "iata": "DRS",
+   "elev_ft": "755",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "leipzig-rtc",
+     "name": "DFS Remote Tower Control Center Leipzig"
+    }
+   ]
+  },
+  {
+   "id": "braunschweig-rtc",
+   "name": "DFS Aviation Services Remote Tower Center Niedersachsen",
+   "icao": "EDVE",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS Aviation Services",
+   "program": "dfs-rtc",
+   "dates": [
+    {
+     "d": "2024-11-28",
+     "t": "Opening ceremony"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Opened 28 November 2024 with capacity for six airports; operated with Frequentis DFS Aerosense and ESPA.",
+     "u": "https://dfs-as.aero/dfs-aviation-services-eroeffnet-remote-tower-center-niedersachsen-in-braunschweig/"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 52.3192,
+   "lon": 10.5561,
+   "iata": "BWE",
+   "elev_ft": "295",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "edve",
+     "name": "Braunschweig-Wolfsburg Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "edwe",
+     "name": "Emden Airport"
+    }
+   ]
+  },
+  {
+   "id": "edve",
+   "name": "Braunschweig-Wolfsburg Airport",
+   "icao": "EDVE",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS Aviation Services",
+   "controlled_from": "braunschweig-rtc",
+   "program": "dfs-rtc",
+   "dates": [
+    {
+     "d": "2024-11",
+     "t": "Services partly provided from the centre"
+    }
+   ],
+   "facts": [
+    {
+     "t": "In the November 2024 operational introduction phase, services were already partly provided from the centre.",
+     "u": "https://dfs-as.aero/dfs-aviation-services-eroeffnet-remote-tower-center-niedersachsen-in-braunschweig/"
+    }
+   ],
+   "conf": "medium",
+   "lat": 52.3252,
+   "lon": 10.5651,
+   "regulator": "",
+   "note": "",
+   "iata": "BWE",
+   "elev_ft": "295",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "braunschweig-rtc",
+     "name": "DFS Aviation Services Remote Tower Center Niedersachsen"
+    }
+   ]
+  },
+  {
+   "id": "edwe",
+   "name": "Emden Airport",
+   "icao": "EDWE",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS Aviation Services",
+   "controlled_from": "braunschweig-rtc",
+   "program": "dfs-rtc",
+   "facts": [
+    {
+     "t": "DFS said in November 2024 that Emden would be connected in the following months, the first integration of an AFIS into a remote tower centre.",
+     "u": "https://dfs-as.aero/dfs-aviation-services-eroeffnet-remote-tower-center-niedersachsen-in-braunschweig/"
+    }
+   ],
+   "conf": "medium",
+   "note": "Wikipedia lists Emden as served from Braunschweig since 2024; the DFS release says planned. Unresolved.",
+   "regulator": "",
+   "dates": [],
+   "lat": 53.39111,
+   "lon": 7.2275,
+   "iata": "EME",
+   "elev_ft": "3",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "braunschweig-rtc",
+     "name": "DFS Aviation Services Remote Tower Center Niedersachsen"
+    }
+   ]
+  },
+  {
+   "id": "eddm",
+   "name": "Munich Airport (validation virtual tower)",
+   "icao": "EDDM",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "test_site",
+   "status": "trial",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DFS",
+   "dates": [
+    {
+     "d": "2026-07-30",
+     "t": "Reported as being installed and tested under real conditions"
+    }
+   ],
+   "facts": [
+    {
+     "t": "A validation system is being installed and tested as a virtual tower during the tower renovation (Frequentis DFS Aerosense).",
+     "u": "https://www.boerse-online.de/dpa-afx/irw-news-dr-reuter-investor-relations-von-sydney-bis-muenchen-wie-frequentis-mit-digitalen-flugtowern-weltweit-neue-standards-fuer-die-zivile-und-militaerische-infrastruktur-setzt-541645.html"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 48.3538,
+   "lon": 11.7861,
+   "iata": "MUC",
+   "elev_ft": "1487",
+   "connections": []
+  },
+  {
+   "id": "etin",
+   "name": "Garrison Katterbach (US Army)",
+   "icao": "ETIN",
+   "country": "Germany",
+   "cc": "DE",
+   "kind": "digital_tower",
+   "status": "operational",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "US Army",
+   "program": "",
+   "dates": [
+    {
+     "d": "2025-06-05",
+     "t": "Reported live and operational"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The US Department of Defense and Frequentis Defense said their first digital air traffic control tower was live and operational at Garrison Katterbach, Germany.",
+     "u": "https://aerospaceglobalnews.com/news/frequentis-cooperates-with-us-dod-on-installation-of-digital-tower/"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 49.74429,
+   "lon": 10.20731,
+   "iata": "KZG",
+   "elev_ft": "689",
+   "connections": []
+  },
+  {
+   "id": "lhbp",
+   "name": "Budapest Ferenc Liszt International Airport",
+   "icao": "LHBP",
+   "country": "Hungary",
+   "cc": "HU",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "HungaroControl",
+   "dates": [
+    {
+     "d": "2017",
+     "t": "Remote tower operations launched"
+    },
+    {
+     "d": "2023-03",
+     "t": "New Indra modular remote tower centre in factory acceptance"
+    }
+   ],
+   "facts": [
+    {
+     "t": "HungaroControl was operationally certified to provide tower services using a remote tower; operations launched in 2017 and the remote facility took over during a physical-tower upgrade.",
+     "u": "https://en.hungarocontrol.hu/press-room/news/remote-tower-technology-continues-to-bolster-service-continuity-in-Hungary"
+    },
+    {
+     "t": "Indra is supplying a modular integrated remote tower centre; live operations were expected in 2024.",
+     "u": "https://www.indragroup.com/en/news/indra-implementing-worlds-advanced-digital-remote-tower-hungarocontrol-budapest-airport"
+    }
+   ],
+   "conf": "medium",
+   "note": "The vendor of the 2017 system is not named in the cited release. The Indra system is a separate, newer deployment. Current status of the Indra system is not confirmed here.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 47.43018,
+   "lon": 19.26239,
+   "iata": "BUD",
+   "elev_ft": "495",
+   "connections": []
+  },
+  {
+   "id": "dublin-atcc",
+   "name": "IAA Dublin ATC Centre (remote tower hub)",
+   "icao": "EIDW",
+   "country": "Ireland",
+   "cc": "IE",
+   "kind": "rtc",
+   "status": "trial",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "IAA",
+   "program": "sesar",
+   "dates": [
+    {
+     "d": "2016-06",
+     "t": "Remote tower trials began"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The IAA plans to provide air movements and surface control for Cork and Shannon from the Dublin centre; trials began in June 2016.",
+     "u": "https://www.iaa.ie/air-traffic-management/innovation/remote-towers"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 53.42871,
+   "lon": -6.26212,
+   "iata": "DUB",
+   "elev_ft": "242",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "eick",
+     "name": "Cork Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "einn",
+     "name": "Shannon Airport"
+    }
+   ]
+  },
+  {
+   "id": "eick",
+   "name": "Cork Airport",
+   "icao": "EICK",
+   "country": "Ireland",
+   "cc": "IE",
+   "kind": "remote_tower",
+   "status": "trial",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "IAA",
+   "controlled_from": "dublin-atcc",
+   "program": "sesar",
+   "dates": [
+    {
+     "d": "2016-06",
+     "t": "Multiple remote tower trial from Dublin"
+    },
+    {
+     "d": "2023-01",
+     "t": "SESAR grant announced for a demonstration"
+    }
+   ],
+   "facts": [
+    {
+     "t": "IAA page dated 30 January 2023 announces a SESAR demonstration grant; no go-live date is given and European regulatory approval is still needed.",
+     "u": "https://www.iaa.ie/air-traffic-management/innovation/remote-towers"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "note": "",
+   "lat": 51.8413,
+   "lon": -8.49111,
+   "iata": "ORK",
+   "elev_ft": "502",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "dublin-atcc",
+     "name": "IAA Dublin ATC Centre (remote tower hub)"
+    }
+   ]
+  },
+  {
+   "id": "einn",
+   "name": "Shannon Airport",
+   "icao": "EINN",
+   "country": "Ireland",
+   "cc": "IE",
+   "kind": "remote_tower",
+   "status": "trial",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "IAA",
+   "controlled_from": "dublin-atcc",
+   "program": "sesar",
+   "dates": [
+    {
+     "d": "2016-06",
+     "t": "Multiple remote tower trial from Dublin"
+    },
+    {
+     "d": "2023-01",
+     "t": "SESAR grant announced for a demonstration"
+    }
+   ],
+   "facts": [
+    {
+     "t": "IAA page dated 30 January 2023 announces a SESAR demonstration grant; no go-live date is given and European regulatory approval is still needed.",
+     "u": "https://www.iaa.ie/air-traffic-management/innovation/remote-towers"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "note": "",
+   "lat": 52.702,
+   "lon": -8.92482,
+   "iata": "SNN",
+   "elev_ft": "46",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "dublin-atcc",
+     "name": "IAA Dublin ATC Centre (remote tower hub)"
+    }
+   ]
+  },
+  {
+   "id": "ehgg",
+   "name": "Groningen Airport Eelde",
+   "icao": "EHGG",
+   "country": "Netherlands",
+   "cc": "NL",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LVNL",
+   "controlled_from": "schiphol-rtc",
+   "dates": [
+    {
+     "d": "2019-12",
+     "t": "SDATS contract"
+    },
+    {
+     "d": "2024-12",
+     "t": "Airport project page marks the project complete"
+    }
+   ],
+   "facts": [
+    {
+     "t": "LVNL chose Saab Digital Air Traffic Solutions for Groningen and Maastricht Aachen; service was planned from the end of 2021.",
+     "u": "https://www.internationalairportreview.com/news/108966/sdats-contract-build-remote-towers"
+    },
+    {
+     "t": "The airport's project page lists May 2018 to December 2024 and says air traffic control is run remotely from the Remote Tower Centre at Schiphol Oost.",
+     "u": "https://www.groningenairport.nl/en/sustainability/project-portfolio/remote-tower"
+    }
+   ],
+   "conf": "low",
+   "note": "No go-live notice found.",
+   "program": "",
+   "regulator": "",
+   "lat": 53.11911,
+   "lon": 6.57765,
+   "iata": "GRQ",
+   "elev_ft": "17",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "schiphol-rtc",
+     "name": "LVNL Remote Tower Centre (Schiphol Oost)"
+    }
+   ]
+  },
+  {
+   "id": "schiphol-rtc",
+   "name": "LVNL Remote Tower Centre (Schiphol Oost)",
+   "icao": "",
+   "country": "Netherlands",
+   "cc": "NL",
+   "kind": "rtc",
+   "status": "unverified",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LVNL",
+   "lat": 52.305,
+   "lon": 4.8,
+   "facts": [
+    {
+     "t": "Named on the Groningen project page as the location from which Groningen is run remotely.",
+     "u": "https://www.groningenairport.nl/en/sustainability/project-portfolio/remote-tower"
+    }
+   ],
+   "conf": "low",
+   "note": "Location approximate.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "iata": "",
+   "elev_ft": "",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "ehgg",
+     "name": "Groningen Airport Eelde"
+    },
+    {
+     "rel": "serves",
+     "id": "ehbk",
+     "name": "Maastricht Aachen Airport"
+    }
+   ]
+  },
+  {
+   "id": "ehbk",
+   "name": "Maastricht Aachen Airport",
+   "icao": "EHBK",
+   "country": "Netherlands",
+   "cc": "NL",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "LVNL",
+   "controlled_from": "schiphol-rtc",
+   "facts": [
+    {
+     "t": "Named in the December 2019 LVNL contract with Saab; current status not confirmed.",
+     "u": "https://www.internationalairportreview.com/news/108966/sdats-contract-build-remote-towers"
+    }
+   ],
+   "conf": "low",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 50.91109,
+   "lon": 5.7694,
+   "iata": "MST",
+   "elev_ft": "375",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "schiphol-rtc",
+     "name": "LVNL Remote Tower Centre (Schiphol Oost)"
+    }
+   ]
+  },
+  {
+   "id": "ekbi",
+   "name": "Billund Airport",
+   "icao": "EKBI",
+   "country": "Denmark",
+   "cc": "DK",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "Naviair",
+   "dates": [
+    {
+     "d": "2020-02",
+     "t": "Naviair selects integrated remote tower and approach centre"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Naviair chose Frequentis DFS Aerosense for an integrated remote digital tower with approach automation, Billund first; centre expected operational in 2022.",
+     "u": "https://canso.org/denmarks-naviair-to-tackle-airspace-efficiency-and-service-provision-with-integrated-remote-tower-and-approach-centre-from-frequentis-dfs-aerosense/"
+    }
+   ],
+   "conf": "low",
+   "note": "No go-live notice found.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 55.74034,
+   "lon": 9.15702,
+   "iata": "BLL",
+   "elev_ft": "247",
+   "connections": []
+  },
+  {
+   "id": "vantaa-rtc",
+   "name": "Fintraffic Remote Tower Centre Vantaa",
+   "icao": "EFHK",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "rtc",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "program": "fintraffic-rtc",
+   "dates": [
+    {
+     "d": "2026-06-25",
+     "t": "Indra announces deployment of the multi-airport centre"
+    }
+   ],
+   "lat": 60.3172,
+   "lon": 24.9633,
+   "facts": [
+    {
+     "t": "Indra and Fintraffic announced a digital remote tower centre near Helsinki where each controller can manage up to three airports from one workstation.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "iata": "HEL",
+   "elev_ft": "179",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "efma",
+     "name": "Mariehamn Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "eftu",
+     "name": "Turku Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "efva",
+     "name": "Vaasa Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "efkt",
+     "name": "Kittilä Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "efiv",
+     "name": "Ivalo Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "efks",
+     "name": "Kuusamo Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "efou",
+     "name": "Oulu Airport"
+    }
+   ]
+  },
+  {
+   "id": "efma",
+   "name": "Mariehamn Airport",
+   "icao": "EFMA",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "controlled_from": "vantaa-rtc",
+   "program": "fintraffic-rtc",
+   "facts": [
+    {
+     "t": "One of seven airports covered by the Vantaa multi-airport centre announced on 25 June 2026; no schedule is given.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 60.1222,
+   "lon": 19.8982,
+   "iata": "MHQ",
+   "elev_ft": "17",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "vantaa-rtc",
+     "name": "Fintraffic Remote Tower Centre Vantaa"
+    }
+   ]
+  },
+  {
+   "id": "eftu",
+   "name": "Turku Airport",
+   "icao": "EFTU",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "controlled_from": "vantaa-rtc",
+   "program": "fintraffic-rtc",
+   "facts": [
+    {
+     "t": "One of seven airports covered by the Vantaa multi-airport centre announced on 25 June 2026; no schedule is given.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 60.5141,
+   "lon": 22.2628,
+   "iata": "TKU",
+   "elev_ft": "161",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "vantaa-rtc",
+     "name": "Fintraffic Remote Tower Centre Vantaa"
+    }
+   ]
+  },
+  {
+   "id": "efva",
+   "name": "Vaasa Airport",
+   "icao": "EFVA",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "controlled_from": "vantaa-rtc",
+   "program": "fintraffic-rtc",
+   "facts": [
+    {
+     "t": "One of seven airports covered by the Vantaa multi-airport centre announced on 25 June 2026; no schedule is given.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 63.05023,
+   "lon": 21.76254,
+   "iata": "VAA",
+   "elev_ft": "19",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "vantaa-rtc",
+     "name": "Fintraffic Remote Tower Centre Vantaa"
+    }
+   ]
+  },
+  {
+   "id": "efkt",
+   "name": "Kittilä Airport",
+   "icao": "EFKT",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "controlled_from": "vantaa-rtc",
+   "program": "fintraffic-rtc",
+   "facts": [
+    {
+     "t": "One of seven airports covered by the Vantaa multi-airport centre announced on 25 June 2026; no schedule is given.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 67.701,
+   "lon": 24.8468,
+   "iata": "KTT",
+   "elev_ft": "644",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "vantaa-rtc",
+     "name": "Fintraffic Remote Tower Centre Vantaa"
+    }
+   ]
+  },
+  {
+   "id": "efiv",
+   "name": "Ivalo Airport",
+   "icao": "EFIV",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "controlled_from": "vantaa-rtc",
+   "program": "fintraffic-rtc",
+   "facts": [
+    {
+     "t": "One of seven airports covered by the Vantaa multi-airport centre announced on 25 June 2026; no schedule is given.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 68.6073,
+   "lon": 27.4053,
+   "iata": "IVL",
+   "elev_ft": "481",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "vantaa-rtc",
+     "name": "Fintraffic Remote Tower Centre Vantaa"
+    }
+   ]
+  },
+  {
+   "id": "efks",
+   "name": "Kuusamo Airport",
+   "icao": "EFKS",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "controlled_from": "vantaa-rtc",
+   "program": "fintraffic-rtc",
+   "facts": [
+    {
+     "t": "One of seven airports covered by the Vantaa multi-airport centre announced on 25 June 2026; no schedule is given.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 65.9876,
+   "lon": 29.2394,
+   "iata": "KAO",
+   "elev_ft": "866",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "vantaa-rtc",
+     "name": "Fintraffic Remote Tower Centre Vantaa"
+    }
+   ]
+  },
+  {
+   "id": "efou",
+   "name": "Oulu Airport",
+   "icao": "EFOU",
+   "country": "Finland",
+   "cc": "FI",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "Fintraffic ANS",
+   "controlled_from": "vantaa-rtc",
+   "program": "fintraffic-rtc",
+   "facts": [
+    {
+     "t": "One of seven airports covered by the Vantaa multi-airport centre announced on 25 June 2026; no schedule is given.",
+     "u": "https://www.indragroup.com/cms-content/2026/06/260625-PR-Indra-digital-multiairport-tower-Fintraffic.pdf"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 64.9301,
+   "lon": 25.3546,
+   "iata": "OUL",
+   "elev_ft": "47",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "vantaa-rtc",
+     "name": "Fintraffic Remote Tower Centre Vantaa"
+    }
+   ]
+  },
+  {
+   "id": "tallinn-rtc",
+   "name": "EANS Remote Tower Centre Tallinn",
+   "icao": "EETN",
+   "country": "Estonia",
+   "cc": "EE",
+   "kind": "rtc",
+   "status": "operational",
+   "vendors": [
+    "Adacel"
+   ],
+   "ansp": "EANS",
+   "program": "",
+   "dates": [
+    {
+     "d": "2016",
+     "t": "EANS starts the remote tower project with Cybernetica"
+    },
+    {
+     "d": "2022-02-24",
+     "t": "Cybernetica sells its ATM remote tower technology; Adacel takes over"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The centre is at the Tallinn ATCC; Tartu was the first airport served from it, from April 2023.",
+     "u": "https://eans.ee/en/tegevused/arendustegevused/remote-tower"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 59.41325,
+   "lon": 24.83264,
+   "iata": "TLL",
+   "elev_ft": "131",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "eetu",
+     "name": "Tartu Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "eeke",
+     "name": "Kuressaare Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "eepu",
+     "name": "Pärnu Airport"
+    },
+    {
+     "rel": "serves",
+     "id": "eeka",
+     "name": "Kärdla Airport"
+    }
+   ]
+  },
+  {
+   "id": "eetu",
+   "name": "Tartu Airport",
+   "icao": "EETU",
+   "country": "Estonia",
+   "cc": "EE",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Adacel"
+   ],
+   "ansp": "EANS",
+   "controlled_from": "tallinn-rtc",
+   "dates": [
+    {
+     "d": "2023-04",
+     "t": "First airport served from the Tallinn centre"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Tartu received air traffic services from the Remote Tower Centre starting April 2023.",
+     "u": "https://eans.ee/en/tegevused/arendustegevused/remote-tower"
+    }
+   ],
+   "conf": "high",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 58.30744,
+   "lon": 26.68647,
+   "iata": "TAY",
+   "elev_ft": "220",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "tallinn-rtc",
+     "name": "EANS Remote Tower Centre Tallinn"
+    }
+   ]
+  },
+  {
+   "id": "eeke",
+   "name": "Kuressaare Airport",
+   "icao": "EEKE",
+   "country": "Estonia",
+   "cc": "EE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Adacel"
+   ],
+   "ansp": "EANS",
+   "controlled_from": "tallinn-rtc",
+   "facts": [
+    {
+     "t": "EANS planned to digitise all four regional Estonian airports (Tartu, Kuressaare, Pärnu, Kärdla).",
+     "u": "https://eans.ee/en/tegevused/arendustegevused/remote-tower"
+    }
+   ],
+   "conf": "low",
+   "note": "Current status not confirmed.",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "lat": 58.2299,
+   "lon": 22.5095,
+   "iata": "URE",
+   "elev_ft": "14",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "tallinn-rtc",
+     "name": "EANS Remote Tower Centre Tallinn"
+    }
+   ]
+  },
+  {
+   "id": "eepu",
+   "name": "Pärnu Airport",
+   "icao": "EEPU",
+   "country": "Estonia",
+   "cc": "EE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Adacel"
+   ],
+   "ansp": "EANS",
+   "controlled_from": "tallinn-rtc",
+   "facts": [
+    {
+     "t": "EANS planned to digitise all four regional Estonian airports (Tartu, Kuressaare, Pärnu, Kärdla).",
+     "u": "https://eans.ee/en/tegevused/arendustegevused/remote-tower"
+    }
+   ],
+   "conf": "low",
+   "note": "Current status not confirmed.",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "lat": 58.419,
+   "lon": 24.4728,
+   "iata": "EPU",
+   "elev_ft": "47",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "tallinn-rtc",
+     "name": "EANS Remote Tower Centre Tallinn"
+    }
+   ]
+  },
+  {
+   "id": "eeka",
+   "name": "Kärdla Airport",
+   "icao": "EEKA",
+   "country": "Estonia",
+   "cc": "EE",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Adacel"
+   ],
+   "ansp": "EANS",
+   "controlled_from": "tallinn-rtc",
+   "facts": [
+    {
+     "t": "EANS planned to digitise all four regional Estonian airports (Tartu, Kuressaare, Pärnu, Kärdla).",
+     "u": "https://eans.ee/en/tegevused/arendustegevused/remote-tower"
+    }
+   ],
+   "conf": "low",
+   "note": "Current status not confirmed.",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "lat": 58.9908,
+   "lon": 22.8307,
+   "iata": "KDL",
+   "elev_ft": "18",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "tallinn-rtc",
+     "name": "EANS Remote Tower Centre Tallinn"
+    }
+   ]
+  },
+  {
+   "id": "eyvi",
+   "name": "Vilnius Airport",
+   "icao": "EYVI",
+   "country": "Lithuania",
+   "cc": "LT",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Oro Navigacija",
+   "dates": [
+    {
+     "d": "2025-04-04",
+     "t": "Order reported"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Saab received an order from Oro Navigacija for a digital air traffic control tower at Vilnius, reported 4 April 2025; no operation date stated.",
+     "u": "https://www.nordicdefencesector.com/article/saab-receives-order-for-digital-air-traffic-control-tower-fo?lang=en"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 54.6341,
+   "lon": 25.2858,
+   "iata": "VNO",
+   "elev_ft": "648",
+   "connections": []
+  },
+  {
+   "id": "epmo",
+   "name": "Warsaw Modlin Airport",
+   "icao": "EPMO",
+   "country": "Poland",
+   "cc": "PL",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "PANSA",
+   "dates": [
+    {
+     "d": "2025-07-10",
+     "t": "Saab Digital Tower selected"
+    }
+   ],
+   "facts": [
+    {
+     "t": "PANSA selected Saab's Digital Tower Suite with an operations centre at PANSA premises in Warsaw; first Polish airport run from a digital tower.",
+     "u": "https://www.saab.com/newsroom/press-releases/2025/saabs-next-generation-digital-tower-selected-for-warsaw-modlin-airport-in-poland"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 52.4511,
+   "lon": 20.6518,
+   "iata": "WMI",
+   "elev_ft": "341",
+   "connections": []
+  },
+  {
+   "id": "lrbv",
+   "name": "Brașov-Ghimbav International Airport",
+   "icao": "LRBV",
+   "country": "Romania",
+   "cc": "RO",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "Brașov airport",
+   "dates": [
+    {
+     "d": "2023-06-15",
+     "t": "Flights began under remote air traffic control"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Wikipedia, citing Romanian press, says flights began on 15 June 2023 with a fully remote tower.",
+     "u": "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+    },
+    {
+     "t": "Saab received the order for a digital tower in Romania in 2022.",
+     "u": "https://www.saab.com/newsroom/press-releases/2022/saab-receives-order-for-a-digital-tower-in-romania"
+    }
+   ],
+   "conf": "medium",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 45.70558,
+   "lon": 25.52287,
+   "iata": "GHV",
+   "elev_ft": "1740",
+   "connections": []
+  },
+  {
+   "id": "lrar",
+   "name": "Arad International Airport",
+   "icao": "LRAR",
+   "country": "Romania",
+   "cc": "RO",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "",
+   "controlled_from": "lrbv",
+   "facts": [
+    {
+     "t": "Wikipedia lists Arad as a remote operating site about 400 km from Brașov-Ghimbav.",
+     "u": "https://en.wikipedia.org/wiki/Remote_and_virtual_tower"
+    }
+   ],
+   "conf": "low",
+   "note": "Single secondary source; not independently confirmed.",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "lat": 46.17614,
+   "lon": 21.26432,
+   "iata": "ARW",
+   "elev_ft": "352",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "lrbv",
+     "name": "Brașov-Ghimbav International Airport"
+    }
+   ]
+  },
+  {
+   "id": "levx",
+   "name": "Vigo Airport",
+   "icao": "LEVX",
+   "country": "Spain",
+   "cc": "ES",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Searidge",
+    "FerroNATS"
+   ],
+   "ansp": "Aena",
+   "dates": [
+    {
+     "d": "2020-11",
+     "t": "Aena selects Searidge and FerroNATS"
+    },
+    {
+     "d": "2025-06",
+     "t": "Operations planned to launch"
+    },
+    {
+     "d": "2025-12-10",
+     "t": "Reported operational; early operations in low-traffic hours with a conventional controller on standby"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Searidge reports Spain's first regulator-certified digital control tower operating at Vigo, with the operations centre in a separate building next to the airport.",
+     "u": "https://www.atc-network.com/atc-news/searidge-technologies/searidge-powers-spains-first-regulator-certified-digital-control-tower-at-vigo-airport"
+    },
+    {
+     "t": "CAPA reported in March 2025 that operations were due to launch in June 2025.",
+     "u": "https://centreforaviation.com/news/vigo-airport-to-launch-digital-control-tower-operations-in-jun-2025-1306697"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 42.2318,
+   "lon": -8.62677,
+   "iata": "VGO",
+   "elev_ft": "856",
+   "connections": []
+  },
+  {
+   "id": "lemh",
+   "name": "Menorca Airport",
+   "icao": "LEMH",
+   "country": "Spain",
+   "cc": "ES",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "Aena",
+   "facts": [
+    {
+     "t": "Kongsberg was selected to supply its remote tower system for Menorca, with delivery stated as 2021; the remote location is not stated.",
+     "u": "https://www.kongsberg.com/news/news-archive/20202/spains-menorca-airport-to-operate-with-kongsbergs-remote-tower-system/"
+    }
+   ],
+   "conf": "low",
+   "note": "No go-live notice found.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "lat": 39.8626,
+   "lon": 4.21865,
+   "iata": "MAH",
+   "elev_ft": "302",
+   "connections": []
+  },
+  {
+   "id": "lfbo-rtc",
+   "name": "DSNA Remote Tower Centre Toulouse",
+   "icao": "LFBO",
+   "country": "France",
+   "cc": "FR",
+   "kind": "rtc",
+   "status": "planned",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DSNA",
+   "dates": [
+    {
+     "d": "2022-06",
+     "t": "DSNA selects Frequentis smartVISION"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The centre at Toulouse-Blagnac was planned to later handle four more airport towers.",
+     "u": "https://canso.org/france-selects-frequentis-remote-digital-tower/"
+    }
+   ],
+   "conf": "medium",
+   "note": "Operational status not confirmed.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 43.6291,
+   "lon": 1.36382,
+   "iata": "TLS",
+   "elev_ft": "499",
+   "connections": [
+    {
+     "rel": "serves",
+     "id": "lfot",
+     "name": "Tours Val de Loire Airport"
+    }
+   ]
+  },
+  {
+   "id": "lfot",
+   "name": "Tours Val de Loire Airport",
+   "icao": "LFOT",
+   "country": "France",
+   "cc": "FR",
+   "kind": "remote_tower",
+   "status": "unverified",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DSNA",
+   "controlled_from": "lfbo-rtc",
+   "dates": [
+    {
+     "d": "2022-06",
+     "t": "Selected; first tower due to go live end of 2023"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Frequentis supplies the system; Tours is more than 500 km from Toulouse and was due to go live at the end of 2023.",
+     "u": "https://canso.org/france-selects-frequentis-remote-digital-tower/"
+    },
+    {
+     "t": "French press in December 2022 said the remote tower was planned for installation in 2024.",
+     "u": "https://www.presse-citron.net/pour-la-premiere-fois-en-france-un-aeroport-va-etre-controle-a-distance/"
+    }
+   ],
+   "conf": "low",
+   "note": "Schedules conflict; no go-live notice found.",
+   "program": "",
+   "regulator": "",
+   "lat": 47.4322,
+   "lon": 0.72761,
+   "iata": "TUF",
+   "elev_ft": "357",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "lfbo-rtc",
+     "name": "DSNA Remote Tower Centre Toulouse"
+    }
+   ]
+  },
+  {
+   "id": "libr",
+   "name": "Brindisi Airport",
+   "icao": "LIBR",
+   "country": "Italy",
+   "cc": "IT",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [],
+   "ansp": "ENAV",
+   "dates": [
+    {
+     "d": "2022-06-13",
+     "t": "Inaugurated"
+    }
+   ],
+   "facts": [
+    {
+     "t": "ENAV inaugurated Italy's first remotely managed control tower on 13 June 2022.",
+     "u": "https://www.enav.it/en/node/17451"
+    }
+   ],
+   "conf": "high",
+   "note": "The hardware vendor is not named in the ENAV release.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 40.6576,
+   "lon": 17.947,
+   "iata": "BDS",
+   "elev_ft": "47",
+   "connections": []
+  },
+  {
+   "id": "lsgg",
+   "name": "Geneva Airport",
+   "icao": "LSGG",
+   "country": "Switzerland",
+   "cc": "CH",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [],
+   "ansp": "skyguide",
+   "dates": [
+    {
+     "d": "2022-09-21",
+     "t": "Reported plan to replace the 1980s tower"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Skyguide plans to replace the tower with a remote tower, initially on site.",
+     "u": "https://worldradio.ch/news/bitesize-news/airport-control-tower-to-go-virtual"
+    }
+   ],
+   "conf": "low",
+   "note": "Plan reported in 2022; current status not confirmed.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 46.2381,
+   "lon": 6.10895,
+   "iata": "GVA",
+   "elev_ft": "1411",
+   "connections": []
+  },
+  {
+   "id": "cygk",
+   "name": "Kingston Airport (Ontario)",
+   "icao": "CYGK",
+   "country": "Canada",
+   "cc": "CA",
+   "kind": "digital_tower",
+   "status": "planned",
+   "vendors": [
+    "Kongsberg"
+   ],
+   "ansp": "NAV CANADA",
+   "program": "daats",
+   "dates": [
+    {
+     "d": "2024-06-24",
+     "t": "Kongsberg Geospatial framework contract announced"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Kingston is the first digital facility in NAV CANADA's DAATS programme; a Kingston hub serving other communities could follow in four to six years.",
+     "u": "https://www.kongsberggeospatial.com/news/nav-canada-selects-kongsberg-geospatial-as-the-technology-partner-to-equip-digital-aerodrome-air-traffic-services-daats-program"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 44.2253,
+   "lon": -76.5969,
+   "iata": "YGK",
+   "elev_ft": "305",
+   "connections": []
+  },
+  {
+   "id": "sbsc",
+   "name": "Santa Cruz Air Base",
+   "icao": "SBSC",
+   "country": "Brazil",
+   "cc": "BR",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "DECEA",
+   "dates": [
+    {
+     "d": "2019-10-18",
+     "t": "smartVISION system installed"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Frequentis and DECEA installed the first remote tower in South America at the Santa Cruz air base in October 2019.",
+     "u": "https://canso.org/?p=11248"
+    }
+   ],
+   "conf": "medium",
+   "note": "Ongoing operation since 2019 not re-verified.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": -22.9324,
+   "lon": -43.7191,
+   "iata": "SNZ",
+   "elev_ft": "10",
+   "connections": []
+  },
+  {
+   "id": "kjyo",
+   "name": "Leesburg Executive Airport",
+   "icao": "KJYO",
+   "country": "United States",
+   "cc": "US",
+   "kind": "remote_tower",
+   "status": "decommissioned",
+   "vendors": [
+    "Saab"
+   ],
+   "ansp": "FAA (non-federal)",
+   "program": "faa-rts",
+   "dates": [
+    {
+     "d": "2015-06",
+     "t": "Test in summer 2015"
+    },
+    {
+     "d": "2018",
+     "t": "Remote tower air traffic services began"
+    },
+    {
+     "d": "2023-06",
+     "t": "FAA discontinued the remote tower program"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The town says air traffic control has been provided since 2018 through the FAA remote tower program (nearly 80,000 operations a year) and that the FAA discontinued the program in June 2023.",
+     "u": "https://www.leesburgva.gov/departments/capital-projects/current-projects/airport-projects/airport-air-traffic-control-tower"
+    },
+    {
+     "t": "A temporary tower is in place; the permanent tower is estimated to finish in spring 2029.",
+     "u": "https://www.leesburgva.gov/departments/capital-projects/current-projects/airport-projects/airport-air-traffic-control-tower"
+    },
+    {
+     "t": "Saab stopped being the provider after the FAA changed certification standards.",
+     "u": "https://reason.org/aviation-policy-news/aviation-policy-news-another-u-s-remote-tower-project-loses-its-provider/"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 39.078,
+   "lon": -77.5575,
+   "iata": "",
+   "elev_ft": "389",
+   "connections": []
+  },
+  {
+   "id": "kfnl",
+   "name": "Northern Colorado Regional Airport",
+   "icao": "KFNL",
+   "country": "United States",
+   "cc": "US",
+   "kind": "remote_tower",
+   "status": "decommissioned",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "FAA / Colorado DOT",
+   "program": "faa-rts",
+   "dates": [
+    {
+     "d": "2015-10-01",
+     "t": "Selected as FAA test site"
+    },
+    {
+     "d": "2023",
+     "t": "FAA terminated the project after the vendor left"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Colorado DOT says the FAA terminated the Loveland project in late 2023 after the vendor opted not to continue; the project began in 2013.",
+     "u": "https://www.codot.gov/business/consultants/advertised-projects/2026/statewide-project-specific-digital-airport-traffic-control-tower-project-management-services/cdot-aero-digital-tower-program-management-sow_acc.pdf"
+    },
+    {
+     "t": "A mobile tower with contract controllers operates at the airport; the airport commission kept a digital tower option open in 2023.",
+     "u": "https://bizwest.com/?p=373279"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "note": "",
+   "lat": 40.44969,
+   "lon": -105.01127,
+   "iata": "FNL",
+   "elev_ft": "5016",
+   "connections": []
+  },
+  {
+   "id": "kbow",
+   "name": "Bartow Executive Airport (Digital Tower Operations Center)",
+   "icao": "KBOW",
+   "country": "United States",
+   "cc": "US",
+   "kind": "remote_tower",
+   "status": "trial",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "FDOT / airport",
+   "program": "faa-rts",
+   "controlled_from": "",
+   "dates": [
+    {
+     "d": "2025",
+     "t": "Frequentis installation (project March 2023 to November 2025)"
+    },
+    {
+     "d": "2026-01",
+     "t": "Active control testing planned"
+    },
+    {
+     "d": "2026-07",
+     "t": "Full services targeted"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Installed at Bartow; active control testing was slated for January 2026 and full air traffic control services were targeted for July 2026.",
+     "u": "https://airportimprovement.com/article/bartow-executive-redefines-air-traffic-control-with-digital-tower-and-onsite-controller-training/"
+    },
+    {
+     "t": "Frequentis reports its X10 voice system went live there; the CANSO story is dated 12 March 2026.",
+     "u": "https://canso.org/?p=117565"
+    }
+   ],
+   "conf": "high",
+   "note": "The FAA states that no remote tower system was approved for the NAS as of its February 2025 page. See the United States program page for the September 2026 design approval.",
+   "regulator": "",
+   "lat": 27.9434,
+   "lon": -81.7834,
+   "iata": "BOW",
+   "elev_ft": "125",
+   "connections": []
+  },
+  {
+   "id": "kgif",
+   "name": "Winter Haven Regional Airport",
+   "icao": "KGIF",
+   "country": "United States",
+   "cc": "US",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "FDOT / airport",
+   "controlled_from": "kbow",
+   "program": "faa-rts",
+   "dates": [
+    {
+     "d": "2026-07",
+     "t": "Control testing for Winter Haven scheduled to begin"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Winter Haven is intended to be operated from the Bartow centre; Florida DOT is funding the system and officials hoped for approval in 2026.",
+     "u": "https://backend.ainonline.com/aviation-news/2025-08-27/faa-tests-while-winter-haven-preps-remote-tower"
+    },
+    {
+     "t": "Control testing for Winter Haven was scheduled to begin in July 2026.",
+     "u": "https://airportimprovement.com/article/bartow-executive-redefines-air-traffic-control-with-digital-tower-and-onsite-controller-training/"
+    }
+   ],
+   "conf": "medium",
+   "regulator": "",
+   "note": "",
+   "lat": 28.0629,
+   "lon": -81.7533,
+   "iata": "GIF",
+   "elev_ft": "145",
+   "connections": [
+    {
+     "rel": "controlled from",
+     "id": "kbow",
+     "name": "Bartow Executive Airport (Digital Tower Operations Center)"
+    }
+   ]
+  },
+  {
+   "id": "kacy",
+   "name": "FAA William J. Hughes Technical Center (Atlantic City)",
+   "icao": "KACY",
+   "country": "United States",
+   "cc": "US",
+   "kind": "test_site",
+   "status": "trial",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "FAA",
+   "program": "faa-rts",
+   "facts": [
+    {
+     "t": "The FAA evaluates remote tower systems at the Technical Center and selected RTX-Frequentis for system design approval evaluation and operational testing.",
+     "u": "https://backend.ainonline.com/aviation-news/2025-08-27/faa-tests-while-winter-haven-preps-remote-tower"
+    },
+    {
+     "t": "The FAA states that manufacturers submit designs which it evaluates at the Technical Center.",
+     "u": "https://www.faa.gov/airports/planning_capacity/non_federal/remote_tower_systems"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "regulator": "",
+   "dates": [],
+   "note": "",
+   "lat": 39.4562,
+   "lon": -74.57751,
+   "iata": "ACY",
+   "elev_ft": "75",
+   "connections": []
+  },
+  {
+   "id": "kjnx",
+   "name": "Johnston Regional Airport",
+   "icao": "KJNX",
+   "country": "United States",
+   "cc": "US",
+   "kind": "remote_tower",
+   "status": "planned",
+   "vendors": [],
+   "ansp": "Airport authority",
+   "program": "faa-rts",
+   "dates": [
+    {
+     "d": "2025-10-27",
+     "t": "Local reporting on a digital tower plan"
+    }
+   ],
+   "facts": [
+    {
+     "t": "The airport has FAA approval for a traditional tower but hopes the FAA approves digital towers; the director estimates a digital tower at about half the cost.",
+     "u": "https://www.wral.com/news/investigates/local-airport-johnston-regional-remote-tower-initiative-smithfield-october-2025/"
+    }
+   ],
+   "conf": "medium",
+   "note": "No vendor named in the cited report.",
+   "controlled_from": "",
+   "regulator": "",
+   "lat": 35.5409,
+   "lon": -78.3903,
+   "iata": "",
+   "elev_ft": "164",
+   "connections": []
+  },
+  {
+   "id": "oeao",
+   "name": "AlUla International Airport",
+   "icao": "OEAO",
+   "country": "Saudi Arabia",
+   "cc": "SA",
+   "kind": "remote_tower",
+   "status": "operational",
+   "vendors": [
+    "Indra"
+   ],
+   "ansp": "SANS",
+   "dates": [
+    {
+     "d": "2026-02-11",
+     "t": "Reported operating fully remotely"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Indra and SANS say the airport operates fully remotely from a control centre about 550 km away in Jeddah, the first in the Middle East.",
+     "u": "https://www.indragroup.com/en/news/al-ula-saudi-arabia-becomes-the-middle-easts-first-airport-to-be-operated-remotely-powered-by-sans-and-indras-digital-tower"
+    }
+   ],
+   "conf": "high",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": 26.48363,
+   "lon": 38.11705,
+   "iata": "ULH",
+   "elev_ft": "2050",
+   "connections": []
+  },
+  {
+   "id": "ysws",
+   "name": "Western Sydney International Airport",
+   "icao": "YSWS",
+   "lat": -33.8844,
+   "lon": 150.734,
+   "country": "Australia",
+   "cc": "AU",
+   "kind": "remote_tower",
+   "status": "trial",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "Airservices Australia",
+   "dates": [
+    {
+     "d": "2024-03-05",
+     "t": "Airservices announces the digital tower"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Over 20 cameras at the airport feed a Digital Aerodrome Service at Eastern Creek; CDC and Frequentis Australasia work with Airservices.",
+     "u": "https://www.australianflying.com.au/latest/western-sydney-to-get-digital-tower"
+    },
+    {
+     "t": "A July 2026 Frequentis article describes the digital work positions as in use.",
+     "u": "https://www.boerse-online.de/dpa-afx/irw-news-dr-reuter-investor-relations-von-sydney-bis-muenchen-wie-frequentis-mit-digitalen-flugtowern-weltweit-neue-standards-fuer-die-zivile-und-militaerische-infrastruktur-setzt-541645.html"
+    }
+   ],
+   "conf": "medium",
+   "note": "Airport opening date and ATC go-live not confirmed here.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "iata": "",
+   "elev_ft": "",
+   "connections": []
+  },
+  {
+   "id": "vhhh",
+   "name": "Hong Kong International Airport (digital tower and apron)",
+   "icao": "VHHH",
+   "country": "Hong Kong",
+   "cc": "HK",
+   "kind": "digital_tower",
+   "status": "operational",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "Airport Authority Hong Kong / CAD",
+   "dates": [
+    {
+     "d": "2022-06-22",
+     "t": "Phase one passed acceptance testing"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Searidge reports a combined digital apron and tower platform with over 240 camera sensors; phase one passed acceptance and reliability testing in June 2022.",
+     "u": "https://www.atc-network.com/atc-news/searidge-technologies/industrys-largest-digital-tower-to-go-operational-in-hong-kong"
+    }
+   ],
+   "conf": "medium",
+   "note": "A digital facility that augments the tower; not a remote tower.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "lat": 22.31184,
+   "lon": 113.91486,
+   "iata": "HKG",
+   "elev_ft": "28",
+   "connections": []
+  },
+  {
+   "id": "wsss",
+   "name": "Singapore Changi Airport (smart digital tower prototype)",
+   "icao": "WSSS",
+   "country": "Singapore",
+   "cc": "SG",
+   "kind": "test_site",
+   "status": "trial",
+   "vendors": [
+    "Searidge"
+   ],
+   "ansp": "CAAS",
+   "facts": [
+    {
+     "t": "NATS built a smart digital tower prototype for CAAS as a 22-month trial, with Searidge, ST Engineering and HungaroControl involved.",
+     "u": "https://www.nats.aero/news/nats-wins-major-smart-digital-tower-contract-changi-airport/"
+    }
+   ],
+   "conf": "medium",
+   "note": "Trial dates are not given in the source; later outcome not confirmed.",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "dates": [],
+   "lat": 1.35019,
+   "lon": 103.994,
+   "iata": "SIN",
+   "elev_ft": "22",
+   "connections": []
+  },
+  {
+   "id": "nzaa",
+   "name": "Auckland Airport (digital tower contingency)",
+   "icao": "NZAA",
+   "country": "New Zealand",
+   "cc": "NZ",
+   "kind": "contingency",
+   "status": "unverified",
+   "vendors": [
+    "Frequentis"
+   ],
+   "ansp": "Airways New Zealand",
+   "dates": [
+    {
+     "d": "2019-08-22",
+     "t": "Frequentis announces the system"
+    }
+   ],
+   "facts": [
+    {
+     "t": "Frequentis said its Digital Tower System would initially be used as a back-up contingency system.",
+     "u": "https://www.frequentis.com/sites/default/files/pr/2019-08/20190822_FREQUENTIS_digitalTower_Auckland_IR_EN.pdf"
+    }
+   ],
+   "conf": "low",
+   "controlled_from": "",
+   "program": "",
+   "regulator": "",
+   "note": "",
+   "lat": -37.01199,
+   "lon": 174.78633,
+   "iata": "AKL",
+   "elev_ft": "23",
+   "connections": []
+  }
+ ]
+}
